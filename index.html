@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REX CM Calculator</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#242838;--border:#2e3348;--text:#e4e6f0;--text2:#9498ad;--accent:#6c5ce7;--accent2:#a29bfe;--green:#00cec9;--green2:#00b894;--red:#ff6b6b;--orange:#fdcb6e;--blue:#74b9ff}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{background:linear-gradient(135deg,var(--accent),#4a3ab5);padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+.header .sub{font-size:13px;color:rgba(255,255,255,.7)}
+.badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.container{max-width:1400px;margin:0 auto;padding:24px}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:24px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.panel-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
+.panel-head .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.panel-body{padding:20px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+select,input[type=number]{width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;outline:none;transition:border .2s}
+select:focus,input:focus{border-color:var(--accent)}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239498ad' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.eq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.eq-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px}
+.eq-card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.eq-card h3{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.eq-card h3 span{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.tag-20{background:rgba(0,206,201,.15);color:var(--green)}
+.tag-40{background:rgba(108,92,231,.15);color:var(--accent2)}
+.btn{padding:12px 24px;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#7c6cf7;transform:translateY(-1px)}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent)}
+.btn-add{width:100%;padding:10px;border:1px dashed var(--border);background:transparent;color:var(--text2);border-radius:8px;cursor:pointer;font-size:13px;margin-top:12px;transition:all .2s}
+.btn-add:hover{border-color:var(--accent);color:var(--text)}
+.btn-remove{background:transparent;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:2px 6px;border-radius:4px}
+.btn-remove:hover{background:rgba(255,107,107,.1)}
+/* Results */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:700px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px}
+.stat-card .label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.stat-card .value{font-size:24px;font-weight:700}
+.stat-card .value.green{color:var(--green)}
+.stat-card .value.blue{color:var(--blue)}
+.stat-card .value.orange{color:var(--orange)}
+.stat-card .sub{font-size:11px;color:var(--text2);margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:10px 14px;font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);font-weight:600;position:sticky;top:0;background:var(--surface)}
+td{padding:10px 14px;border-bottom:1px solid rgba(46,51,72,.5)}
+tr:hover td{background:rgba(108,92,231,.05)}
+.positive{color:var(--green2)}
+.negative{color:var(--red)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.tag-up{background:rgba(0,184,148,.12);color:var(--green2)}
+.tag-down{background:rgba(255,107,107,.12);color:var(--red)}
+.tag-flat{background:rgba(148,152,173,.12);color:var(--text2)}
+/* AI Panel */
+.ai-panel{background:linear-gradient(135deg,rgba(108,92,231,.08),rgba(0,206,201,.05));border:1px solid rgba(108,92,231,.2)}
+.ai-msg{padding:14px 16px;border-radius:8px;margin-bottom:10px;font-size:13px;line-height:1.6}
+.ai-msg.tip{background:rgba(0,184,148,.08);border-left:3px solid var(--green2)}
+.ai-msg.warning{background:rgba(253,203,110,.08);border-left:3px solid var(--orange)}
+.ai-msg.insight{background:rgba(116,185,255,.08);border-left:3px solid var(--blue)}
+.ai-msg strong{color:var(--text)}
+.pair-badge{display:inline-block;padding:3px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;font-size:12px;font-family:'Courier New',monospace;margin:2px}
+.empty-state{text-align:center;padding:60px 20px;color:var(--text2)}
+.empty-state svg{width:64px;height:64px;margin-bottom:16px;opacity:.3}
+.scroll{max-height:600px;overflow-y:auto}
+.scroll::-webkit-scrollbar{width:6px}
+.scroll::-webkit-scrollbar-track{background:transparent}
+.scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.entry-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(46,51,72,.3)}
+.entry-num{width:24px;height:24px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.divider{height:1px;background:var(--border);margin:16px 0}
+.vessel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.vessel-header h3{font-size:15px;font-weight:600}
+.vessel-tag{font-size:11px;padding:4px 10px;background:rgba(108,92,231,.12);color:var(--accent2);border-radius:6px;font-weight:500}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>REX CM Calculator</h1>
+    <div class="sub">Port Pair CM Estimator based on 12-month history</div>
+  </div>
+  <div class="badge">2025-02 ~ 2026-05</div>
+</div>
+
+<div class="container">
+  <div class="grid">
+    <!-- LEFT: Input -->
+    <div>
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel-head"><span class="dot"></span> Vessel Configuration</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Vessel / Voyage</label>
+            <input type="text" id="vvdName" placeholder="e.g. REX 001E / COSCO HOPE" style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;outline:none">
+          </div>
+          <div class="vessel-header">
+            <h3>Port Pair Entries</h3>
+            <button class="btn btn-add" onclick="addEntry()" style="width:auto;margin:0;padding:6px 14px;font-size:12px">+ Add Port Pair</button>
+          </div>
+          <div id="entries"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><span class="dot" style="background:var(--green)"></span> Actions</div>
+        <div class="panel-body" style="display:flex;gap:10px">
+          <button class="btn btn-primary" onclick="calculate()" style="flex:1">Calculate CM</button>
+          <button class="btn btn-secondary" onclick="resetAll()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div>
+      <!-- Stats -->
+      <div class="stats-row" id="statsRow" style="display:none">
+        <div class="stat-card">
+          <div class="label">Total CM</div>
+          <div class="value green" id="statTotalCM">-</div>
+          <div class="sub" id="statTotalCMsub"></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Total TEU</div>
+          <div class="value blue" id="statTotalTEU">-</div>
+          <div class="sub" id="statTotalTEUsub"></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Blended Per TEU CM</div>
+          <div class="value orange" id="statBlended">-</div>
+          <div class="sub" id="statBlendedsub"></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Vessel BSA Utilization</div>
+          <div class="value" id="statUtil">-</div>
+          <div class="sub" id="statUtilsub"></div>
+        </div>
+      </div>
+
+      <!-- Result Table -->
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel-head"><span class="dot" style="background:var(--blue)"></span> CM Calculation Results</div>
+        <div class="panel-body scroll" id="resultBody">
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            <div style="font-size:15px;font-weight:600;margin-bottom:6px">No calculations yet</div>
+            <div style="font-size:13px">Add port pairs and click Calculate CM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Suggestions -->
+      <div class="panel ai-panel">
+        <div class="panel-head"><span class="dot" style="background:var(--orange)"></span> AI Margin Optimization</div>
+        <div class="panel-body" id="aiBody">
+          <div class="empty-state" style="padding:30px">
+            <div style="font-size:14px;color:var(--text2)">Calculate CM first to get AI-driven margin suggestions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Load data
+let DATA = {};
+let entries = [];
+
+fetch('data/cm_history.json').then(r=>r.json()).then(d=>{
+  DATA = d;
+  addEntry();
+  populateSelects();
+}).catch(e=>{
+  document.getElementById('entries').innerHTML = '<div style="color:var(--red);padding:20px">Failed to load cm_history.json</div>';
+});
+
+function fmt(n){ return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtInt(n){ return n.toLocaleString('en-US'); }
+
+function populateSelects(){
+  document.querySelectorAll('select.pol-sel').forEach(s=>fillPol(s));
+  document.querySelectorAll('select.pod-sel').forEach(s=>{
+    fillPod(s);
+    const prev = s.dataset.pol;
+    if(prev) filterDel(s.closest('.eq-card').querySelector('select.del-sel'), prev, s.value);
+  });
+}
+
+function fillPol(sel){
+  const val = sel.value;
+  sel.innerHTML = '<option value="">Select POL</option>';
+  DATA.pol_list.forEach(p=>{
+    sel.innerHTML += `<option value="${p}"${p===val?' selected':''}>${p}</option>`;
+  });
+}
+
+function fillPod(sel){
+  const val = sel.value;
+  sel.innerHTML = '<option value="">Select POD</option>';
+  DATA.pod_list.forEach(p=>{
+    sel.innerHTML += `<option value="${p}"${p===val?' selected':''}>${p}</option>`;
+  });
+}
+
+function filterDel(delSel, pol, pod){
+  const val = delSel.value;
+  delSel.innerHTML = '<option value="">Select DEL</option>';
+  if(!pod) return;
+  // Find matching DELs from port pairs
+  const dels = new Set();
+  Object.keys(DATA.port_pairs).forEach(k=>{
+    const pp = DATA.port_pairs[k];
+    if(pp.pod === pod){
+      if(!pol || pp.pol === pol){
+        if(pp.del) dels.add(pp.del);
+      }
+    }
+  });
+  // Also add from del_by_pod
+  if(DATA.del_by_pod[pod]){
+    DATA.del_by_pod[pod].forEach(d=>{ if(d.del) dels.add(d.del); });
+  }
+  [...dels].sort().forEach(d=>{
+    delSel.innerHTML += `<option value="${d}"${d===val?' selected':''}>${d}</option>`;
+  });
+}
+
+function onPolChange(sel){
+  const card = sel.closest('.eq-card');
+  filterDel(card.querySelector('select.del-sel'), sel.value, card.querySelector('select.pod-sel').value);
+}
+
+function onPodChange(sel){
+  const card = sel.closest('.eq-card');
+  filterDel(card.querySelector('select.del-sel'), card.querySelector('select.pol-sel').value, sel.value);
+}
+
+let entryCounter = 0;
+function addEntry(){
+  entryCounter++;
+  const id = entryCounter;
+  const div = document.createElement('div');
+  div.className = 'eq-card';
+  div.id = `entry-${id}`;
+  div.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <h3><span class="entry-num">${id}</span> Port Pair #${id}</h3>
+      <button class="btn-remove" onclick="removeEntry(${id})" title="Remove">&times;</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div>
+        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">POL</label>
+        <select class="pol-sel" onchange="onPolChange(this)"><option value="">Select</option></select>
+      </div>
+      <div>
+        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">POD</label>
+        <select class="pod-sel" onchange="onPodChange(this)"><option value="">Select</option></select>
+      </div>
+      <div>
+        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">DEL</label>
+        <select class="del-sel"><option value="">Select</option></select>
+      </div>
+    </div>
+    <div class="eq-grid">
+      <div>
+        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">20' BSA (TEU)</label>
+        <input type="number" class="gp20-bsa" placeholder="0" min="0" value="0" style="width:100%;padding:8px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">40' BSA (TEU)</label>
+        <input type="number" class="hc40-bsa" placeholder="0" min="0" value="0" style="width:100%;padding:8px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;outline:none">
+      </div>
+    </div>
+    <div style="margin-top:10px;padding:10px;background:rgba(108,92,231,.05);border-radius:6px;font-size:12px;color:var(--text2)" class="hist-info">
+      Historical benchmark will show here after selecting ports
+    </div>
+  `;
+  document.getElementById('entries').appendChild(div);
+  populateSelects();
+  // Add live preview
+  div.querySelectorAll('select').forEach(s=>{
+    s.addEventListener('change', ()=>showHist(div));
+  });
+}
+
+function removeEntry(id){
+  const el = document.getElementById(`entry-${id}`);
+  if(el) el.remove();
+}
+
+function showHist(card){
+  const pol = card.querySelector('select.pol-sel').value;
+  const pod = card.querySelector('select.pod-sel').value;
+  const del = card.querySelector('select.del-sel').value;
+  const info = card.querySelector('.hist-info');
+  if(!pol || !pod){
+    info.textContent = 'Select POL and POD to see historical benchmark';
+    return;
+  }
+  // Try to find matching port pair
+  let best = null;
+  // Exact match with DEL first
+  if(del){
+    const k = `${pol}|${pod}|${del}`;
+    if(DATA.port_pairs[k]) best = DATA.port_pairs[k];
+  }
+  // Match without DEL
+  if(!best){
+    const k = `${pol}|${pod}`;
+    if(DATA.port_pairs[k]) best = DATA.port_pairs[k];
+  }
+  // Try any DEL
+  if(!best){
+    for(const [key, val] of Object.entries(DATA.port_pairs)){
+      if(val.pol === pol && val.pod === pod){
+        best = val;
+        break;
+      }
+    }
+  }
+  if(!best){
+    info.innerHTML = '<span style="color:var(--orange)">No historical data found for this port pair</span>';
+    return;
+  }
+  let html = `<strong>Historical Benchmark (${best.months} months):</strong><br>`;
+  if(best.gp20){
+    html += `20' Avg Per TEU CM: <span style="color:var(--green2);font-weight:600">$${fmt(best.gp20.avg_ptcm)}</span>`;
+    html += ` (${fmtInt(best.gp20.total_teu)} TEU total)`;
+  }
+  if(best.gp20 && best.hc40) html += '<br>';
+  if(best.hc40){
+    html += `40' Per TEU CM: <span style="color:var(--accent2);font-weight:600">$${fmt(best.hc40.avg_ptcm)}</span>`;
+    html += ` | FEU adj: <span style="color:var(--accent2);font-weight:600">$${fmt(best.hc40.avg_ptcm_feu)}</span>`;
+    html += ` (${fmtInt(best.hc40.total_teu)} TEU total)`;
+  }
+  info.innerHTML = html;
+}
+
+function findBestPortPair(pol, pod, del){
+  if(del){
+    const k = `${pol}|${pod}|${del}`;
+    if(DATA.port_pairs[k]) return DATA.port_pairs[k];
+  }
+  const k = `${pol}|${pod}`;
+  if(DATA.port_pairs[k]) return DATA.port_pairs[k];
+  for(const [key, val] of Object.entries(DATA.port_pairs)){
+    if(val.pol === pol && val.pod === pod) return val;
+  }
+  return null;
+}
+
+function calculate(){
+  const entryEls = document.querySelectorAll('#entries .eq-card');
+  if(entryEls.length === 0) return;
+
+  let results = [];
+  let totalCM = 0, totalTEU = 0, totalGP20TEU = 0, totalHC40TEU = 0;
+  let totalGP20CM = 0, totalHC40CM = 0;
+  let totalBSA = 0;
+  const vvdName = document.getElementById('vvdName').value || 'REX Vessel';
+
+  entryEls.forEach((card, idx)=>{
+    const pol = card.querySelector('select.pol-sel').value;
+    const pod = card.querySelector('select.pod-sel').value;
+    const del = card.querySelector('select.del-sel').value;
+    const gp20Bsa = parseInt(card.querySelector('.gp20-bsa').value) || 0;
+    const hc40Bsa = parseInt(card.querySelector('.hc40-bsa').value) || 0;
+
+    if(!pol || !pod || (gp20Bsa===0 && hc40Bsa===0)) return;
+
+    const hist = findBestPortPair(pol, pod, del);
+    const gp20Ptcm = hist?.gp20?.avg_ptcm || DATA.metadata.overall_gp20_ptcm;
+    const hc40Ptcm = hist?.hc40?.avg_ptcm || DATA.metadata.overall_hc40_ptcm;
+    const hc40PtcmFeu = hist?.hc40?.avg_ptcm_feu || DATA.metadata.overall_hc40_ptcm_feu;
+    const hasHist = !!hist;
+
+    const gp20CM = gp20Bsa * gp20Ptcm;
+    const hc40CM = hc40Bsa * hc40Ptcm;
+    const hc40CMFeu = hc40Bsa * hc40PtcmFeu;
+    const entryCM = gp20CM + hc40CMFeu;
+    const entryTEU = gp20Bsa + hc40Bsa;
+
+    totalCM += entryCM;
+    totalTEU += entryTEU;
+    totalGP20TEU += gp20Bsa;
+    totalHC40TEU += hc40Bsa;
+    totalGP20CM += gp20CM;
+    totalHC40CM += hc40CMFeu;
+    totalBSA += gp20Bsa + hc40Bsa;
+
+    results.push({
+      idx: idx+1, pol, pod, del, gp20Bsa, hc40Bsa,
+      gp20Ptcm, hc40Ptcm, hc40PtcmFeu,
+      gp20CM, hc40CM: hc40CMFeu,
+      entryCM, entryTEU, hasHist,
+      source: hist ? (hist.del ? `${pol}→${pod}→${hist.del}` : `${pol}→${pod}`) : 'Overall Average'
+    });
+  });
+
+  if(results.length === 0) return;
+
+  // Update stats
+  document.getElementById('statsRow').style.display = 'grid';
+  document.getElementById('statTotalCM').textContent = '$' + fmt(totalCM);
+  document.getElementById('statTotalCMsub').textContent = `GP20: $${fmt(totalGP20CM)} | HC40(FEU): $${fmt(totalHC40CM)}`;
+  document.getElementById('statTotalTEU').textContent = fmtInt(totalTEU);
+  document.getElementById('statTotalTEUsub').textContent = `GP20: ${fmtInt(totalGP20TEU)} | HC40: ${fmtInt(totalHC40TEU)}`;
+  document.getElementById('statBlended').textContent = '$' + fmt(totalCM/totalTEU);
+  document.getElementById('statBlendedsub').textContent = `GP20: $${fmt(totalGP20TEU>0?totalGP20CM/totalGP20TEU:0)} | HC40 FEU: $${fmt(totalHC40TEU>0?totalHC40CM/totalHC40TEU:0)}`;
+  document.getElementById('statUtil').textContent = fmtInt(totalBSA) + ' TEU';
+  document.getElementById('statUtilsub').textContent = `${results.length} port pairs`;
+
+  // Build result table
+  let html = `<table>
+    <thead><tr>
+      <th>#</th><th>Port Pair</th><th>DEL</th>
+      <th style="text-align:right">20' BSA</th><th style="text-align:right">20' P/T CM</th><th style="text-align:right">20' Est CM</th>
+      <th style="text-align:right">40' BSA</th><th style="text-align:right">40' P/T(FEU)</th><th style="text-align:right">40' Est CM</th>
+      <th style="text-align:right">Total CM</th><th>Source</th>
+    </tr></thead><tbody>`;
+
+  results.forEach(r=>{
+    const ppStr = `<span class="pair-badge">${r.pol} → ${r.pod}</span>`;
+    const sourceTag = r.hasHist ?
+      `<span class="tag tag-up">Historical</span>` :
+      `<span class="tag tag-flat">Overall Avg</span>`;
+    html += `<tr>
+      <td>${r.idx}</td>
+      <td>${ppStr}</td>
+      <td style="color:var(--text2)">${r.del || '-'}</td>
+      <td style="text-align:right;font-family:monospace">${fmtInt(r.gp20Bsa)}</td>
+      <td style="text-align:right;color:var(--green2)">$${fmt(r.gp20Ptcm)}</td>
+      <td style="text-align:right;font-weight:600">$${fmt(r.gp20CM)}</td>
+      <td style="text-align:right;font-family:monospace">${fmtInt(r.hc40Bsa)}</td>
+      <td style="text-align:right;color:var(--accent2)">$${fmt(r.hc40PtcmFeu)}</td>
+      <td style="text-align:right;font-weight:600">$${fmt(r.hc40CM)}</td>
+      <td style="text-align:right;font-weight:700;color:var(--green2)">$${fmt(r.entryCM)}</td>
+      <td>${sourceTag}</td>
+    </tr>`;
+  });
+
+  // Total row
+  html += `<tr style="background:var(--surface2);font-weight:700">
+    <td colspan="3" style="color:var(--accent2)">VESSEL TOTAL</td>
+    <td style="text-align:right">${fmtInt(totalGP20TEU)}</td>
+    <td style="text-align:right">-</td>
+    <td style="text-align:right">$${fmt(totalGP20CM)}</td>
+    <td style="text-align:right">${fmtInt(totalHC40TEU)}</td>
+    <td style="text-align:right">-</td>
+    <td style="text-align:right">$${fmt(totalHC40CM)}</td>
+    <td style="text-align:right;color:var(--green2);font-size:15px">$${fmt(totalCM)}</td>
+    <td></td>
+  </tr>`;
+  html += '</tbody></table>';
+  document.getElementById('resultBody').innerHTML = html;
+
+  // AI Suggestions
+  generateAI(results, totalCM, totalTEU, totalGP20TEU, totalHC40TEU);
+}
+
+function generateAI(results, totalCM, totalTEU, gp20Teu, hc40Teu){
+  const ai = DATA.ai_insights;
+  let msgs = [];
+
+  // 1. Equipment mix analysis
+  const gp20Pct = (gp20Teu / totalTEU * 100).toFixed(1);
+  const hc40Pct = (hc40Teu / totalTEU * 100).toFixed(1);
+  const overallRatio = parseFloat(DATA.metadata.overall_hc40_ptcm_feu / DATA.metadata.overall_gp20_ptcm).toFixed(2);
+
+  msgs.push({
+    type: 'insight',
+    html: `<strong>Equipment Mix:</strong> Your vessel is ${gp20Pct}% 20' / ${hc40Pct}% 40'. 
+    Historical overall 40' FEU Per TEU CM ($${fmt(DATA.metadata.overall_hc40_ptcm_feu)}) is <strong>${overallRatio}x</strong> of 20' ($${fmt(DATA.metadata.overall_gp20_ptcm)}). 
+    ${parseFloat(hc40Pct) < 80 ? 'Consider increasing 40\' allocation for better margin.' : 'Your 40\' utilization is strong.'}`
+  });
+
+  // 2. Check if any entries use overall average (no history)
+  const noHist = results.filter(r=>!r.hasHist);
+  if(noHist.length > 0){
+    const pairs = noHist.map(r=>`<span class="pair-badge">${r.pol}→${r.pod}</span>`).join(' ');
+    msgs.push({
+      type: 'warning',
+      html: `<strong>No Historical Match:</strong> ${pairs} ${noHist.length===1?'has':'have'} no matching history. 
+      CM is estimated using <strong>overall average</strong>, which may be inaccurate for these specific routes. Verify with actual data if possible.`
+    });
+  }
+
+  // 3. Port pair optimization suggestions
+  const pairSet = new Set(results.map(r=>`${r.pol}|${r.pod}`));
+  const hc40Better = ai.hc40_better_than_gp20.filter(p=>pairSet.has(p.pair));
+  const gp20Better = ai.gp20_better_than_gp20.filter(p=>pairSet.has(p.pair));
+
+  if(hc40Better.length > 0){
+    const top = hc40Better.slice(0,3);
+    const pairs = top.map(p=>`<span class="pair-badge">${p.pair.replace('|','→')}</span> (${p.ratio}x)`).join(' ');
+    msgs.push({
+      type: 'tip',
+      html: `<strong>Maximize 40' on these routes:</strong> ${pairs}<br>
+      40' FEU Per TEU CM significantly exceeds 20' on these port pairs. Prioritize 40' allocation here.`
+    });
+  }
+
+  if(gp20Better.length > 0){
+    const top = gp20Better.slice(0,3);
+    const pairs = top.map(p=>`<span class="pair-badge">${p.pair.replace('|','→')}</span> (${p.ratio}x 20' better)</span>`).join(' ');
+    msgs.push({
+      type: 'tip',
+      html: `<strong>20' outperforms 40' on:</strong> ${pairs}<br>
+      Consider offering competitive 20' rates to capture volume — the Per TEU CM is higher than 40' FEU here.`
+    });
+  }
+
+  // 4. Top margin port pairs not yet in the plan
+  const allTopHC40 = ai.best_hc40_pairs.slice(0,10).map(p=>p.pair);
+  const allTopGP20 = ai.best_gp20_pairs.slice(0,10).map(p=>p.pair);
+  const missingHC40 = allTopHC40.filter(p=>!pairSet.has(p)).slice(0,3);
+  const missingGP20 = allTopGP20.filter(p=>!pairSet.has(p)).slice(0,3);
+
+  if(missingHC40.length > 0 || missingGP20.length > 0){
+    let missPairs = [];
+    missingHC40.forEach(p=>missPairs.push(`<span class="pair-badge">${p.replace('|','→')}</span>`));
+    missingGP20.forEach(p=>missPairs.push(`<span class="pair-badge">${p.replace('|','→')}</span>`));
+    msgs.push({
+      type: 'insight',
+      html: `<strong>High-margin pairs not in your plan:</strong> ${missPairs.join(' ')}<br>
+      These port pairs have top historical Per TEU CM. Consider adding them if viable.`
+    });
+  }
+
+  // 5. Blended CM assessment
+  const blended = totalCM / totalTEU;
+  const benchmark = (DATA.metadata.total_gp20_teu > 0 && DATA.metadata.total_hc40_teu > 0) ?
+    (DATA.metadata.total_cm / DATA.metadata.total_teu) : 0;
+
+  if(blended > benchmark * 1.1){
+    msgs.push({
+      type: 'tip',
+      html: `<strong>Strong vessel profile:</strong> Your estimated blended Per TEU CM ($${fmt(blended)}) is <strong>${((blended/benchmark-1)*100).toFixed(0)}% above</strong> the 12-month average ($${fmt(benchmark)}). This vessel composition looks profitable.`
+    });
+  } else if(blended < benchmark * 0.9){
+    msgs.push({
+      type: 'warning',
+      html: `<strong>Below benchmark:</strong> Estimated blended Per TEU CM ($${fmt(blended)}) is <strong>${((1-blended/benchmark)*100).toFixed(0)}% below</strong> the 12-month average ($${fmt(benchmark)}). Review port pair mix and consider substituting lower-margin routes.`
+    });
+  }
+
+  // Render
+  let html = '';
+  msgs.forEach(m=>{
+    html += `<div class="ai-msg ${m.type}">${m.html}</div>`;
+  });
+  document.getElementById('aiBody').innerHTML = html;
+}
+
+function resetAll(){
+  document.getElementById('entries').innerHTML = '';
+  document.getElementById('vvdName').value = '';
+  document.getElementById('statsRow').style.display = 'none';
+  document.getElementById('resultBody').innerHTML = `
+    <div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+      <div style="font-size:15px;font-weight:600;margin-bottom:6px">No calculations yet</div>
+      <div style="font-size:13px">Add port pairs and click Calculate CM</div>
+    </div>`;
+  document.getElementById('aiBody').innerHTML = `
+    <div class="empty-state" style="padding:30px">
+      <div style="font-size:14px;color:var(--text2)">Calculate CM first to get AI-driven margin suggestions</div>
+    </div>`;
+  entryCounter = 0;
+  addEntry();
+}
+</script>
+</body>
+</html>

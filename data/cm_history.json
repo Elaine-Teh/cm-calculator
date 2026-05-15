@@ -1,0 +1,5719 @@
+{
+  "pol_list": [
+    "CNFOS",
+    "CNFZH",
+    "CNHUA",
+    "CNJMN",
+    "CNNAS",
+    "CNNGB",
+    "CNNJG",
+    "CNQZH",
+    "CNSHA",
+    "CNSHK",
+    "CNSWA",
+    "CNTAO",
+    "CNXGG",
+    "CNXMN",
+    "CNZPU",
+    "DJJIB",
+    "EGSOK",
+    "HKHKG",
+    "IDBLW",
+    "IDJKT",
+    "IDSUB",
+    "JPNGO",
+    "JPTYO",
+    "JPUKB",
+    "JPYOK",
+    "KRINC",
+    "KRPUS",
+    "MYPGU",
+    "MYPKG",
+    "SAJED",
+    "SDPZU",
+    "THBKK",
+    "THBKS",
+    "THLCH",
+    "THSCS",
+    "TWKEL",
+    "TWKHH",
+    "TWTPE",
+    "TWTXG",
+    "VNHPH",
+    "VNSGN",
+    "VNVUT",
+    "YEADE"
+  ],
+  "pod_list": [
+    "AEJEA",
+    "CNHUA",
+    "CNNAS",
+    "CNNGB",
+    "CNSHA",
+    "CNSHK",
+    "CNSWA",
+    "CNTAO",
+    "CNXMN",
+    "DJJIB",
+    "EGALY",
+    "EGPSD",
+    "EGSOK",
+    "HKHKG",
+    "IDJKT",
+    "INMUN",
+    "JOAQJ",
+    "JPNGO",
+    "JPTYO",
+    "MYPGU",
+    "MYPKG",
+    "PHMNN",
+    "SAJED",
+    "SDPZU",
+    "SOBBO",
+    "SYLTR",
+    "THBKK",
+    "THLCH",
+    "TRIST",
+    "TRIZT",
+    "TWKEL",
+    "TWKHH",
+    "TWTPE",
+    "TWTXG",
+    "VNHPH",
+    "VNSGN",
+    "YEADE",
+    "YEHOD"
+  ],
+  "del_list": [
+    "AEJEA",
+    "CNHUA",
+    "CNNAS",
+    "CNNGB",
+    "CNSHA",
+    "CNSHK",
+    "CNSWA",
+    "CNTAO",
+    "CNXMN",
+    "DJJIB",
+    "EGALY",
+    "EGPSD",
+    "EGSOK",
+    "HKHKG",
+    "IDJKT",
+    "INMUN",
+    "JOAQJ",
+    "JPNGO",
+    "JPTYO",
+    "MYPGU",
+    "MYPKG",
+    "PHMNN",
+    "SADMM",
+    "SAJED",
+    "SARUH",
+    "SDPZU",
+    "SOBBO",
+    "SYLTR",
+    "THBKK",
+    "THLCH",
+    "TRIST",
+    "TRIZT",
+    "TWKEL",
+    "TWKHH",
+    "TWTPE",
+    "TWTXG",
+    "VNHPH",
+    "VNSGN",
+    "YEADE",
+    "YEHOD"
+  ],
+  "por_list": [
+    "CNFOS",
+    "CNFZH",
+    "CNHUA",
+    "CNJMN",
+    "CNNAS",
+    "CNNGB",
+    "CNNJG",
+    "CNQZH",
+    "CNSHA",
+    "CNSHK",
+    "CNSWA",
+    "CNTAO",
+    "CNXGG",
+    "CNXMN",
+    "CNZPU",
+    "DJJIB",
+    "EGSOK",
+    "HKHKG",
+    "IDBLW",
+    "IDJKT",
+    "IDSUB",
+    "JPNGO",
+    "JPTYO",
+    "JPUKB",
+    "JPYOK",
+    "KRINC",
+    "KRPUS",
+    "MYPGU",
+    "MYPKG",
+    "SAJED",
+    "SDPZU",
+    "THBKK",
+    "THBKS",
+    "THLCH",
+    "THLKB",
+    "THSCS",
+    "TWKEL",
+    "TWKHH",
+    "TWNTC",
+    "TWTPE",
+    "TWTXG",
+    "TWTYN",
+    "VNHPH",
+    "VNSGN",
+    "VNVUT",
+    "YEADE"
+  ],
+  "port_pairs": {
+    "CNFOS|EGSOK|EGSOK": {
+      "pol": "CNFOS",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 14,
+      "gp20": {
+        "total_teu": 142,
+        "total_cm": 315577.39,
+        "avg_ptcm": 2222.38,
+        "avg_per_month_teu": 10.9,
+        "avg_per_month_cm": 24275.18,
+        "months_active": 13
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 13991.43,
+        "cm_feu": 27982.87,
+        "avg_ptcm": 1399.14,
+        "avg_ptcm_feu": 2798.29,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 6995.72,
+        "months_active": 2
+      }
+    },
+    "CNFZH|DJJIB|DJJIB": {
+      "pol": "CNFZH",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 8069.99,
+        "cm_feu": 16139.98,
+        "avg_ptcm": 1345.0,
+        "avg_ptcm_feu": 2690.0,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 8069.99,
+        "months_active": 1
+      }
+    },
+    "CNHUA|EGSOK|EGSOK": {
+      "pol": "CNHUA",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 3,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 5516.95,
+        "avg_ptcm": 2758.48,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2758.48,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 7122.93,
+        "cm_feu": 14245.86,
+        "avg_ptcm": 1780.73,
+        "avg_ptcm_feu": 3561.46,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3561.46,
+        "months_active": 2
+      }
+    },
+    "CNHUA|SDPZU|SDPZU": {
+      "pol": "CNHUA",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 18,
+        "total_cm": 24504.62,
+        "cm_feu": 49009.24,
+        "avg_ptcm": 1361.37,
+        "avg_ptcm_feu": 2722.74,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 4900.92,
+        "months_active": 5
+      }
+    },
+    "CNJMN|EGSOK|EGSOK": {
+      "pol": "CNJMN",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 7,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 15932.05,
+        "avg_ptcm": 2655.34,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 5310.68,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 26,
+        "total_cm": 39793.8,
+        "cm_feu": 79587.6,
+        "avg_ptcm": 1530.53,
+        "avg_ptcm_feu": 3061.06,
+        "avg_per_month_teu": 3.7,
+        "avg_per_month_cm": 5684.83,
+        "months_active": 7
+      }
+    },
+    "CNNAS|AEJEA|AEJEA": {
+      "pol": "CNNAS",
+      "pod": "AEJEA",
+      "del": "AEJEA",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 16,
+        "total_cm": 101370.19,
+        "cm_feu": 202740.39,
+        "avg_ptcm": 6335.64,
+        "avg_ptcm_feu": 12671.27,
+        "avg_per_month_teu": 5.3,
+        "avg_per_month_cm": 33790.06,
+        "months_active": 3
+      }
+    },
+    "CNNAS|CNNAS|CNNAS": {
+      "pol": "CNNAS",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 16,
+        "total_cm": 110070.27,
+        "cm_feu": 220140.54,
+        "avg_ptcm": 6879.39,
+        "avg_ptcm_feu": 13758.78,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 55035.13,
+        "months_active": 2
+      }
+    },
+    "CNNAS|CNSHA|CNSHA": {
+      "pol": "CNNAS",
+      "pod": "CNSHA",
+      "del": "CNSHA",
+      "months": 1,
+      "gp20": {
+        "total_teu": 181,
+        "total_cm": 16200.0,
+        "avg_ptcm": 89.5,
+        "avg_per_month_teu": 181.0,
+        "avg_per_month_cm": 16200.0,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 98,
+        "total_cm": 6800.0,
+        "cm_feu": 13600.0,
+        "avg_ptcm": 69.39,
+        "avg_ptcm_feu": 138.78,
+        "avg_per_month_teu": 98.0,
+        "avg_per_month_cm": 6800.0,
+        "months_active": 1
+      }
+    },
+    "CNNAS|DJJIB|DJJIB": {
+      "pol": "CNNAS",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 44,
+      "gp20": {
+        "total_teu": 254,
+        "total_cm": 542314.12,
+        "avg_ptcm": 2135.09,
+        "avg_per_month_teu": 7.9,
+        "avg_per_month_cm": 16947.32,
+        "months_active": 32
+      },
+      "hc40": {
+        "total_teu": 1226,
+        "total_cm": 1620931.2,
+        "cm_feu": 3241862.4,
+        "avg_ptcm": 1322.13,
+        "avg_ptcm_feu": 2644.26,
+        "avg_per_month_teu": 30.6,
+        "avg_per_month_cm": 40523.28,
+        "months_active": 40
+      }
+    },
+    "CNNAS|EGPSD|EGPSD": {
+      "pol": "CNNAS",
+      "pod": "EGPSD",
+      "del": "EGPSD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1340.08,
+        "avg_ptcm": 1340.08,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1340.08,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "CNNAS|EGSOK|EGSOK": {
+      "pol": "CNNAS",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 114,
+      "gp20": {
+        "total_teu": 2172,
+        "total_cm": 4723629.56,
+        "avg_ptcm": 2174.78,
+        "avg_per_month_teu": 25.3,
+        "avg_per_month_cm": 54925.93,
+        "months_active": 86
+      },
+      "hc40": {
+        "total_teu": 8346,
+        "total_cm": 11936276.42,
+        "cm_feu": 23872552.83,
+        "avg_ptcm": 1430.18,
+        "avg_ptcm_feu": 2860.36,
+        "avg_per_month_teu": 75.2,
+        "avg_per_month_cm": 107534.02,
+        "months_active": 111
+      }
+    },
+    "CNNAS|HKHKG|HKHKG": {
+      "pol": "CNNAS",
+      "pod": "HKHKG",
+      "del": "HKHKG",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 15608.26,
+        "cm_feu": 31216.51,
+        "avg_ptcm": 7804.13,
+        "avg_ptcm_feu": 15608.26,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 15608.26,
+        "months_active": 1
+      }
+    },
+    "CNNAS|MYPKG|MYPKG": {
+      "pol": "CNNAS",
+      "pod": "MYPKG",
+      "del": "MYPKG",
+      "months": 1,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 2026.89,
+        "avg_ptcm": 337.82,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 2026.89,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 282,
+        "total_cm": 78350.21,
+        "cm_feu": 156700.41,
+        "avg_ptcm": 277.84,
+        "avg_ptcm_feu": 555.68,
+        "avg_per_month_teu": 282.0,
+        "avg_per_month_cm": 78350.21,
+        "months_active": 1
+      }
+    },
+    "CNNAS|SAJED|SADMM": {
+      "pol": "CNNAS",
+      "pod": "SAJED",
+      "del": "SADMM",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 13268.61,
+        "cm_feu": 26537.22,
+        "avg_ptcm": 3317.15,
+        "avg_ptcm_feu": 6634.31,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 13268.61,
+        "months_active": 1
+      }
+    },
+    "CNNAS|SAJED|SAJED": {
+      "pol": "CNNAS",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 113,
+      "gp20": {
+        "total_teu": 584,
+        "total_cm": 1340092.66,
+        "avg_ptcm": 2294.68,
+        "avg_per_month_teu": 7.0,
+        "avg_per_month_cm": 16145.69,
+        "months_active": 83
+      },
+      "hc40": {
+        "total_teu": 5622,
+        "total_cm": 8878908.77,
+        "cm_feu": 17757817.54,
+        "avg_ptcm": 1579.31,
+        "avg_ptcm_feu": 3158.63,
+        "avg_per_month_teu": 50.6,
+        "avg_per_month_cm": 79990.17,
+        "months_active": 111
+      }
+    },
+    "CNNAS|SAJED|SARUH": {
+      "pol": "CNNAS",
+      "pod": "SAJED",
+      "del": "SARUH",
+      "months": 3,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 20446.56,
+        "avg_ptcm": 5111.64,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 10223.28,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 6386.26,
+        "cm_feu": 12772.51,
+        "avg_ptcm": 3193.13,
+        "avg_ptcm_feu": 6386.26,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 6386.26,
+        "months_active": 1
+      }
+    },
+    "CNNAS|SDPZU|SDPZU": {
+      "pol": "CNNAS",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 99,
+      "gp20": {
+        "total_teu": 368,
+        "total_cm": 857586.97,
+        "avg_ptcm": 2330.4,
+        "avg_per_month_teu": 4.4,
+        "avg_per_month_cm": 10332.37,
+        "months_active": 83
+      },
+      "hc40": {
+        "total_teu": 2938,
+        "total_cm": 4051009.11,
+        "cm_feu": 8102018.21,
+        "avg_ptcm": 1378.83,
+        "avg_ptcm_feu": 2757.66,
+        "avg_per_month_teu": 32.3,
+        "avg_per_month_cm": 44516.58,
+        "months_active": 91
+      }
+    },
+    "CNNAS|SOBBO|SOBBO": {
+      "pol": "CNNAS",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 7,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 17677.23,
+        "avg_ptcm": 2946.21,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 5892.41,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 56,
+        "total_cm": 244367.04,
+        "cm_feu": 488734.09,
+        "avg_ptcm": 4363.7,
+        "avg_ptcm_feu": 8727.39,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 34909.58,
+        "months_active": 7
+      }
+    },
+    "CNNAS|YEADE|YEADE": {
+      "pol": "CNNAS",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 72,
+      "gp20": {
+        "total_teu": 179,
+        "total_cm": 445644.53,
+        "avg_ptcm": 2489.63,
+        "avg_per_month_teu": 4.2,
+        "avg_per_month_cm": 10363.83,
+        "months_active": 43
+      },
+      "hc40": {
+        "total_teu": 2264,
+        "total_cm": 3677477.62,
+        "cm_feu": 7354955.24,
+        "avg_ptcm": 1624.33,
+        "avg_ptcm_feu": 3248.66,
+        "avg_per_month_teu": 35.4,
+        "avg_per_month_cm": 57460.59,
+        "months_active": 64
+      }
+    },
+    "CNNAS|YEHOD|YEHOD": {
+      "pol": "CNNAS",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 17,
+      "gp20": {
+        "total_teu": 9,
+        "total_cm": 39131.13,
+        "avg_ptcm": 4347.9,
+        "avg_per_month_teu": 2.2,
+        "avg_per_month_cm": 9782.78,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 188,
+        "total_cm": 498047.69,
+        "cm_feu": 996095.39,
+        "avg_ptcm": 2649.19,
+        "avg_ptcm_feu": 5298.38,
+        "avg_per_month_teu": 11.1,
+        "avg_per_month_cm": 29296.92,
+        "months_active": 17
+      }
+    },
+    "CNNGB|CNNAS|CNNAS": {
+      "pol": "CNNGB",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 15,
+      "gp20": {
+        "total_teu": 141,
+        "total_cm": 14100.0,
+        "avg_ptcm": 100.0,
+        "avg_per_month_teu": 10.1,
+        "avg_per_month_cm": 1007.14,
+        "months_active": 14
+      },
+      "hc40": {
+        "total_teu": 1392,
+        "total_cm": 139200.0,
+        "cm_feu": 278400.0,
+        "avg_ptcm": 100.0,
+        "avg_ptcm_feu": 200.0,
+        "avg_per_month_teu": 92.8,
+        "avg_per_month_cm": 9280.0,
+        "months_active": 15
+      }
+    },
+    "CNNGB|DJJIB|DJJIB": {
+      "pol": "CNNGB",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 38,
+      "gp20": {
+        "total_teu": 196,
+        "total_cm": 360419.82,
+        "avg_ptcm": 1838.88,
+        "avg_per_month_teu": 8.2,
+        "avg_per_month_cm": 15017.49,
+        "months_active": 24
+      },
+      "hc40": {
+        "total_teu": 2004,
+        "total_cm": 2339540.83,
+        "cm_feu": 4679081.65,
+        "avg_ptcm": 1167.44,
+        "avg_ptcm_feu": 2334.87,
+        "avg_per_month_teu": 54.2,
+        "avg_per_month_cm": 63230.83,
+        "months_active": 37
+      }
+    },
+    "CNNGB|EGSOK|EGSOK": {
+      "pol": "CNNGB",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 96,
+      "gp20": {
+        "total_teu": 963,
+        "total_cm": 2032119.53,
+        "avg_ptcm": 2110.2,
+        "avg_per_month_teu": 14.8,
+        "avg_per_month_cm": 31263.38,
+        "months_active": 65
+      },
+      "hc40": {
+        "total_teu": 16768,
+        "total_cm": 22244178.66,
+        "cm_feu": 44488357.31,
+        "avg_ptcm": 1326.59,
+        "avg_ptcm_feu": 2653.17,
+        "avg_per_month_teu": 176.5,
+        "avg_per_month_cm": 234149.25,
+        "months_active": 95
+      }
+    },
+    "CNNGB|JOAQJ|JOAQJ": {
+      "pol": "CNNGB",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 2791.75,
+        "cm_feu": 5583.51,
+        "avg_ptcm": 1395.88,
+        "avg_ptcm_feu": 2791.75,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2791.75,
+        "months_active": 1
+      }
+    },
+    "CNNGB|MYPKG|MYPKG": {
+      "pol": "CNNGB",
+      "pod": "MYPKG",
+      "del": "MYPKG",
+      "months": 1,
+      "gp20": {
+        "total_teu": 32,
+        "total_cm": 10571.14,
+        "avg_ptcm": 330.35,
+        "avg_per_month_teu": 32.0,
+        "avg_per_month_cm": 10571.14,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 296,
+        "total_cm": 80194.39,
+        "cm_feu": 160388.77,
+        "avg_ptcm": 270.93,
+        "avg_ptcm_feu": 541.85,
+        "avg_per_month_teu": 296.0,
+        "avg_per_month_cm": 80194.39,
+        "months_active": 1
+      }
+    },
+    "CNNGB|SAJED|SAJED": {
+      "pol": "CNNGB",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 97,
+      "gp20": {
+        "total_teu": 954,
+        "total_cm": 2092139.64,
+        "avg_ptcm": 2193.02,
+        "avg_per_month_teu": 14.7,
+        "avg_per_month_cm": 32186.76,
+        "months_active": 65
+      },
+      "hc40": {
+        "total_teu": 14208,
+        "total_cm": 20004490.51,
+        "cm_feu": 40008981.03,
+        "avg_ptcm": 1407.97,
+        "avg_ptcm_feu": 2815.95,
+        "avg_per_month_teu": 146.5,
+        "avg_per_month_cm": 206231.86,
+        "months_active": 97
+      }
+    },
+    "CNNGB|SDPZU|SDPZU": {
+      "pol": "CNNGB",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 81,
+      "gp20": {
+        "total_teu": 171,
+        "total_cm": 391965.57,
+        "avg_ptcm": 2292.2,
+        "avg_per_month_teu": 3.3,
+        "avg_per_month_cm": 7537.8,
+        "months_active": 52
+      },
+      "hc40": {
+        "total_teu": 2436,
+        "total_cm": 3107564.72,
+        "cm_feu": 6215129.43,
+        "avg_ptcm": 1275.68,
+        "avg_ptcm_feu": 2551.37,
+        "avg_per_month_teu": 31.2,
+        "avg_per_month_cm": 39840.57,
+        "months_active": 78
+      }
+    },
+    "CNNGB|SOBBO|SOBBO": {
+      "pol": "CNNGB",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 2,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 5523.9,
+        "avg_ptcm": 2761.95,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2761.95,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "CNNGB|TRIST|TRIST": {
+      "pol": "CNNGB",
+      "pod": "TRIST",
+      "del": "TRIST",
+      "months": 4,
+      "gp20": {
+        "total_teu": 38,
+        "total_cm": 55956.32,
+        "avg_ptcm": 1472.53,
+        "avg_per_month_teu": 9.5,
+        "avg_per_month_cm": 13989.08,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 110,
+        "total_cm": 161569.6,
+        "cm_feu": 323139.19,
+        "avg_ptcm": 1468.81,
+        "avg_ptcm_feu": 2937.63,
+        "avg_per_month_teu": 27.5,
+        "avg_per_month_cm": 40392.4,
+        "months_active": 4
+      }
+    },
+    "CNNGB|TRIZT|TRIZT": {
+      "pol": "CNNGB",
+      "pod": "TRIZT",
+      "del": "TRIZT",
+      "months": 2,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 4333.19,
+        "avg_ptcm": 1444.4,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 4333.19,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 8729.74,
+        "cm_feu": 17459.48,
+        "avg_ptcm": 1454.96,
+        "avg_ptcm_feu": 2909.91,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 4364.87,
+        "months_active": 2
+      }
+    },
+    "CNNGB|YEADE|YEADE": {
+      "pol": "CNNGB",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 68,
+      "gp20": {
+        "total_teu": 96,
+        "total_cm": 238025.53,
+        "avg_ptcm": 2479.43,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 8815.76,
+        "months_active": 27
+      },
+      "hc40": {
+        "total_teu": 4784,
+        "total_cm": 7223239.54,
+        "cm_feu": 14446479.07,
+        "avg_ptcm": 1509.87,
+        "avg_ptcm_feu": 3019.75,
+        "avg_per_month_teu": 71.4,
+        "avg_per_month_cm": 107809.55,
+        "months_active": 67
+      }
+    },
+    "CNNGB|YEHOD|YEHOD": {
+      "pol": "CNNGB",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 9,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 5177.9,
+        "avg_ptcm": 5177.9,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 5177.9,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 36,
+        "total_cm": 93250.55,
+        "cm_feu": 186501.1,
+        "avg_ptcm": 2590.29,
+        "avg_ptcm_feu": 5180.59,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 10361.17,
+        "months_active": 9
+      }
+    },
+    "CNNJG|SDPZU|SDPZU": {
+      "pol": "CNNJG",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 3,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 7686.67,
+        "avg_ptcm": 1281.11,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 7686.67,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 12,
+        "total_cm": 15120.45,
+        "cm_feu": 30240.89,
+        "avg_ptcm": 1260.04,
+        "avg_ptcm_feu": 2520.07,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 5040.15,
+        "months_active": 3
+      }
+    },
+    "CNQZH|DJJIB|DJJIB": {
+      "pol": "CNQZH",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 2,
+      "gp20": {
+        "total_teu": 80,
+        "total_cm": 169469.43,
+        "avg_ptcm": 2118.37,
+        "avg_per_month_teu": 40.0,
+        "avg_per_month_cm": 84734.72,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "CNQZH|EGSOK|EGSOK": {
+      "pol": "CNQZH",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 3,
+      "gp20": {
+        "total_teu": 17,
+        "total_cm": 21163.89,
+        "avg_ptcm": 1244.93,
+        "avg_per_month_teu": 8.5,
+        "avg_per_month_cm": 10581.94,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 20,
+        "total_cm": 32589.24,
+        "cm_feu": 65178.48,
+        "avg_ptcm": 1629.46,
+        "avg_ptcm_feu": 3258.92,
+        "avg_per_month_teu": 20.0,
+        "avg_per_month_cm": 32589.24,
+        "months_active": 1
+      }
+    },
+    "CNQZH|SDPZU|SDPZU": {
+      "pol": "CNQZH",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 4,
+      "gp20": {
+        "total_teu": 69,
+        "total_cm": 148742.83,
+        "avg_ptcm": 2155.69,
+        "avg_per_month_teu": 17.2,
+        "avg_per_month_cm": 37185.71,
+        "months_active": 4
+      },
+      "hc40": null
+    },
+    "CNSHA|DJJIB|DJJIB": {
+      "pol": "CNSHA",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 17,
+      "gp20": {
+        "total_teu": 140,
+        "total_cm": 185036.66,
+        "avg_ptcm": 1321.69,
+        "avg_per_month_teu": 11.7,
+        "avg_per_month_cm": 15419.72,
+        "months_active": 12
+      },
+      "hc40": {
+        "total_teu": 442,
+        "total_cm": 418488.28,
+        "cm_feu": 836976.56,
+        "avg_ptcm": 946.81,
+        "avg_ptcm_feu": 1893.61,
+        "avg_per_month_teu": 31.6,
+        "avg_per_month_cm": 29892.02,
+        "months_active": 14
+      }
+    },
+    "CNSHA|EGSOK|EGSOK": {
+      "pol": "CNSHA",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 38,
+      "gp20": {
+        "total_teu": 278,
+        "total_cm": 630695.03,
+        "avg_ptcm": 2268.69,
+        "avg_per_month_teu": 9.9,
+        "avg_per_month_cm": 22524.82,
+        "months_active": 28
+      },
+      "hc40": {
+        "total_teu": 1520,
+        "total_cm": 1748392.47,
+        "cm_feu": 3496784.93,
+        "avg_ptcm": 1150.26,
+        "avg_ptcm_feu": 2300.52,
+        "avg_per_month_teu": 46.1,
+        "avg_per_month_cm": 52981.59,
+        "months_active": 33
+      }
+    },
+    "CNSHA|JOAQJ|JOAQJ": {
+      "pol": "CNSHA",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 4,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 2357.51,
+        "avg_ptcm": 2357.51,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2357.51,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 38,
+        "total_cm": 74182.85,
+        "cm_feu": 148365.7,
+        "avg_ptcm": 1952.18,
+        "avg_ptcm_feu": 3904.36,
+        "avg_per_month_teu": 9.5,
+        "avg_per_month_cm": 18545.71,
+        "months_active": 4
+      }
+    },
+    "CNSHA|SAJED|SADMM": {
+      "pol": "CNSHA",
+      "pod": "SAJED",
+      "del": "SADMM",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 6367.51,
+        "cm_feu": 12735.03,
+        "avg_ptcm": 3183.76,
+        "avg_ptcm_feu": 6367.51,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 6367.51,
+        "months_active": 1
+      }
+    },
+    "CNSHA|SAJED|SAJED": {
+      "pol": "CNSHA",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 37,
+      "gp20": {
+        "total_teu": 530,
+        "total_cm": 1303437.01,
+        "avg_ptcm": 2459.32,
+        "avg_per_month_teu": 17.7,
+        "avg_per_month_cm": 43447.9,
+        "months_active": 30
+      },
+      "hc40": {
+        "total_teu": 4590,
+        "total_cm": 7661207.14,
+        "cm_feu": 15322414.27,
+        "avg_ptcm": 1669.11,
+        "avg_ptcm_feu": 3338.22,
+        "avg_per_month_teu": 135.0,
+        "avg_per_month_cm": 225329.62,
+        "months_active": 34
+      }
+    },
+    "CNSHA|SDPZU|SDPZU": {
+      "pol": "CNSHA",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 29,
+      "gp20": {
+        "total_teu": 30,
+        "total_cm": 69624.05,
+        "avg_ptcm": 2320.8,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 4641.6,
+        "months_active": 15
+      },
+      "hc40": {
+        "total_teu": 546,
+        "total_cm": 685097.25,
+        "cm_feu": 1370194.5,
+        "avg_ptcm": 1254.76,
+        "avg_ptcm_feu": 2509.51,
+        "avg_per_month_teu": 21.0,
+        "avg_per_month_cm": 26349.89,
+        "months_active": 26
+      }
+    },
+    "CNSHA|YEADE|YEADE": {
+      "pol": "CNSHA",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 17,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 38131.4,
+        "avg_ptcm": 2542.09,
+        "avg_per_month_teu": 2.1,
+        "avg_per_month_cm": 5447.34,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 184,
+        "total_cm": 288302.04,
+        "cm_feu": 576604.08,
+        "avg_ptcm": 1566.86,
+        "avg_ptcm_feu": 3133.72,
+        "avg_per_month_teu": 12.3,
+        "avg_per_month_cm": 19220.14,
+        "months_active": 15
+      }
+    },
+    "CNSHK|CNNAS|CNNAS": {
+      "pol": "CNSHK",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 46172.97,
+        "cm_feu": 92345.94,
+        "avg_ptcm": 7695.5,
+        "avg_ptcm_feu": 15390.99,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 23086.49,
+        "months_active": 2
+      }
+    },
+    "CNSHK|DJJIB|DJJIB": {
+      "pol": "CNSHK",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 30,
+      "gp20": {
+        "total_teu": 105,
+        "total_cm": 196781.13,
+        "avg_ptcm": 1874.11,
+        "avg_per_month_teu": 5.5,
+        "avg_per_month_cm": 10356.9,
+        "months_active": 19
+      },
+      "hc40": {
+        "total_teu": 1000,
+        "total_cm": 1271739.78,
+        "cm_feu": 2543479.56,
+        "avg_ptcm": 1271.74,
+        "avg_ptcm_feu": 2543.48,
+        "avg_per_month_teu": 35.7,
+        "avg_per_month_cm": 45419.28,
+        "months_active": 28
+      }
+    },
+    "CNSHK|EGPSD|EGPSD": {
+      "pol": "CNSHK",
+      "pod": "EGPSD",
+      "del": "EGPSD",
+      "months": 2,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1769.57,
+        "avg_ptcm": 1769.57,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1769.57,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 5912.43,
+        "cm_feu": 11824.86,
+        "avg_ptcm": 985.4,
+        "avg_ptcm_feu": 1970.81,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 2956.21,
+        "months_active": 2
+      }
+    },
+    "CNSHK|EGSOK|EGSOK": {
+      "pol": "CNSHK",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 89,
+      "gp20": {
+        "total_teu": 1475,
+        "total_cm": 2966467.96,
+        "avg_ptcm": 2011.16,
+        "avg_per_month_teu": 20.5,
+        "avg_per_month_cm": 41200.94,
+        "months_active": 72
+      },
+      "hc40": {
+        "total_teu": 4622,
+        "total_cm": 6760020.72,
+        "cm_feu": 13520041.44,
+        "avg_ptcm": 1462.57,
+        "avg_ptcm_feu": 2925.15,
+        "avg_per_month_teu": 54.4,
+        "avg_per_month_cm": 79529.66,
+        "months_active": 85
+      }
+    },
+    "CNSHK|JOAQJ|JOAQJ": {
+      "pol": "CNSHK",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 2,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1119.49,
+        "avg_ptcm": 1119.49,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1119.49,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 7981.39,
+        "cm_feu": 15962.78,
+        "avg_ptcm": 798.14,
+        "avg_ptcm_feu": 1596.28,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 3990.7,
+        "months_active": 2
+      }
+    },
+    "CNSHK|SAJED|SAJED": {
+      "pol": "CNSHK",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 97,
+      "gp20": {
+        "total_teu": 1020,
+        "total_cm": 2205946.2,
+        "avg_ptcm": 2162.69,
+        "avg_per_month_teu": 15.5,
+        "avg_per_month_cm": 33423.43,
+        "months_active": 66
+      },
+      "hc40": {
+        "total_teu": 7798,
+        "total_cm": 11379039.25,
+        "cm_feu": 22758078.5,
+        "avg_ptcm": 1459.23,
+        "avg_ptcm_feu": 2918.45,
+        "avg_per_month_teu": 83.8,
+        "avg_per_month_cm": 122355.26,
+        "months_active": 93
+      }
+    },
+    "CNSHK|SAJED|SARUH": {
+      "pol": "CNSHK",
+      "pod": "SAJED",
+      "del": "SARUH",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 5898.0,
+        "cm_feu": 11796.0,
+        "avg_ptcm": 2949.0,
+        "avg_ptcm_feu": 5898.0,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 5898.0,
+        "months_active": 1
+      }
+    },
+    "CNSHK|SDPZU|SDPZU": {
+      "pol": "CNSHK",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 86,
+      "gp20": {
+        "total_teu": 75,
+        "total_cm": 160925.49,
+        "avg_ptcm": 2145.67,
+        "avg_per_month_teu": 1.7,
+        "avg_per_month_cm": 3742.45,
+        "months_active": 43
+      },
+      "hc40": {
+        "total_teu": 1738,
+        "total_cm": 2221207.63,
+        "cm_feu": 4442415.26,
+        "avg_ptcm": 1278.03,
+        "avg_ptcm_feu": 2556.05,
+        "avg_per_month_teu": 20.4,
+        "avg_per_month_cm": 26131.85,
+        "months_active": 85
+      }
+    },
+    "CNSHK|SOBBO|SOBBO": {
+      "pol": "CNSHK",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 3,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 13555.87,
+        "avg_ptcm": 6777.93,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 13555.87,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 22,
+        "total_cm": 95977.2,
+        "cm_feu": 191954.41,
+        "avg_ptcm": 4362.6,
+        "avg_ptcm_feu": 8725.2,
+        "avg_per_month_teu": 7.3,
+        "avg_per_month_cm": 31992.4,
+        "months_active": 3
+      }
+    },
+    "CNSHK|YEADE|YEADE": {
+      "pol": "CNSHK",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 59,
+      "gp20": {
+        "total_teu": 82,
+        "total_cm": 213555.11,
+        "avg_ptcm": 2604.33,
+        "avg_per_month_teu": 2.6,
+        "avg_per_month_cm": 6888.87,
+        "months_active": 31
+      },
+      "hc40": {
+        "total_teu": 668,
+        "total_cm": 981433.69,
+        "cm_feu": 1962867.39,
+        "avg_ptcm": 1469.21,
+        "avg_ptcm_feu": 2938.42,
+        "avg_per_month_teu": 12.4,
+        "avg_per_month_cm": 18174.7,
+        "months_active": 54
+      }
+    },
+    "CNSHK|YEHOD|YEHOD": {
+      "pol": "CNSHK",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 17,
+      "gp20": {
+        "total_teu": 11,
+        "total_cm": 55168.24,
+        "avg_ptcm": 5015.29,
+        "avg_per_month_teu": 1.6,
+        "avg_per_month_cm": 7881.18,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 86,
+        "total_cm": 237993.45,
+        "cm_feu": 475986.9,
+        "avg_ptcm": 2767.37,
+        "avg_ptcm_feu": 5534.73,
+        "avg_per_month_teu": 6.1,
+        "avg_per_month_cm": 16999.53,
+        "months_active": 14
+      }
+    },
+    "CNSWA|DJJIB|DJJIB": {
+      "pol": "CNSWA",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 5409.71,
+        "avg_ptcm": 1352.43,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2704.85,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 2621.53,
+        "cm_feu": 5243.06,
+        "avg_ptcm": 655.38,
+        "avg_ptcm_feu": 1310.77,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1310.77,
+        "months_active": 2
+      }
+    },
+    "CNSWA|EGSOK|EGSOK": {
+      "pol": "CNSWA",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 33,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 4419.57,
+        "avg_ptcm": 2209.78,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2209.78,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 660,
+        "total_cm": 901190.99,
+        "cm_feu": 1802381.98,
+        "avg_ptcm": 1365.44,
+        "avg_ptcm_feu": 2730.88,
+        "avg_per_month_teu": 20.6,
+        "avg_per_month_cm": 28162.22,
+        "months_active": 32
+      }
+    },
+    "CNSWA|SAJED|SAJED": {
+      "pol": "CNSWA",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 24,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 12752.02,
+        "avg_ptcm": 2125.34,
+        "avg_per_month_teu": 1.5,
+        "avg_per_month_cm": 3188.0,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 350,
+        "total_cm": 494930.53,
+        "cm_feu": 989861.06,
+        "avg_ptcm": 1414.09,
+        "avg_ptcm_feu": 2828.17,
+        "avg_per_month_teu": 14.6,
+        "avg_per_month_cm": 20622.11,
+        "months_active": 24
+      }
+    },
+    "CNSWA|SDPZU|SDPZU": {
+      "pol": "CNSWA",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 8709.5,
+        "cm_feu": 17419.01,
+        "avg_ptcm": 1451.58,
+        "avg_ptcm_feu": 2903.17,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2903.17,
+        "months_active": 3
+      }
+    },
+    "CNSWA|SOBBO|SOBBO": {
+      "pol": "CNSWA",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1644.08,
+        "avg_ptcm": 1644.08,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1644.08,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "CNSWA|YEADE|YEADE": {
+      "pol": "CNSWA",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 12,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 7294.0,
+        "avg_ptcm": 3647.0,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 3647.0,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 40,
+        "total_cm": 61304.23,
+        "cm_feu": 122608.47,
+        "avg_ptcm": 1532.61,
+        "avg_ptcm_feu": 3065.21,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 5573.11,
+        "months_active": 11
+      }
+    },
+    "CNSWA|YEHOD|YEHOD": {
+      "pol": "CNSWA",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 5352.64,
+        "avg_ptcm": 5352.64,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 5352.64,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 4384.31,
+        "cm_feu": 8768.62,
+        "avg_ptcm": 2192.16,
+        "avg_ptcm_feu": 4384.31,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 4384.31,
+        "months_active": 1
+      }
+    },
+    "CNTAO|CNNAS|CNNAS": {
+      "pol": "CNTAO",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 1,
+      "gp20": {
+        "total_teu": 69,
+        "total_cm": 6900.0,
+        "avg_ptcm": 100.0,
+        "avg_per_month_teu": 69.0,
+        "avg_per_month_cm": 6900.0,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 146,
+        "total_cm": 14600.0,
+        "cm_feu": 29200.0,
+        "avg_ptcm": 100.0,
+        "avg_ptcm_feu": 200.0,
+        "avg_per_month_teu": 146.0,
+        "avg_per_month_cm": 14600.0,
+        "months_active": 1
+      }
+    },
+    "CNTAO|DJJIB|DJJIB": {
+      "pol": "CNTAO",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 13,
+      "gp20": {
+        "total_teu": 47,
+        "total_cm": 98813.71,
+        "avg_ptcm": 2102.42,
+        "avg_per_month_teu": 9.4,
+        "avg_per_month_cm": 19762.74,
+        "months_active": 5
+      },
+      "hc40": {
+        "total_teu": 218,
+        "total_cm": 236171.46,
+        "cm_feu": 472342.92,
+        "avg_ptcm": 1083.36,
+        "avg_ptcm_feu": 2166.71,
+        "avg_per_month_teu": 18.2,
+        "avg_per_month_cm": 19680.95,
+        "months_active": 12
+      }
+    },
+    "CNTAO|EGSOK|EGSOK": {
+      "pol": "CNTAO",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 25,
+      "gp20": {
+        "total_teu": 221,
+        "total_cm": 458199.49,
+        "avg_ptcm": 2073.3,
+        "avg_per_month_teu": 12.3,
+        "avg_per_month_cm": 25455.53,
+        "months_active": 18
+      },
+      "hc40": {
+        "total_teu": 1410,
+        "total_cm": 1721000.74,
+        "cm_feu": 3442001.48,
+        "avg_ptcm": 1220.57,
+        "avg_ptcm_feu": 2441.14,
+        "avg_per_month_teu": 64.1,
+        "avg_per_month_cm": 78227.31,
+        "months_active": 22
+      }
+    },
+    "CNTAO|JOAQJ|JOAQJ": {
+      "pol": "CNTAO",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1783.17,
+        "avg_ptcm": 1783.17,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1783.17,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 6942.65,
+        "cm_feu": 13885.31,
+        "avg_ptcm": 867.83,
+        "avg_ptcm_feu": 1735.66,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 6942.65,
+        "months_active": 1
+      }
+    },
+    "CNTAO|SAJED|SAJED": {
+      "pol": "CNTAO",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 28,
+      "gp20": {
+        "total_teu": 777,
+        "total_cm": 1683822.11,
+        "avg_ptcm": 2167.08,
+        "avg_per_month_teu": 33.8,
+        "avg_per_month_cm": 73209.66,
+        "months_active": 23
+      },
+      "hc40": {
+        "total_teu": 3090,
+        "total_cm": 3997047.4,
+        "cm_feu": 7994094.81,
+        "avg_ptcm": 1293.54,
+        "avg_ptcm_feu": 2587.09,
+        "avg_per_month_teu": 114.4,
+        "avg_per_month_cm": 148038.79,
+        "months_active": 27
+      }
+    },
+    "CNTAO|SDPZU|SDPZU": {
+      "pol": "CNTAO",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 32,
+      "gp20": {
+        "total_teu": 221,
+        "total_cm": 490696.38,
+        "avg_ptcm": 2220.35,
+        "avg_per_month_teu": 9.2,
+        "avg_per_month_cm": 20445.68,
+        "months_active": 24
+      },
+      "hc40": {
+        "total_teu": 1124,
+        "total_cm": 1233479.43,
+        "cm_feu": 2466958.87,
+        "avg_ptcm": 1097.4,
+        "avg_ptcm_feu": 2194.8,
+        "avg_per_month_teu": 40.1,
+        "avg_per_month_cm": 44052.84,
+        "months_active": 28
+      }
+    },
+    "CNTAO|SOBBO|SOBBO": {
+      "pol": "CNTAO",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 5,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 7400.6,
+        "avg_ptcm": 2466.87,
+        "avg_per_month_teu": 1.5,
+        "avg_per_month_cm": 3700.3,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 66,
+        "total_cm": 87522.18,
+        "cm_feu": 175044.37,
+        "avg_ptcm": 1326.09,
+        "avg_ptcm_feu": 2652.19,
+        "avg_per_month_teu": 13.2,
+        "avg_per_month_cm": 17504.44,
+        "months_active": 5
+      }
+    },
+    "CNTAO|YEADE|YEADE": {
+      "pol": "CNTAO",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 24,
+      "gp20": {
+        "total_teu": 99,
+        "total_cm": 243222.97,
+        "avg_ptcm": 2456.8,
+        "avg_per_month_teu": 5.2,
+        "avg_per_month_cm": 12801.21,
+        "months_active": 19
+      },
+      "hc40": {
+        "total_teu": 988,
+        "total_cm": 1282644.17,
+        "cm_feu": 2565288.34,
+        "avg_ptcm": 1298.22,
+        "avg_ptcm_feu": 2596.45,
+        "avg_per_month_teu": 49.4,
+        "avg_per_month_cm": 64132.21,
+        "months_active": 20
+      }
+    },
+    "CNTAO|YEHOD|YEHOD": {
+      "pol": "CNTAO",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 5,
+        "total_cm": 27942.91,
+        "avg_ptcm": 5588.58,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 27942.91,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "CNXGG|DJJIB|DJJIB": {
+      "pol": "CNXGG",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 20,
+        "total_cm": 23595.4,
+        "cm_feu": 47190.81,
+        "avg_ptcm": 1179.77,
+        "avg_ptcm_feu": 2359.54,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 11797.7,
+        "months_active": 2
+      }
+    },
+    "CNXGG|EGALY|EGALY": {
+      "pol": "CNXGG",
+      "pod": "EGALY",
+      "del": "EGALY",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 7392.85,
+        "cm_feu": 14785.7,
+        "avg_ptcm": 739.28,
+        "avg_ptcm_feu": 1478.57,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 3696.42,
+        "months_active": 2
+      }
+    },
+    "CNXGG|EGSOK|EGSOK": {
+      "pol": "CNXGG",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 9,
+      "gp20": {
+        "total_teu": 14,
+        "total_cm": 26433.22,
+        "avg_ptcm": 1888.09,
+        "avg_per_month_teu": 2.3,
+        "avg_per_month_cm": 4405.54,
+        "months_active": 6
+      },
+      "hc40": {
+        "total_teu": 20,
+        "total_cm": 17226.39,
+        "cm_feu": 34452.78,
+        "avg_ptcm": 861.32,
+        "avg_ptcm_feu": 1722.64,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 4306.6,
+        "months_active": 4
+      }
+    },
+    "CNXGG|SAJED|SAJED": {
+      "pol": "CNXGG",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 12,
+      "gp20": {
+        "total_teu": 59,
+        "total_cm": 111378.56,
+        "avg_ptcm": 1887.77,
+        "avg_per_month_teu": 9.8,
+        "avg_per_month_cm": 18563.09,
+        "months_active": 6
+      },
+      "hc40": {
+        "total_teu": 216,
+        "total_cm": 171646.96,
+        "cm_feu": 343293.92,
+        "avg_ptcm": 794.66,
+        "avg_ptcm_feu": 1589.32,
+        "avg_per_month_teu": 27.0,
+        "avg_per_month_cm": 21455.87,
+        "months_active": 8
+      }
+    },
+    "CNXGG|SDPZU|SDPZU": {
+      "pol": "CNXGG",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 21,
+      "gp20": {
+        "total_teu": 23,
+        "total_cm": 56797.14,
+        "avg_ptcm": 2469.44,
+        "avg_per_month_teu": 2.3,
+        "avg_per_month_cm": 5679.71,
+        "months_active": 10
+      },
+      "hc40": {
+        "total_teu": 196,
+        "total_cm": 170604.29,
+        "cm_feu": 341208.59,
+        "avg_ptcm": 870.43,
+        "avg_ptcm_feu": 1740.86,
+        "avg_per_month_teu": 11.5,
+        "avg_per_month_cm": 10035.55,
+        "months_active": 17
+      }
+    },
+    "CNXGG|YEADE|YEADE": {
+      "pol": "CNXGG",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 11,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1732.46,
+        "avg_ptcm": 1732.46,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1732.46,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 98,
+        "total_cm": 114741.2,
+        "cm_feu": 229482.41,
+        "avg_ptcm": 1170.83,
+        "avg_ptcm_feu": 2341.66,
+        "avg_per_month_teu": 8.9,
+        "avg_per_month_cm": 10431.02,
+        "months_active": 11
+      }
+    },
+    "CNXGG|YEHOD|YEHOD": {
+      "pol": "CNXGG",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 5,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 23021.64,
+        "avg_ptcm": 3836.94,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 11510.82,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 21801.06,
+        "cm_feu": 43602.12,
+        "avg_ptcm": 2725.13,
+        "avg_ptcm_feu": 5450.26,
+        "avg_per_month_teu": 2.7,
+        "avg_per_month_cm": 7267.02,
+        "months_active": 3
+      }
+    },
+    "CNXMN|DJJIB|DJJIB": {
+      "pol": "CNXMN",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 15,
+      "gp20": {
+        "total_teu": 24,
+        "total_cm": 45632.96,
+        "avg_ptcm": 1901.37,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 5704.12,
+        "months_active": 8
+      },
+      "hc40": {
+        "total_teu": 132,
+        "total_cm": 122965.57,
+        "cm_feu": 245931.13,
+        "avg_ptcm": 931.56,
+        "avg_ptcm_feu": 1863.11,
+        "avg_per_month_teu": 9.4,
+        "avg_per_month_cm": 8783.25,
+        "months_active": 14
+      }
+    },
+    "CNXMN|EGSOK|EGSOK": {
+      "pol": "CNXMN",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 32,
+      "gp20": {
+        "total_teu": 39,
+        "total_cm": 76776.34,
+        "avg_ptcm": 1968.62,
+        "avg_per_month_teu": 2.6,
+        "avg_per_month_cm": 5118.42,
+        "months_active": 15
+      },
+      "hc40": {
+        "total_teu": 258,
+        "total_cm": 245937.42,
+        "cm_feu": 491874.84,
+        "avg_ptcm": 953.25,
+        "avg_ptcm_feu": 1906.49,
+        "avg_per_month_teu": 9.9,
+        "avg_per_month_cm": 9459.13,
+        "months_active": 26
+      }
+    },
+    "CNXMN|JOAQJ|JOAQJ": {
+      "pol": "CNXMN",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 4,
+      "gp20": {
+        "total_teu": 31,
+        "total_cm": 36609.18,
+        "avg_ptcm": 1180.94,
+        "avg_per_month_teu": 7.8,
+        "avg_per_month_cm": 9152.29,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 8721.19,
+        "cm_feu": 17442.39,
+        "avg_ptcm": 872.12,
+        "avg_ptcm_feu": 1744.24,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 4360.6,
+        "months_active": 2
+      }
+    },
+    "CNXMN|SAJED|SADMM": {
+      "pol": "CNXMN",
+      "pod": "SAJED",
+      "del": "SADMM",
+      "months": 1,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 11627.44,
+        "avg_ptcm": 3875.81,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 11627.44,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "CNXMN|SAJED|SAJED": {
+      "pol": "CNXMN",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 30,
+      "gp20": {
+        "total_teu": 195,
+        "total_cm": 331675.19,
+        "avg_ptcm": 1700.9,
+        "avg_per_month_teu": 15.0,
+        "avg_per_month_cm": 25513.48,
+        "months_active": 13
+      },
+      "hc40": {
+        "total_teu": 708,
+        "total_cm": 680113.22,
+        "cm_feu": 1360226.44,
+        "avg_ptcm": 960.61,
+        "avg_ptcm_feu": 1921.22,
+        "avg_per_month_teu": 25.3,
+        "avg_per_month_cm": 24289.76,
+        "months_active": 28
+      }
+    },
+    "CNXMN|SDPZU|SDPZU": {
+      "pol": "CNXMN",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 22,
+      "gp20": {
+        "total_teu": 12,
+        "total_cm": 27543.8,
+        "avg_ptcm": 2295.32,
+        "avg_per_month_teu": 1.7,
+        "avg_per_month_cm": 3934.83,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 122,
+        "total_cm": 133640.42,
+        "cm_feu": 267280.84,
+        "avg_ptcm": 1095.41,
+        "avg_ptcm_feu": 2190.83,
+        "avg_per_month_teu": 6.8,
+        "avg_per_month_cm": 7424.47,
+        "months_active": 18
+      }
+    },
+    "CNXMN|SOBBO|SOBBO": {
+      "pol": "CNXMN",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 9279.99,
+        "avg_ptcm": 2320.0,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 9279.99,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "CNXMN|YEADE|YEADE": {
+      "pol": "CNXMN",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 29,
+      "gp20": {
+        "total_teu": 100,
+        "total_cm": 227608.27,
+        "avg_ptcm": 2276.08,
+        "avg_per_month_teu": 6.2,
+        "avg_per_month_cm": 14225.52,
+        "months_active": 16
+      },
+      "hc40": {
+        "total_teu": 138,
+        "total_cm": 189816.42,
+        "cm_feu": 379632.84,
+        "avg_ptcm": 1375.48,
+        "avg_ptcm_feu": 2750.96,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 8252.89,
+        "months_active": 23
+      }
+    },
+    "CNXMN|YEHOD|YEHOD": {
+      "pol": "CNXMN",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 5,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 8556.01,
+        "avg_ptcm": 4278.0,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 8556.01,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 30033.27,
+        "cm_feu": 60066.54,
+        "avg_ptcm": 3003.33,
+        "avg_ptcm_feu": 6006.65,
+        "avg_per_month_teu": 2.5,
+        "avg_per_month_cm": 7508.32,
+        "months_active": 4
+      }
+    },
+    "CNZPU|YEADE|YEADE": {
+      "pol": "CNZPU",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 18,
+        "total_cm": 23859.56,
+        "cm_feu": 47719.12,
+        "avg_ptcm": 1325.53,
+        "avg_ptcm_feu": 2651.06,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 7953.19,
+        "months_active": 3
+      }
+    },
+    "DJJIB|CNNAS|CNNAS": {
+      "pol": "DJJIB",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 171.0,
+        "avg_ptcm": 171.0,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 171.0,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "DJJIB|CNNGB|CNNGB": {
+      "pol": "DJJIB",
+      "pod": "CNNGB",
+      "del": "CNNGB",
+      "months": 19,
+      "gp20": {
+        "total_teu": 26,
+        "total_cm": 4014.95,
+        "avg_ptcm": 154.42,
+        "avg_per_month_teu": 4.3,
+        "avg_per_month_cm": 669.16,
+        "months_active": 6
+      },
+      "hc40": {
+        "total_teu": 318,
+        "total_cm": 28632.48,
+        "cm_feu": 57264.96,
+        "avg_ptcm": 90.04,
+        "avg_ptcm_feu": 180.08,
+        "avg_per_month_teu": 16.7,
+        "avg_per_month_cm": 1506.97,
+        "months_active": 19
+      }
+    },
+    "DJJIB|CNSHA|CNSHA": {
+      "pol": "DJJIB",
+      "pod": "CNSHA",
+      "del": "CNSHA",
+      "months": 2,
+      "gp20": {
+        "total_teu": 18,
+        "total_cm": 847.73,
+        "avg_ptcm": 47.1,
+        "avg_per_month_teu": 9.0,
+        "avg_per_month_cm": 423.86,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "DJJIB|CNSHK|CNSHK": {
+      "pol": "DJJIB",
+      "pod": "CNSHK",
+      "del": "CNSHK",
+      "months": 3,
+      "gp20": {
+        "total_teu": 8,
+        "total_cm": 886.51,
+        "avg_ptcm": 110.81,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 443.26,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 335.46,
+        "cm_feu": 670.92,
+        "avg_ptcm": 167.73,
+        "avg_ptcm_feu": 335.46,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 335.46,
+        "months_active": 1
+      }
+    },
+    "DJJIB|CNTAO|CNTAO": {
+      "pol": "DJJIB",
+      "pod": "CNTAO",
+      "del": "CNTAO",
+      "months": 3,
+      "gp20": {
+        "total_teu": 85,
+        "total_cm": -5898.53,
+        "avg_ptcm": -69.39,
+        "avg_per_month_teu": 28.3,
+        "avg_per_month_cm": -1966.18,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 14,
+        "total_cm": 1302.93,
+        "cm_feu": 2605.87,
+        "avg_ptcm": 93.07,
+        "avg_ptcm_feu": 186.13,
+        "avg_per_month_teu": 14.0,
+        "avg_per_month_cm": 1302.93,
+        "months_active": 1
+      }
+    },
+    "DJJIB|EGSOK|EGSOK": {
+      "pol": "DJJIB",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 1,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 635.49,
+        "avg_ptcm": 317.74,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 635.49,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "DJJIB|SAJED|SAJED": {
+      "pol": "DJJIB",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 15,
+      "gp20": {
+        "total_teu": 57,
+        "total_cm": 26264.08,
+        "avg_ptcm": 460.77,
+        "avg_per_month_teu": 4.8,
+        "avg_per_month_cm": 2188.67,
+        "months_active": 12
+      },
+      "hc40": {
+        "total_teu": 72,
+        "total_cm": 22968.55,
+        "cm_feu": 45937.1,
+        "avg_ptcm": 319.01,
+        "avg_ptcm_feu": 638.02,
+        "avg_per_month_teu": 9.0,
+        "avg_per_month_cm": 2871.07,
+        "months_active": 8
+      }
+    },
+    "EGSOK|AEJEA|AEJEA": {
+      "pol": "EGSOK",
+      "pod": "AEJEA",
+      "del": "AEJEA",
+      "months": 1,
+      "gp20": {
+        "total_teu": 47,
+        "total_cm": 16277.98,
+        "avg_ptcm": 346.34,
+        "avg_per_month_teu": 47.0,
+        "avg_per_month_cm": 16277.98,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 434,
+        "total_cm": 33187.58,
+        "cm_feu": 66375.16,
+        "avg_ptcm": 76.47,
+        "avg_ptcm_feu": 152.94,
+        "avg_per_month_teu": 434.0,
+        "avg_per_month_cm": 33187.58,
+        "months_active": 1
+      }
+    },
+    "EGSOK|CNHUA|CNHUA": {
+      "pol": "EGSOK",
+      "pod": "CNHUA",
+      "del": "CNHUA",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 38,
+        "total_cm": -1075.81,
+        "cm_feu": -2151.63,
+        "avg_ptcm": -28.31,
+        "avg_ptcm_feu": -56.62,
+        "avg_per_month_teu": 38.0,
+        "avg_per_month_cm": -1075.81,
+        "months_active": 1
+      }
+    },
+    "EGSOK|CNNAS|CNNAS": {
+      "pol": "EGSOK",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 6,
+      "gp20": {
+        "total_teu": 9,
+        "total_cm": 476.34,
+        "avg_ptcm": 52.93,
+        "avg_per_month_teu": 4.5,
+        "avg_per_month_cm": 238.17,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 118,
+        "total_cm": 5849.08,
+        "cm_feu": 11698.16,
+        "avg_ptcm": 49.57,
+        "avg_ptcm_feu": 99.14,
+        "avg_per_month_teu": 29.5,
+        "avg_per_month_cm": 1462.27,
+        "months_active": 4
+      }
+    },
+    "EGSOK|CNNGB|CNNGB": {
+      "pol": "EGSOK",
+      "pod": "CNNGB",
+      "del": "CNNGB",
+      "months": 8,
+      "gp20": {
+        "total_teu": 52,
+        "total_cm": 423.13,
+        "avg_ptcm": 8.14,
+        "avg_per_month_teu": 6.5,
+        "avg_per_month_cm": 52.89,
+        "months_active": 8
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 409.55,
+        "cm_feu": 819.1,
+        "avg_ptcm": 204.78,
+        "avg_ptcm_feu": 409.55,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 409.55,
+        "months_active": 1
+      }
+    },
+    "EGSOK|CNSHA|CNSHA": {
+      "pol": "EGSOK",
+      "pod": "CNSHA",
+      "del": "CNSHA",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 40,
+        "total_cm": 620.98,
+        "cm_feu": 1241.96,
+        "avg_ptcm": 15.52,
+        "avg_ptcm_feu": 31.05,
+        "avg_per_month_teu": 40.0,
+        "avg_per_month_cm": 620.98,
+        "months_active": 1
+      }
+    },
+    "EGSOK|CNSHK|CNSHK": {
+      "pol": "EGSOK",
+      "pod": "CNSHK",
+      "del": "CNSHK",
+      "months": 27,
+      "gp20": {
+        "total_teu": 202,
+        "total_cm": 51086.26,
+        "avg_ptcm": 252.9,
+        "avg_per_month_teu": 11.2,
+        "avg_per_month_cm": 2838.13,
+        "months_active": 18
+      },
+      "hc40": {
+        "total_teu": 420,
+        "total_cm": 106427.04,
+        "cm_feu": 212854.08,
+        "avg_ptcm": 253.4,
+        "avg_ptcm_feu": 506.8,
+        "avg_per_month_teu": 24.7,
+        "avg_per_month_cm": 6260.41,
+        "months_active": 17
+      }
+    },
+    "EGSOK|CNSWA|CNSWA": {
+      "pol": "EGSOK",
+      "pod": "CNSWA",
+      "del": "CNSWA",
+      "months": 1,
+      "gp20": {
+        "total_teu": 100,
+        "total_cm": 15603.11,
+        "avg_ptcm": 156.03,
+        "avg_per_month_teu": 100.0,
+        "avg_per_month_cm": 15603.11,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "EGSOK|CNTAO|CNTAO": {
+      "pol": "EGSOK",
+      "pod": "CNTAO",
+      "del": "CNTAO",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 100,
+        "total_cm": -7653.12,
+        "cm_feu": -15306.24,
+        "avg_ptcm": -76.53,
+        "avg_ptcm_feu": -153.06,
+        "avg_per_month_teu": 50.0,
+        "avg_per_month_cm": -3826.56,
+        "months_active": 2
+      }
+    },
+    "EGSOK|CNXMN|CNXMN": {
+      "pol": "EGSOK",
+      "pod": "CNXMN",
+      "del": "CNXMN",
+      "months": 2,
+      "gp20": {
+        "total_teu": 20,
+        "total_cm": 2554.7,
+        "avg_ptcm": 127.74,
+        "avg_per_month_teu": 20.0,
+        "avg_per_month_cm": 2554.7,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": -261.33,
+        "cm_feu": -522.65,
+        "avg_ptcm": -130.66,
+        "avg_ptcm_feu": -261.33,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": -261.33,
+        "months_active": 1
+      }
+    },
+    "EGSOK|DJJIB|DJJIB": {
+      "pol": "EGSOK",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 44,
+        "total_cm": 39446.0,
+        "avg_ptcm": 896.5,
+        "avg_per_month_teu": 44.0,
+        "avg_per_month_cm": 39446.0,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 30,
+        "total_cm": 5644.71,
+        "cm_feu": 11289.43,
+        "avg_ptcm": 188.16,
+        "avg_ptcm_feu": 376.31,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 1881.57,
+        "months_active": 3
+      }
+    },
+    "EGSOK|HKHKG|HKHKG": {
+      "pol": "EGSOK",
+      "pod": "HKHKG",
+      "del": "HKHKG",
+      "months": 2,
+      "gp20": null,
+      "hc40": null
+    },
+    "EGSOK|IDJKT|IDJKT": {
+      "pol": "EGSOK",
+      "pod": "IDJKT",
+      "del": "IDJKT",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": -89.43,
+        "avg_ptcm": -89.43,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": -89.43,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "EGSOK|JPNGO|JPNGO": {
+      "pol": "EGSOK",
+      "pod": "JPNGO",
+      "del": "JPNGO",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": -83.36,
+        "cm_feu": -166.71,
+        "avg_ptcm": -10.42,
+        "avg_ptcm_feu": -20.84,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": -83.36,
+        "months_active": 1
+      }
+    },
+    "EGSOK|JPTYO|JPTYO": {
+      "pol": "EGSOK",
+      "pod": "JPTYO",
+      "del": "JPTYO",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 50,
+        "total_cm": 355.58,
+        "cm_feu": 711.16,
+        "avg_ptcm": 7.11,
+        "avg_ptcm_feu": 14.22,
+        "avg_per_month_teu": 25.0,
+        "avg_per_month_cm": 177.79,
+        "months_active": 2
+      }
+    },
+    "EGSOK|MYPGU|MYPGU": {
+      "pol": "EGSOK",
+      "pod": "MYPGU",
+      "del": "MYPGU",
+      "months": 1,
+      "gp20": {
+        "total_teu": 40,
+        "total_cm": -4197.76,
+        "avg_ptcm": -104.94,
+        "avg_per_month_teu": 40.0,
+        "avg_per_month_cm": -4197.76,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "EGSOK|MYPKG|MYPKG": {
+      "pol": "EGSOK",
+      "pod": "MYPKG",
+      "del": "MYPKG",
+      "months": 1,
+      "gp20": {
+        "total_teu": 21,
+        "total_cm": -590.95,
+        "avg_ptcm": -28.14,
+        "avg_per_month_teu": 21.0,
+        "avg_per_month_cm": -590.95,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 140.14,
+        "cm_feu": 280.27,
+        "avg_ptcm": 35.03,
+        "avg_ptcm_feu": 70.07,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 140.14,
+        "months_active": 1
+      }
+    },
+    "EGSOK|SAJED|SAJED": {
+      "pol": "EGSOK",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 47,
+      "gp20": {
+        "total_teu": 327,
+        "total_cm": 5973.2,
+        "avg_ptcm": 18.27,
+        "avg_per_month_teu": 25.2,
+        "avg_per_month_cm": 459.48,
+        "months_active": 13
+      },
+      "hc40": {
+        "total_teu": 2608,
+        "total_cm": 23836.94,
+        "cm_feu": 47673.88,
+        "avg_ptcm": 9.14,
+        "avg_ptcm_feu": 18.28,
+        "avg_per_month_teu": 58.0,
+        "avg_per_month_cm": 529.71,
+        "months_active": 45
+      }
+    },
+    "EGSOK|YEADE|YEADE": {
+      "pol": "EGSOK",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 11,
+      "gp20": {
+        "total_teu": 828,
+        "total_cm": 238402.14,
+        "avg_ptcm": 287.93,
+        "avg_per_month_teu": 75.3,
+        "avg_per_month_cm": 21672.92,
+        "months_active": 11
+      },
+      "hc40": {
+        "total_teu": 1102,
+        "total_cm": 556201.13,
+        "cm_feu": 1112402.26,
+        "avg_ptcm": 504.72,
+        "avg_ptcm_feu": 1009.44,
+        "avg_per_month_teu": 110.2,
+        "avg_per_month_cm": 55620.11,
+        "months_active": 10
+      }
+    },
+    "EGSOK|YEHOD|YEHOD": {
+      "pol": "EGSOK",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 1874.89,
+        "cm_feu": 3749.77,
+        "avg_ptcm": 937.44,
+        "avg_ptcm_feu": 1874.89,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1874.89,
+        "months_active": 1
+      }
+    },
+    "HKHKG|EGSOK|EGSOK": {
+      "pol": "HKHKG",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 14,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 8395.75,
+        "avg_ptcm": 2798.58,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2798.58,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 50,
+        "total_cm": 83845.97,
+        "cm_feu": 167691.94,
+        "avg_ptcm": 1676.92,
+        "avg_ptcm_feu": 3353.84,
+        "avg_per_month_teu": 3.8,
+        "avg_per_month_cm": 6449.69,
+        "months_active": 13
+      }
+    },
+    "IDBLW|DJJIB|DJJIB": {
+      "pol": "IDBLW",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 1,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": -7397.2,
+        "avg_ptcm": -1232.87,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": -7397.2,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "IDBLW|JOAQJ|JOAQJ": {
+      "pol": "IDBLW",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 8890.16,
+        "cm_feu": 17780.33,
+        "avg_ptcm": 2222.54,
+        "avg_ptcm_feu": 4445.08,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 8890.16,
+        "months_active": 1
+      }
+    },
+    "IDBLW|YEADE|YEADE": {
+      "pol": "IDBLW",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 2,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": 31959.99,
+        "avg_ptcm": 3196.0,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 15979.99,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "IDJKT|DJJIB|DJJIB": {
+      "pol": "IDJKT",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 11743.13,
+        "avg_ptcm": 782.88,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 3914.38,
+        "months_active": 3
+      },
+      "hc40": null
+    },
+    "IDJKT|EGSOK|EGSOK": {
+      "pol": "IDJKT",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 30,
+        "total_cm": 23026.85,
+        "cm_feu": 46053.7,
+        "avg_ptcm": 767.56,
+        "avg_ptcm_feu": 1535.12,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 7675.62,
+        "months_active": 3
+      }
+    },
+    "IDJKT|JOAQJ|JOAQJ": {
+      "pol": "IDJKT",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 9211.36,
+        "cm_feu": 18422.72,
+        "avg_ptcm": 921.14,
+        "avg_ptcm_feu": 1842.27,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1842.27,
+        "months_active": 5
+      }
+    },
+    "IDJKT|SAJED|SAJED": {
+      "pol": "IDJKT",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 9,
+      "gp20": {
+        "total_teu": 56,
+        "total_cm": 121889.43,
+        "avg_ptcm": 2176.6,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 17412.78,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 60,
+        "total_cm": 120394.09,
+        "cm_feu": 240788.17,
+        "avg_ptcm": 2006.57,
+        "avg_ptcm_feu": 4013.14,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 20065.68,
+        "months_active": 6
+      }
+    },
+    "IDJKT|SDPZU|SDPZU": {
+      "pol": "IDJKT",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 7,
+      "gp20": {
+        "total_teu": 21,
+        "total_cm": -49361.61,
+        "avg_ptcm": -2350.55,
+        "avg_per_month_teu": 5.2,
+        "avg_per_month_cm": -12340.4,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 32,
+        "total_cm": 21964.55,
+        "cm_feu": 43929.11,
+        "avg_ptcm": 686.39,
+        "avg_ptcm_feu": 1372.78,
+        "avg_per_month_teu": 5.3,
+        "avg_per_month_cm": 3660.76,
+        "months_active": 6
+      }
+    },
+    "IDJKT|YEADE|YEADE": {
+      "pol": "IDJKT",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 10,
+      "gp20": {
+        "total_teu": 59,
+        "total_cm": 113659.58,
+        "avg_ptcm": 1926.43,
+        "avg_per_month_teu": 14.8,
+        "avg_per_month_cm": 28414.9,
+        "months_active": 4
+      },
+      "hc40": {
+        "total_teu": 48,
+        "total_cm": 84699.8,
+        "cm_feu": 169399.6,
+        "avg_ptcm": 1764.58,
+        "avg_ptcm_feu": 3529.16,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 10587.47,
+        "months_active": 8
+      }
+    },
+    "IDSUB|EGSOK|EGSOK": {
+      "pol": "IDSUB",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 1,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 6128.98,
+        "avg_ptcm": 1532.25,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 6128.98,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "IDSUB|JOAQJ|JOAQJ": {
+      "pol": "IDSUB",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 1778.48,
+        "cm_feu": 3556.96,
+        "avg_ptcm": 889.24,
+        "avg_ptcm_feu": 1778.48,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1778.48,
+        "months_active": 1
+      }
+    },
+    "IDSUB|SDPZU|SDPZU": {
+      "pol": "IDSUB",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 2,
+      "gp20": {
+        "total_teu": 6,
+        "total_cm": 15679.21,
+        "avg_ptcm": 2613.2,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 7839.6,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "IDSUB|YEADE|YEADE": {
+      "pol": "IDSUB",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 2,
+      "gp20": {
+        "total_teu": 32,
+        "total_cm": 59974.01,
+        "avg_ptcm": 1874.19,
+        "avg_per_month_teu": 16.0,
+        "avg_per_month_cm": 29987.0,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 3828.78,
+        "cm_feu": 7657.56,
+        "avg_ptcm": 1914.39,
+        "avg_ptcm_feu": 3828.78,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3828.78,
+        "months_active": 1
+      }
+    },
+    "JPNGO|JOAQJ|JOAQJ": {
+      "pol": "JPNGO",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 21739.64,
+        "cm_feu": 43479.29,
+        "avg_ptcm": 2717.46,
+        "avg_ptcm_feu": 5434.91,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 10869.82,
+        "months_active": 2
+      }
+    },
+    "JPNGO|SAJED|SAJED": {
+      "pol": "JPNGO",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 3,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 8967.64,
+        "avg_ptcm": 2989.21,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2989.21,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 30,
+        "total_cm": 71760.38,
+        "cm_feu": 143520.75,
+        "avg_ptcm": 2392.01,
+        "avg_ptcm_feu": 4784.03,
+        "avg_per_month_teu": 15.0,
+        "avg_per_month_cm": 35880.19,
+        "months_active": 2
+      }
+    },
+    "JPTYO|EGSOK|EGSOK": {
+      "pol": "JPTYO",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 3781.12,
+        "cm_feu": 7562.24,
+        "avg_ptcm": 1890.56,
+        "avg_ptcm_feu": 3781.12,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3781.12,
+        "months_active": 1
+      }
+    },
+    "JPUKB|JOAQJ|JOAQJ": {
+      "pol": "JPUKB",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 5223.15,
+        "cm_feu": 10446.3,
+        "avg_ptcm": 2611.57,
+        "avg_ptcm_feu": 5223.15,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 5223.15,
+        "months_active": 1
+      }
+    },
+    "JPUKB|SAJED|SAJED": {
+      "pol": "JPUKB",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 190,
+        "total_cm": 491156.95,
+        "cm_feu": 982313.91,
+        "avg_ptcm": 2585.04,
+        "avg_ptcm_feu": 5170.07,
+        "avg_per_month_teu": 38.0,
+        "avg_per_month_cm": 98231.39,
+        "months_active": 5
+      }
+    },
+    "JPUKB|YEADE|YEADE": {
+      "pol": "JPUKB",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 4877.72,
+        "cm_feu": 9755.45,
+        "avg_ptcm": 2438.86,
+        "avg_ptcm_feu": 4877.72,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 4877.72,
+        "months_active": 1
+      }
+    },
+    "JPYOK|EGSOK|EGSOK": {
+      "pol": "JPYOK",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 8259.56,
+        "cm_feu": 16519.12,
+        "avg_ptcm": 1032.44,
+        "avg_ptcm_feu": 2064.89,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 8259.56,
+        "months_active": 1
+      }
+    },
+    "JPYOK|JOAQJ|JOAQJ": {
+      "pol": "JPYOK",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 7687.67,
+        "avg_ptcm": 3843.83,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 7687.67,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 5467.07,
+        "cm_feu": 10934.15,
+        "avg_ptcm": 2733.54,
+        "avg_ptcm_feu": 5467.07,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 5467.07,
+        "months_active": 1
+      }
+    },
+    "JPYOK|SAJED|SAJED": {
+      "pol": "JPYOK",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 1,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 7596.53,
+        "avg_ptcm": 3798.27,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 7596.53,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 24,
+        "total_cm": 58044.98,
+        "cm_feu": 116089.96,
+        "avg_ptcm": 2418.54,
+        "avg_ptcm_feu": 4837.08,
+        "avg_per_month_teu": 24.0,
+        "avg_per_month_cm": 58044.98,
+        "months_active": 1
+      }
+    },
+    "JPYOK|SDPZU|SDPZU": {
+      "pol": "JPYOK",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 4426.33,
+        "avg_ptcm": 4426.33,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 4426.33,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "KRINC|SDPZU|SDPZU": {
+      "pol": "KRINC",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 2,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 1749.69,
+        "avg_ptcm": 1749.69,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1749.69,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 18,
+        "total_cm": 1453.36,
+        "cm_feu": 2906.71,
+        "avg_ptcm": 80.74,
+        "avg_ptcm_feu": 161.48,
+        "avg_per_month_teu": 9.0,
+        "avg_per_month_cm": 726.68,
+        "months_active": 2
+      }
+    },
+    "KRPUS|SAJED|SAJED": {
+      "pol": "KRPUS",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 3574.12,
+        "cm_feu": 7148.24,
+        "avg_ptcm": 1787.06,
+        "avg_ptcm_feu": 3574.12,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3574.12,
+        "months_active": 1
+      }
+    },
+    "MYPGU|SDPZU|SDPZU": {
+      "pol": "MYPGU",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 3132.71,
+        "avg_ptcm": 3132.71,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 3132.71,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "MYPGU|YEADE|YEADE": {
+      "pol": "MYPGU",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 6,
+      "gp20": {
+        "total_teu": 74,
+        "total_cm": 85912.05,
+        "avg_ptcm": 1160.97,
+        "avg_per_month_teu": 14.8,
+        "avg_per_month_cm": 17182.41,
+        "months_active": 5
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 1382.66,
+        "cm_feu": 2765.31,
+        "avg_ptcm": 691.33,
+        "avg_ptcm_feu": 1382.66,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1382.66,
+        "months_active": 1
+      }
+    },
+    "MYPKG|DJJIB|DJJIB": {
+      "pol": "MYPKG",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 5,
+      "gp20": {
+        "total_teu": 146,
+        "total_cm": 144951.48,
+        "avg_ptcm": 992.82,
+        "avg_per_month_teu": 29.2,
+        "avg_per_month_cm": 28990.3,
+        "months_active": 5
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 7504.74,
+        "cm_feu": 15009.48,
+        "avg_ptcm": 938.09,
+        "avg_ptcm_feu": 1876.19,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 7504.74,
+        "months_active": 1
+      }
+    },
+    "MYPKG|EGSOK|EGSOK": {
+      "pol": "MYPKG",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 13,
+      "gp20": {
+        "total_teu": 103,
+        "total_cm": 172438.15,
+        "avg_ptcm": 1674.16,
+        "avg_per_month_teu": 8.6,
+        "avg_per_month_cm": 14369.85,
+        "months_active": 12
+      },
+      "hc40": {
+        "total_teu": 48,
+        "total_cm": 96933.28,
+        "cm_feu": 193866.57,
+        "avg_ptcm": 2019.44,
+        "avg_ptcm_feu": 4038.89,
+        "avg_per_month_teu": 16.0,
+        "avg_per_month_cm": 32311.09,
+        "months_active": 3
+      }
+    },
+    "MYPKG|JOAQJ|JOAQJ": {
+      "pol": "MYPKG",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 9,
+      "gp20": {
+        "total_teu": 49,
+        "total_cm": 118619.69,
+        "avg_ptcm": 2420.81,
+        "avg_per_month_teu": 5.4,
+        "avg_per_month_cm": 13179.97,
+        "months_active": 9
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 20757.26,
+        "cm_feu": 41514.52,
+        "avg_ptcm": 2594.66,
+        "avg_ptcm_feu": 5189.32,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 20757.26,
+        "months_active": 1
+      }
+    },
+    "MYPKG|SAJED|SADMM": {
+      "pol": "MYPKG",
+      "pod": "SAJED",
+      "del": "SADMM",
+      "months": 1,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 12175.54,
+        "avg_ptcm": 6087.77,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 12175.54,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "MYPKG|SAJED|SAJED": {
+      "pol": "MYPKG",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 19,
+      "gp20": {
+        "total_teu": 263,
+        "total_cm": 528357.31,
+        "avg_ptcm": 2008.96,
+        "avg_per_month_teu": 17.5,
+        "avg_per_month_cm": 35223.82,
+        "months_active": 15
+      },
+      "hc40": {
+        "total_teu": 382,
+        "total_cm": 796678.05,
+        "cm_feu": 1593356.11,
+        "avg_ptcm": 2085.54,
+        "avg_ptcm_feu": 4171.09,
+        "avg_per_month_teu": 27.3,
+        "avg_per_month_cm": 56905.58,
+        "months_active": 14
+      }
+    },
+    "MYPKG|SAJED|SARUH": {
+      "pol": "MYPKG",
+      "pod": "SAJED",
+      "del": "SARUH",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 6090.14,
+        "avg_ptcm": 6090.14,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 6090.14,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "MYPKG|SDPZU|SDPZU": {
+      "pol": "MYPKG",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 11,
+      "gp20": {
+        "total_teu": 281,
+        "total_cm": 296665.23,
+        "avg_ptcm": 1055.75,
+        "avg_per_month_teu": 28.1,
+        "avg_per_month_cm": 29666.52,
+        "months_active": 10
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 9093.82,
+        "cm_feu": 18187.63,
+        "avg_ptcm": 2273.45,
+        "avg_ptcm_feu": 4546.91,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 4546.91,
+        "months_active": 2
+      }
+    },
+    "MYPKG|YEADE|YEADE": {
+      "pol": "MYPKG",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 14,
+      "gp20": {
+        "total_teu": 141,
+        "total_cm": 279811.59,
+        "avg_ptcm": 1984.48,
+        "avg_per_month_teu": 11.8,
+        "avg_per_month_cm": 23317.63,
+        "months_active": 12
+      },
+      "hc40": {
+        "total_teu": 24,
+        "total_cm": 38250.88,
+        "cm_feu": 76501.77,
+        "avg_ptcm": 1593.79,
+        "avg_ptcm_feu": 3187.57,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 6375.15,
+        "months_active": 6
+      }
+    },
+    "MYPKG|YEHOD|YEHOD": {
+      "pol": "MYPKG",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": 39004.43,
+        "avg_ptcm": 3900.44,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 39004.43,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "SAJED|AEJEA|AEJEA": {
+      "pol": "SAJED",
+      "pod": "AEJEA",
+      "del": "AEJEA",
+      "months": 1,
+      "gp20": {
+        "total_teu": 102,
+        "total_cm": 13052.24,
+        "avg_ptcm": 127.96,
+        "avg_per_month_teu": 102.0,
+        "avg_per_month_cm": 13052.24,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 798,
+        "total_cm": 121590.44,
+        "cm_feu": 243180.88,
+        "avg_ptcm": 152.37,
+        "avg_ptcm_feu": 304.74,
+        "avg_per_month_teu": 798.0,
+        "avg_per_month_cm": 121590.44,
+        "months_active": 1
+      }
+    },
+    "SAJED|CNHUA|CNHUA": {
+      "pol": "SAJED",
+      "pod": "CNHUA",
+      "del": "CNHUA",
+      "months": 15,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 1202,
+        "total_cm": 228862.15,
+        "cm_feu": 457724.3,
+        "avg_ptcm": 190.4,
+        "avg_ptcm_feu": 380.8,
+        "avg_per_month_teu": 80.1,
+        "avg_per_month_cm": 15257.48,
+        "months_active": 15
+      }
+    },
+    "SAJED|CNNAS|CNNAS": {
+      "pol": "SAJED",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 32,
+      "gp20": {
+        "total_teu": 9,
+        "total_cm": 2185.79,
+        "avg_ptcm": 242.87,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 728.6,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 554,
+        "total_cm": 143355.94,
+        "cm_feu": 286711.88,
+        "avg_ptcm": 258.77,
+        "avg_ptcm_feu": 517.53,
+        "avg_per_month_teu": 17.3,
+        "avg_per_month_cm": 4479.87,
+        "months_active": 32
+      }
+    },
+    "SAJED|CNNGB|CNNGB": {
+      "pol": "SAJED",
+      "pod": "CNNGB",
+      "del": "CNNGB",
+      "months": 22,
+      "gp20": {
+        "total_teu": 60,
+        "total_cm": 5578.58,
+        "avg_ptcm": 92.98,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 371.91,
+        "months_active": 15
+      },
+      "hc40": {
+        "total_teu": 302,
+        "total_cm": 16479.63,
+        "cm_feu": 32959.27,
+        "avg_ptcm": 54.57,
+        "avg_ptcm_feu": 109.14,
+        "avg_per_month_teu": 37.8,
+        "avg_per_month_cm": 2059.95,
+        "months_active": 8
+      }
+    },
+    "SAJED|CNSHK|CNSHK": {
+      "pol": "SAJED",
+      "pod": "CNSHK",
+      "del": "CNSHK",
+      "months": 3,
+      "gp20": {
+        "total_teu": 25,
+        "total_cm": 7465.75,
+        "avg_ptcm": 298.63,
+        "avg_per_month_teu": 25.0,
+        "avg_per_month_cm": 7465.75,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 244,
+        "total_cm": 72210.65,
+        "cm_feu": 144421.31,
+        "avg_ptcm": 295.95,
+        "avg_ptcm_feu": 591.89,
+        "avg_per_month_teu": 122.0,
+        "avg_per_month_cm": 36105.33,
+        "months_active": 2
+      }
+    },
+    "SAJED|CNTAO|CNTAO": {
+      "pol": "SAJED",
+      "pod": "CNTAO",
+      "del": "CNTAO",
+      "months": 1,
+      "gp20": null,
+      "hc40": null
+    },
+    "SAJED|CNXMN|CNXMN": {
+      "pol": "SAJED",
+      "pod": "CNXMN",
+      "del": "CNXMN",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 100,
+        "total_cm": 7041.11,
+        "cm_feu": 14082.22,
+        "avg_ptcm": 70.41,
+        "avg_ptcm_feu": 140.82,
+        "avg_per_month_teu": 20.0,
+        "avg_per_month_cm": 1408.22,
+        "months_active": 5
+      }
+    },
+    "SAJED|EGSOK|EGSOK": {
+      "pol": "SAJED",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 4,
+      "gp20": {
+        "total_teu": 22,
+        "total_cm": 2473.03,
+        "avg_ptcm": 112.41,
+        "avg_per_month_teu": 22.0,
+        "avg_per_month_cm": 2473.03,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 208,
+        "total_cm": 4567.37,
+        "cm_feu": 9134.75,
+        "avg_ptcm": 21.96,
+        "avg_ptcm_feu": 43.92,
+        "avg_per_month_teu": 52.0,
+        "avg_per_month_cm": 1141.84,
+        "months_active": 4
+      }
+    },
+    "SAJED|MYPKG|MYPKG": {
+      "pol": "SAJED",
+      "pod": "MYPKG",
+      "del": "MYPKG",
+      "months": 4,
+      "gp20": {
+        "total_teu": 262,
+        "total_cm": 47357.8,
+        "avg_ptcm": 180.75,
+        "avg_per_month_teu": 131.0,
+        "avg_per_month_cm": 23678.9,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 1554,
+        "total_cm": 208151.6,
+        "cm_feu": 416303.21,
+        "avg_ptcm": 133.95,
+        "avg_ptcm_feu": 267.89,
+        "avg_per_month_teu": 388.5,
+        "avg_per_month_cm": 52037.9,
+        "months_active": 4
+      }
+    },
+    "SAJED|PHMNN|PHMNN": {
+      "pol": "SAJED",
+      "pod": "PHMNN",
+      "del": "PHMNN",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 100,
+        "total_cm": 29013.95,
+        "cm_feu": 58027.9,
+        "avg_ptcm": 290.14,
+        "avg_ptcm_feu": 580.28,
+        "avg_per_month_teu": 20.0,
+        "avg_per_month_cm": 5802.79,
+        "months_active": 5
+      }
+    },
+    "SAJED|THBKK|THBKK": {
+      "pol": "SAJED",
+      "pod": "THBKK",
+      "del": "THBKK",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 675.77,
+        "cm_feu": 1351.54,
+        "avg_ptcm": 67.58,
+        "avg_ptcm_feu": 135.15,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 337.89,
+        "months_active": 2
+      }
+    },
+    "SAJED|THLCH|THLCH": {
+      "pol": "SAJED",
+      "pod": "THLCH",
+      "del": "THLCH",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 9.81,
+        "avg_ptcm": 9.81,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 9.81,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "SAJED|TWKEL|TWKEL": {
+      "pol": "SAJED",
+      "pod": "TWKEL",
+      "del": "TWKEL",
+      "months": 3,
+      "gp20": {
+        "total_teu": 20,
+        "total_cm": -835.24,
+        "avg_ptcm": -41.76,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": -417.62,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 38.17,
+        "cm_feu": 76.34,
+        "avg_ptcm": 4.77,
+        "avg_ptcm_feu": 9.54,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 38.17,
+        "months_active": 1
+      }
+    },
+    "SAJED|TWKEL|TWTPE": {
+      "pol": "SAJED",
+      "pod": "TWKEL",
+      "del": "TWTPE",
+      "months": 9,
+      "gp20": {
+        "total_teu": 55,
+        "total_cm": -8168.92,
+        "avg_ptcm": -148.53,
+        "avg_per_month_teu": 6.1,
+        "avg_per_month_cm": -907.66,
+        "months_active": 9
+      },
+      "hc40": null
+    },
+    "SAJED|TWKHH|TWKHH": {
+      "pol": "SAJED",
+      "pod": "TWKHH",
+      "del": "TWKHH",
+      "months": 9,
+      "gp20": {
+        "total_teu": 31,
+        "total_cm": 983.98,
+        "avg_ptcm": 31.74,
+        "avg_per_month_teu": 3.9,
+        "avg_per_month_cm": 123.0,
+        "months_active": 8
+      },
+      "hc40": {
+        "total_teu": 44,
+        "total_cm": 2708.55,
+        "cm_feu": 5417.11,
+        "avg_ptcm": 61.56,
+        "avg_ptcm_feu": 123.12,
+        "avg_per_month_teu": 44.0,
+        "avg_per_month_cm": 2708.55,
+        "months_active": 1
+      }
+    },
+    "SAJED|TWTPE|TWTPE": {
+      "pol": "SAJED",
+      "pod": "TWTPE",
+      "del": "TWTPE",
+      "months": 2,
+      "gp20": {
+        "total_teu": 5,
+        "total_cm": -93.76,
+        "avg_ptcm": -18.75,
+        "avg_per_month_teu": 2.5,
+        "avg_per_month_cm": -46.88,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "SAJED|TWTXG|TWTXG": {
+      "pol": "SAJED",
+      "pod": "TWTXG",
+      "del": "TWTXG",
+      "months": 3,
+      "gp20": {
+        "total_teu": 9,
+        "total_cm": -464.32,
+        "avg_ptcm": -51.59,
+        "avg_per_month_teu": 4.5,
+        "avg_per_month_cm": -232.16,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 218.84,
+        "cm_feu": 437.67,
+        "avg_ptcm": 27.35,
+        "avg_ptcm_feu": 54.71,
+        "avg_per_month_teu": 8.0,
+        "avg_per_month_cm": 218.84,
+        "months_active": 1
+      }
+    },
+    "SAJED|VNHPH|VNHPH": {
+      "pol": "SAJED",
+      "pod": "VNHPH",
+      "del": "VNHPH",
+      "months": 5,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 88,
+        "total_cm": 726.02,
+        "cm_feu": 1452.04,
+        "avg_ptcm": 8.25,
+        "avg_ptcm_feu": 16.5,
+        "avg_per_month_teu": 17.6,
+        "avg_per_month_cm": 145.2,
+        "months_active": 5
+      }
+    },
+    "SAJED|VNSGN|VNSGN": {
+      "pol": "SAJED",
+      "pod": "VNSGN",
+      "del": "VNSGN",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 266,
+        "total_cm": 61927.34,
+        "cm_feu": 123854.67,
+        "avg_ptcm": 232.81,
+        "avg_ptcm_feu": 465.62,
+        "avg_per_month_teu": 266.0,
+        "avg_per_month_cm": 61927.34,
+        "months_active": 1
+      }
+    },
+    "SAJED|YEADE|YEADE": {
+      "pol": "SAJED",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 2,
+      "gp20": {
+        "total_teu": 97,
+        "total_cm": 38518.6,
+        "avg_ptcm": 397.1,
+        "avg_per_month_teu": 48.5,
+        "avg_per_month_cm": 19259.3,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 544,
+        "total_cm": 216038.0,
+        "cm_feu": 432076.0,
+        "avg_ptcm": 397.13,
+        "avg_ptcm_feu": 794.26,
+        "avg_per_month_teu": 272.0,
+        "avg_per_month_cm": 108019.0,
+        "months_active": 2
+      }
+    },
+    "SDPZU|CNTAO|CNTAO": {
+      "pol": "SDPZU",
+      "pod": "CNTAO",
+      "del": "CNTAO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": -1767.77,
+        "avg_ptcm": -176.78,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": -1767.77,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THBKK|DJJIB|DJJIB": {
+      "pol": "THBKK",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 2985.98,
+        "avg_ptcm": 1492.99,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1492.99,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 10071.39,
+        "cm_feu": 20142.79,
+        "avg_ptcm": 1007.14,
+        "avg_ptcm_feu": 2014.28,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 10071.39,
+        "months_active": 1
+      }
+    },
+    "THBKK|EGSOK|EGSOK": {
+      "pol": "THBKK",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 10,
+      "gp20": {
+        "total_teu": 192,
+        "total_cm": 275360.69,
+        "avg_ptcm": 1434.17,
+        "avg_per_month_teu": 19.2,
+        "avg_per_month_cm": 27536.07,
+        "months_active": 10
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 3337.8,
+        "cm_feu": 6675.6,
+        "avg_ptcm": 333.78,
+        "avg_ptcm_feu": 667.56,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 3337.8,
+        "months_active": 1
+      }
+    },
+    "THBKK|SAJED|SAJED": {
+      "pol": "THBKK",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 13,
+      "gp20": {
+        "total_teu": 40,
+        "total_cm": 55195.21,
+        "avg_ptcm": 1379.88,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 5519.52,
+        "months_active": 10
+      },
+      "hc40": {
+        "total_teu": 30,
+        "total_cm": 43007.76,
+        "cm_feu": 86015.51,
+        "avg_ptcm": 1433.59,
+        "avg_ptcm_feu": 2867.18,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 8601.55,
+        "months_active": 5
+      }
+    },
+    "THBKK|SDPZU|SDPZU": {
+      "pol": "THBKK",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 4,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 5701.75,
+        "avg_ptcm": 1900.58,
+        "avg_per_month_teu": 1.5,
+        "avg_per_month_cm": 2850.88,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 4310.05,
+        "cm_feu": 8620.09,
+        "avg_ptcm": 431.0,
+        "avg_ptcm_feu": 862.01,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 2155.02,
+        "months_active": 2
+      }
+    },
+    "THBKK|SOBBO|SOBBO": {
+      "pol": "THBKK",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 12,
+        "total_cm": 19119.4,
+        "avg_ptcm": 1593.28,
+        "avg_per_month_teu": 12.0,
+        "avg_per_month_cm": 19119.4,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THBKK|YEADE|YEADE": {
+      "pol": "THBKK",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 9,
+      "gp20": {
+        "total_teu": 26,
+        "total_cm": 39603.27,
+        "avg_ptcm": 1523.2,
+        "avg_per_month_teu": 3.7,
+        "avg_per_month_cm": 5657.61,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 5398.25,
+        "cm_feu": 10796.51,
+        "avg_ptcm": 1349.56,
+        "avg_ptcm_feu": 2699.13,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2699.13,
+        "months_active": 2
+      }
+    },
+    "THBKK|YEHOD|YEHOD": {
+      "pol": "THBKK",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 2,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 11916.06,
+        "avg_ptcm": 3972.02,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 11916.06,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 6404.78,
+        "cm_feu": 12809.57,
+        "avg_ptcm": 1601.2,
+        "avg_ptcm_feu": 3202.39,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 6404.78,
+        "months_active": 1
+      }
+    },
+    "THBKS|EGSOK|EGSOK": {
+      "pol": "THBKS",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 8,
+      "gp20": {
+        "total_teu": 137,
+        "total_cm": 161655.27,
+        "avg_ptcm": 1179.97,
+        "avg_per_month_teu": 19.6,
+        "avg_per_month_cm": 23093.61,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 22,
+        "total_cm": 15722.84,
+        "cm_feu": 31445.69,
+        "avg_ptcm": 714.67,
+        "avg_ptcm_feu": 1429.35,
+        "avg_per_month_teu": 11.0,
+        "avg_per_month_cm": 7861.42,
+        "months_active": 2
+      }
+    },
+    "THBKS|JOAQJ|JOAQJ": {
+      "pol": "THBKS",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 1,
+      "gp20": {
+        "total_teu": 7,
+        "total_cm": 9416.97,
+        "avg_ptcm": 1345.28,
+        "avg_per_month_teu": 7.0,
+        "avg_per_month_cm": 9416.97,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THBKS|SAJED|SAJED": {
+      "pol": "THBKS",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 12,
+      "gp20": {
+        "total_teu": 75,
+        "total_cm": 106172.07,
+        "avg_ptcm": 1415.63,
+        "avg_per_month_teu": 8.3,
+        "avg_per_month_cm": 11796.9,
+        "months_active": 9
+      },
+      "hc40": {
+        "total_teu": 38,
+        "total_cm": 29586.82,
+        "cm_feu": 59173.64,
+        "avg_ptcm": 778.6,
+        "avg_ptcm_feu": 1557.2,
+        "avg_per_month_teu": 9.5,
+        "avg_per_month_cm": 7396.71,
+        "months_active": 4
+      }
+    },
+    "THBKS|SDPZU|SDPZU": {
+      "pol": "THBKS",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 6,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 3585.93,
+        "avg_ptcm": 1792.96,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3585.93,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 18,
+        "total_cm": 14262.68,
+        "cm_feu": 28525.35,
+        "avg_ptcm": 792.37,
+        "avg_ptcm_feu": 1584.74,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 2852.54,
+        "months_active": 5
+      }
+    },
+    "THBKS|SOBBO|SOBBO": {
+      "pol": "THBKS",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 17381.29,
+        "avg_ptcm": 1158.75,
+        "avg_per_month_teu": 15.0,
+        "avg_per_month_cm": 17381.29,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THBKS|YEADE|YEADE": {
+      "pol": "THBKS",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 5,
+      "gp20": {
+        "total_teu": 38,
+        "total_cm": 70688.2,
+        "avg_ptcm": 1860.22,
+        "avg_per_month_teu": 7.6,
+        "avg_per_month_cm": 14137.64,
+        "months_active": 5
+      },
+      "hc40": null
+    },
+    "THLCH|DJJIB|DJJIB": {
+      "pol": "THLCH",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 2815.19,
+        "avg_ptcm": 1407.6,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1407.6,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 6852.87,
+        "cm_feu": 13705.75,
+        "avg_ptcm": 1142.15,
+        "avg_ptcm_feu": 2284.29,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2284.29,
+        "months_active": 3
+      }
+    },
+    "THLCH|EGSOK|EGSOK": {
+      "pol": "THLCH",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 40,
+      "gp20": {
+        "total_teu": 216,
+        "total_cm": 341920.53,
+        "avg_ptcm": 1582.97,
+        "avg_per_month_teu": 8.6,
+        "avg_per_month_cm": 13676.82,
+        "months_active": 25
+      },
+      "hc40": {
+        "total_teu": 638,
+        "total_cm": 567119.95,
+        "cm_feu": 1134239.9,
+        "avg_ptcm": 888.9,
+        "avg_ptcm_feu": 1777.81,
+        "avg_per_month_teu": 20.6,
+        "avg_per_month_cm": 18294.19,
+        "months_active": 31
+      }
+    },
+    "THLCH|JOAQJ|JOAQJ": {
+      "pol": "THLCH",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 10,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": 25396.1,
+        "avg_ptcm": 2539.61,
+        "avg_per_month_teu": 1.4,
+        "avg_per_month_cm": 3628.01,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 13726.56,
+        "cm_feu": 27453.12,
+        "avg_ptcm": 1715.82,
+        "avg_ptcm_feu": 3431.64,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3431.64,
+        "months_active": 4
+      }
+    },
+    "THLCH|SAJED|SAJED": {
+      "pol": "THLCH",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 36,
+      "gp20": {
+        "total_teu": 100,
+        "total_cm": 253456.82,
+        "avg_ptcm": 2534.57,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 9052.03,
+        "months_active": 28
+      },
+      "hc40": {
+        "total_teu": 792,
+        "total_cm": 1222534.05,
+        "cm_feu": 2445068.1,
+        "avg_ptcm": 1543.6,
+        "avg_ptcm_feu": 3087.21,
+        "avg_per_month_teu": 33.0,
+        "avg_per_month_cm": 50938.92,
+        "months_active": 24
+      }
+    },
+    "THLCH|SDPZU|SDPZU": {
+      "pol": "THLCH",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 7,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 24,
+        "total_cm": 41643.57,
+        "cm_feu": 83287.14,
+        "avg_ptcm": 1735.15,
+        "avg_ptcm_feu": 3470.3,
+        "avg_per_month_teu": 3.4,
+        "avg_per_month_cm": 5949.08,
+        "months_active": 7
+      }
+    },
+    "THLCH|SOBBO|SOBBO": {
+      "pol": "THLCH",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 5,
+        "total_cm": 4191.29,
+        "avg_ptcm": 838.26,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 4191.29,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THLCH|YEADE|YEADE": {
+      "pol": "THLCH",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 13,
+      "gp20": {
+        "total_teu": 61,
+        "total_cm": 104703.55,
+        "avg_ptcm": 1716.45,
+        "avg_per_month_teu": 6.1,
+        "avg_per_month_cm": 10470.35,
+        "months_active": 10
+      },
+      "hc40": {
+        "total_teu": 30,
+        "total_cm": 61648.86,
+        "cm_feu": 123297.71,
+        "avg_ptcm": 2054.96,
+        "avg_ptcm_feu": 4109.92,
+        "avg_per_month_teu": 5.0,
+        "avg_per_month_cm": 10274.81,
+        "months_active": 6
+      }
+    },
+    "THSCS|DJJIB|DJJIB": {
+      "pol": "THSCS",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 13,
+        "total_cm": 19932.39,
+        "avg_ptcm": 1533.26,
+        "avg_per_month_teu": 4.3,
+        "avg_per_month_cm": 6644.13,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 9087.43,
+        "cm_feu": 18174.85,
+        "avg_ptcm": 908.74,
+        "avg_ptcm_feu": 1817.49,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 9087.43,
+        "months_active": 1
+      }
+    },
+    "THSCS|EGSOK|EGSOK": {
+      "pol": "THSCS",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 26,
+      "gp20": {
+        "total_teu": 507,
+        "total_cm": 733557.43,
+        "avg_ptcm": 1446.86,
+        "avg_per_month_teu": 22.0,
+        "avg_per_month_cm": 31893.8,
+        "months_active": 23
+      },
+      "hc40": {
+        "total_teu": 68,
+        "total_cm": 62521.96,
+        "cm_feu": 125043.92,
+        "avg_ptcm": 919.44,
+        "avg_ptcm_feu": 1838.88,
+        "avg_per_month_teu": 9.7,
+        "avg_per_month_cm": 8931.71,
+        "months_active": 7
+      }
+    },
+    "THSCS|JOAQJ|JOAQJ": {
+      "pol": "THSCS",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 7,
+      "gp20": {
+        "total_teu": 14,
+        "total_cm": 26440.57,
+        "avg_ptcm": 1888.61,
+        "avg_per_month_teu": 2.3,
+        "avg_per_month_cm": 4406.76,
+        "months_active": 6
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 1452.89,
+        "cm_feu": 2905.78,
+        "avg_ptcm": 726.44,
+        "avg_ptcm_feu": 1452.89,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1452.89,
+        "months_active": 1
+      }
+    },
+    "THSCS|SAJED|SAJED": {
+      "pol": "THSCS",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 22,
+      "gp20": {
+        "total_teu": 196,
+        "total_cm": 310865.8,
+        "avg_ptcm": 1586.05,
+        "avg_per_month_teu": 10.9,
+        "avg_per_month_cm": 17270.32,
+        "months_active": 18
+      },
+      "hc40": {
+        "total_teu": 72,
+        "total_cm": 84714.6,
+        "cm_feu": 169429.21,
+        "avg_ptcm": 1176.59,
+        "avg_ptcm_feu": 2353.18,
+        "avg_per_month_teu": 7.2,
+        "avg_per_month_cm": 8471.46,
+        "months_active": 10
+      }
+    },
+    "THSCS|SDPZU|SDPZU": {
+      "pol": "THSCS",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 8,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 7177.1,
+        "avg_ptcm": 1794.28,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 3588.55,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 24,
+        "total_cm": 19439.02,
+        "cm_feu": 38878.03,
+        "avg_ptcm": 809.96,
+        "avg_ptcm_feu": 1619.92,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 3239.84,
+        "months_active": 6
+      }
+    },
+    "THSCS|SOBBO|SOBBO": {
+      "pol": "THSCS",
+      "pod": "SOBBO",
+      "del": "SOBBO",
+      "months": 1,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 21153.16,
+        "avg_ptcm": 1410.21,
+        "avg_per_month_teu": 15.0,
+        "avg_per_month_cm": 21153.16,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "THSCS|YEADE|YEADE": {
+      "pol": "THSCS",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 11,
+      "gp20": {
+        "total_teu": 201,
+        "total_cm": 286415.13,
+        "avg_ptcm": 1424.95,
+        "avg_per_month_teu": 18.3,
+        "avg_per_month_cm": 26037.74,
+        "months_active": 11
+      },
+      "hc40": {
+        "total_teu": 18,
+        "total_cm": 30539.16,
+        "cm_feu": 61078.31,
+        "avg_ptcm": 1696.62,
+        "avg_ptcm_feu": 3393.24,
+        "avg_per_month_teu": 3.6,
+        "avg_per_month_cm": 6107.83,
+        "months_active": 5
+      }
+    },
+    "THSCS|YEHOD|YEHOD": {
+      "pol": "THSCS",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 2,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 11473.12,
+        "avg_ptcm": 3824.37,
+        "avg_per_month_teu": 1.5,
+        "avg_per_month_cm": 5736.56,
+        "months_active": 2
+      },
+      "hc40": null
+    },
+    "TWKEL|EGSOK|EGSOK": {
+      "pol": "TWKEL",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 81,
+      "gp20": {
+        "total_teu": 151,
+        "total_cm": 263656.39,
+        "avg_ptcm": 1746.07,
+        "avg_per_month_teu": 2.8,
+        "avg_per_month_cm": 4974.65,
+        "months_active": 53
+      },
+      "hc40": {
+        "total_teu": 230,
+        "total_cm": 308131.73,
+        "cm_feu": 616263.47,
+        "avg_ptcm": 1339.7,
+        "avg_ptcm_feu": 2679.41,
+        "avg_per_month_teu": 3.7,
+        "avg_per_month_cm": 4890.98,
+        "months_active": 63
+      }
+    },
+    "TWKEL|JOAQJ|JOAQJ": {
+      "pol": "TWKEL",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 14,
+      "gp20": {
+        "total_teu": 31,
+        "total_cm": 51945.91,
+        "avg_ptcm": 1675.67,
+        "avg_per_month_teu": 2.2,
+        "avg_per_month_cm": 3710.42,
+        "months_active": 14
+      },
+      "hc40": null
+    },
+    "TWKEL|SAJED|SAJED": {
+      "pol": "TWKEL",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 68,
+      "gp20": {
+        "total_teu": 80,
+        "total_cm": 157295.29,
+        "avg_ptcm": 1966.19,
+        "avg_per_month_teu": 1.5,
+        "avg_per_month_cm": 2967.84,
+        "months_active": 53
+      },
+      "hc40": {
+        "total_teu": 178,
+        "total_cm": 266509.54,
+        "cm_feu": 533019.07,
+        "avg_ptcm": 1497.24,
+        "avg_ptcm_feu": 2994.49,
+        "avg_per_month_teu": 4.5,
+        "avg_per_month_cm": 6662.74,
+        "months_active": 40
+      }
+    },
+    "TWKEL|SAJED|SARUH": {
+      "pol": "TWKEL",
+      "pod": "SAJED",
+      "del": "SARUH",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 5715.35,
+        "avg_ptcm": 5715.35,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 5715.35,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "TWKEL|YEHOD|YEHOD": {
+      "pol": "TWKEL",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 5814.91,
+        "avg_ptcm": 5814.91,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 5814.91,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "TWKHH|EGSOK|EGSOK": {
+      "pol": "TWKHH",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 49,
+      "gp20": {
+        "total_teu": 653,
+        "total_cm": 966892.41,
+        "avg_ptcm": 1480.69,
+        "avg_per_month_teu": 15.2,
+        "avg_per_month_cm": 22485.87,
+        "months_active": 43
+      },
+      "hc40": {
+        "total_teu": 362,
+        "total_cm": 470389.76,
+        "cm_feu": 940779.51,
+        "avg_ptcm": 1299.42,
+        "avg_ptcm_feu": 2598.84,
+        "avg_per_month_teu": 11.0,
+        "avg_per_month_cm": 14254.24,
+        "months_active": 33
+      }
+    },
+    "TWKHH|JOAQJ|JOAQJ": {
+      "pol": "TWKHH",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 16,
+      "gp20": {
+        "total_teu": 24,
+        "total_cm": 60136.3,
+        "avg_ptcm": 2505.68,
+        "avg_per_month_teu": 2.2,
+        "avg_per_month_cm": 5466.94,
+        "months_active": 11
+      },
+      "hc40": {
+        "total_teu": 192,
+        "total_cm": 417983.86,
+        "cm_feu": 835967.72,
+        "avg_ptcm": 2177.0,
+        "avg_ptcm_feu": 4354.0,
+        "avg_per_month_teu": 32.0,
+        "avg_per_month_cm": 69663.98,
+        "months_active": 6
+      }
+    },
+    "TWKHH|SAJED|SAJED": {
+      "pol": "TWKHH",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 47,
+      "gp20": {
+        "total_teu": 165,
+        "total_cm": 372944.92,
+        "avg_ptcm": 2260.27,
+        "avg_per_month_teu": 3.8,
+        "avg_per_month_cm": 8673.14,
+        "months_active": 43
+      },
+      "hc40": {
+        "total_teu": 72,
+        "total_cm": 119306.78,
+        "cm_feu": 238613.56,
+        "avg_ptcm": 1657.04,
+        "avg_ptcm_feu": 3314.08,
+        "avg_per_month_teu": 4.2,
+        "avg_per_month_cm": 7018.05,
+        "months_active": 17
+      }
+    },
+    "TWKHH|YEHOD|YEHOD": {
+      "pol": "TWKHH",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 18341.59,
+        "cm_feu": 36683.18,
+        "avg_ptcm": 3056.93,
+        "avg_ptcm_feu": 6113.86,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 6113.86,
+        "months_active": 3
+      }
+    },
+    "TWTPE|EGSOK|EGSOK": {
+      "pol": "TWTPE",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 3,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 4039.94,
+        "avg_ptcm": 2019.97,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 2019.97,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 10931.69,
+        "cm_feu": 21863.38,
+        "avg_ptcm": 1366.46,
+        "avg_ptcm_feu": 2732.92,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 5465.84,
+        "months_active": 2
+      }
+    },
+    "TWTPE|SAJED|SAJED": {
+      "pol": "TWTPE",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 3,
+      "gp20": {
+        "total_teu": 4,
+        "total_cm": 7611.34,
+        "avg_ptcm": 1902.84,
+        "avg_per_month_teu": 1.3,
+        "avg_per_month_cm": 2537.11,
+        "months_active": 3
+      },
+      "hc40": {
+        "total_teu": 2,
+        "total_cm": 2382.36,
+        "cm_feu": 4764.73,
+        "avg_ptcm": 1191.18,
+        "avg_ptcm_feu": 2382.36,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 2382.36,
+        "months_active": 1
+      }
+    },
+    "TWTXG|EGSOK|EGSOK": {
+      "pol": "TWTXG",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 38,
+      "gp20": {
+        "total_teu": 306,
+        "total_cm": 425299.05,
+        "avg_ptcm": 1389.87,
+        "avg_per_month_teu": 9.0,
+        "avg_per_month_cm": 12508.8,
+        "months_active": 34
+      },
+      "hc40": {
+        "total_teu": 54,
+        "total_cm": 78550.42,
+        "cm_feu": 157100.84,
+        "avg_ptcm": 1454.64,
+        "avg_ptcm_feu": 2909.27,
+        "avg_per_month_teu": 4.2,
+        "avg_per_month_cm": 6042.34,
+        "months_active": 13
+      }
+    },
+    "TWTXG|JOAQJ|JOAQJ": {
+      "pol": "TWTXG",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 21,
+      "gp20": {
+        "total_teu": 49,
+        "total_cm": 95729.97,
+        "avg_ptcm": 1953.67,
+        "avg_per_month_teu": 2.6,
+        "avg_per_month_cm": 5038.42,
+        "months_active": 19
+      },
+      "hc40": {
+        "total_teu": 14,
+        "total_cm": 25193.33,
+        "cm_feu": 50386.67,
+        "avg_ptcm": 1799.52,
+        "avg_ptcm_feu": 3599.05,
+        "avg_per_month_teu": 2.8,
+        "avg_per_month_cm": 5038.67,
+        "months_active": 5
+      }
+    },
+    "TWTXG|SAJED|SAJED": {
+      "pol": "TWTXG",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 33,
+      "gp20": {
+        "total_teu": 44,
+        "total_cm": 88789.19,
+        "avg_ptcm": 2017.94,
+        "avg_per_month_teu": 1.6,
+        "avg_per_month_cm": 3171.04,
+        "months_active": 28
+      },
+      "hc40": {
+        "total_teu": 34,
+        "total_cm": 44417.92,
+        "cm_feu": 88835.84,
+        "avg_ptcm": 1306.41,
+        "avg_ptcm_feu": 2612.82,
+        "avg_per_month_teu": 3.4,
+        "avg_per_month_cm": 4441.79,
+        "months_active": 10
+      }
+    },
+    "VNHPH|DJJIB|DJJIB": {
+      "pol": "VNHPH",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 7,
+      "gp20": {
+        "total_teu": 62,
+        "total_cm": 106114.18,
+        "avg_ptcm": 1711.52,
+        "avg_per_month_teu": 12.4,
+        "avg_per_month_cm": 21222.84,
+        "months_active": 5
+      },
+      "hc40": {
+        "total_teu": 28,
+        "total_cm": 34733.11,
+        "cm_feu": 69466.23,
+        "avg_ptcm": 1240.47,
+        "avg_ptcm_feu": 2480.94,
+        "avg_per_month_teu": 7.0,
+        "avg_per_month_cm": 8683.28,
+        "months_active": 4
+      }
+    },
+    "VNHPH|EGSOK|EGSOK": {
+      "pol": "VNHPH",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 20,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": 20298.12,
+        "avg_ptcm": 2029.81,
+        "avg_per_month_teu": 1.4,
+        "avg_per_month_cm": 2899.73,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 114,
+        "total_cm": 123064.71,
+        "cm_feu": 246129.41,
+        "avg_ptcm": 1079.51,
+        "avg_ptcm_feu": 2159.03,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 6477.09,
+        "months_active": 19
+      }
+    },
+    "VNHPH|JOAQJ|JOAQJ": {
+      "pol": "VNHPH",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 18,
+      "gp20": {
+        "total_teu": 44,
+        "total_cm": 56235.9,
+        "avg_ptcm": 1278.09,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 5112.35,
+        "months_active": 11
+      },
+      "hc40": {
+        "total_teu": 38,
+        "total_cm": 55035.53,
+        "cm_feu": 110071.05,
+        "avg_ptcm": 1448.3,
+        "avg_ptcm_feu": 2896.61,
+        "avg_per_month_teu": 3.5,
+        "avg_per_month_cm": 5003.23,
+        "months_active": 11
+      }
+    },
+    "VNHPH|SAJED|SAJED": {
+      "pol": "VNHPH",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 20,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 30445.56,
+        "avg_ptcm": 2029.7,
+        "avg_per_month_teu": 2.5,
+        "avg_per_month_cm": 5074.26,
+        "months_active": 6
+      },
+      "hc40": {
+        "total_teu": 196,
+        "total_cm": 366667.24,
+        "cm_feu": 733334.47,
+        "avg_ptcm": 1870.75,
+        "avg_ptcm_feu": 3741.5,
+        "avg_per_month_teu": 10.3,
+        "avg_per_month_cm": 19298.28,
+        "months_active": 19
+      }
+    },
+    "VNHPH|SDPZU|SDPZU": {
+      "pol": "VNHPH",
+      "pod": "SDPZU",
+      "del": "SDPZU",
+      "months": 8,
+      "gp20": {
+        "total_teu": 10,
+        "total_cm": 20423.31,
+        "avg_ptcm": 2042.33,
+        "avg_per_month_teu": 1.4,
+        "avg_per_month_cm": 2917.62,
+        "months_active": 7
+      },
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 5946.23,
+        "cm_feu": 11892.45,
+        "avg_ptcm": 991.04,
+        "avg_ptcm_feu": 1982.08,
+        "avg_per_month_teu": 2.0,
+        "avg_per_month_cm": 1982.08,
+        "months_active": 3
+      }
+    },
+    "VNHPH|YEADE|YEADE": {
+      "pol": "VNHPH",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 25,
+      "gp20": {
+        "total_teu": 42,
+        "total_cm": 96020.15,
+        "avg_ptcm": 2286.19,
+        "avg_per_month_teu": 3.5,
+        "avg_per_month_cm": 8001.68,
+        "months_active": 12
+      },
+      "hc40": {
+        "total_teu": 62,
+        "total_cm": 103955.41,
+        "cm_feu": 207910.82,
+        "avg_ptcm": 1676.7,
+        "avg_ptcm_feu": 3353.4,
+        "avg_per_month_teu": 3.9,
+        "avg_per_month_cm": 6497.21,
+        "months_active": 16
+      }
+    },
+    "VNHPH|YEHOD|YEHOD": {
+      "pol": "VNHPH",
+      "pod": "YEHOD",
+      "del": "YEHOD",
+      "months": 1,
+      "gp20": {
+        "total_teu": 3,
+        "total_cm": 12227.46,
+        "avg_ptcm": 4075.82,
+        "avg_per_month_teu": 3.0,
+        "avg_per_month_cm": 12227.46,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "VNSGN|CNNAS|CNNAS": {
+      "pol": "VNSGN",
+      "pod": "CNNAS",
+      "del": "CNNAS",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": -34.38,
+        "avg_ptcm": -34.38,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": -34.38,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 106,
+        "total_cm": -3242.32,
+        "cm_feu": -6484.64,
+        "avg_ptcm": -30.59,
+        "avg_ptcm_feu": -61.18,
+        "avg_per_month_teu": 106.0,
+        "avg_per_month_cm": -3242.32,
+        "months_active": 1
+      }
+    },
+    "VNSGN|DJJIB|DJJIB": {
+      "pol": "VNSGN",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 3,
+      "gp20": {
+        "total_teu": 8,
+        "total_cm": 16587.89,
+        "avg_ptcm": 2073.49,
+        "avg_per_month_teu": 2.7,
+        "avg_per_month_cm": 5529.3,
+        "months_active": 3
+      },
+      "hc40": null
+    },
+    "VNSGN|EGSOK|EGSOK": {
+      "pol": "VNSGN",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 42,
+      "gp20": {
+        "total_teu": 217,
+        "total_cm": 318439.6,
+        "avg_ptcm": 1467.46,
+        "avg_per_month_teu": 6.6,
+        "avg_per_month_cm": 9649.68,
+        "months_active": 33
+      },
+      "hc40": {
+        "total_teu": 272,
+        "total_cm": 274919.46,
+        "cm_feu": 549838.91,
+        "avg_ptcm": 1010.73,
+        "avg_ptcm_feu": 2021.47,
+        "avg_per_month_teu": 13.0,
+        "avg_per_month_cm": 13091.4,
+        "months_active": 21
+      }
+    },
+    "VNSGN|JOAQJ|JOAQJ": {
+      "pol": "VNSGN",
+      "pod": "JOAQJ",
+      "del": "JOAQJ",
+      "months": 6,
+      "gp20": {
+        "total_teu": 2,
+        "total_cm": 2297.17,
+        "avg_ptcm": 1148.59,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 1148.59,
+        "months_active": 2
+      },
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 17927.97,
+        "cm_feu": 35855.93,
+        "avg_ptcm": 1792.8,
+        "avg_ptcm_feu": 3585.59,
+        "avg_per_month_teu": 2.5,
+        "avg_per_month_cm": 4481.99,
+        "months_active": 4
+      }
+    },
+    "VNSGN|SAJED|SAJED": {
+      "pol": "VNSGN",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 50,
+      "gp20": {
+        "total_teu": 127,
+        "total_cm": 223254.33,
+        "avg_ptcm": 1757.91,
+        "avg_per_month_teu": 5.8,
+        "avg_per_month_cm": 10147.92,
+        "months_active": 22
+      },
+      "hc40": {
+        "total_teu": 146,
+        "total_cm": 179778.39,
+        "cm_feu": 359556.77,
+        "avg_ptcm": 1231.36,
+        "avg_ptcm_feu": 2462.72,
+        "avg_per_month_teu": 10.4,
+        "avg_per_month_cm": 12841.31,
+        "months_active": 14
+      }
+    },
+    "VNSGN|SYLTR|SYLTR": {
+      "pol": "VNSGN",
+      "pod": "SYLTR",
+      "del": "SYLTR",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 12,
+        "total_cm": 19897.24,
+        "cm_feu": 39794.48,
+        "avg_ptcm": 1658.1,
+        "avg_ptcm_feu": 3316.21,
+        "avg_per_month_teu": 12.0,
+        "avg_per_month_cm": 19897.24,
+        "months_active": 1
+      }
+    },
+    "VNSGN|TRIST|TRIST": {
+      "pol": "VNSGN",
+      "pod": "TRIST",
+      "del": "TRIST",
+      "months": 1,
+      "gp20": {
+        "total_teu": 1,
+        "total_cm": 3088.97,
+        "avg_ptcm": 3088.97,
+        "avg_per_month_teu": 1.0,
+        "avg_per_month_cm": 3088.97,
+        "months_active": 1
+      },
+      "hc40": null
+    },
+    "VNSGN|YEADE|YEADE": {
+      "pol": "VNSGN",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 14,
+      "gp20": {
+        "total_teu": 25,
+        "total_cm": 57732.3,
+        "avg_ptcm": 2309.29,
+        "avg_per_month_teu": 3.1,
+        "avg_per_month_cm": 7216.54,
+        "months_active": 8
+      },
+      "hc40": {
+        "total_teu": 52,
+        "total_cm": 76552.65,
+        "cm_feu": 153105.3,
+        "avg_ptcm": 1472.17,
+        "avg_ptcm_feu": 2944.33,
+        "avg_per_month_teu": 5.8,
+        "avg_per_month_cm": 8505.85,
+        "months_active": 9
+      }
+    },
+    "VNVUT|DJJIB|DJJIB": {
+      "pol": "VNVUT",
+      "pod": "DJJIB",
+      "del": "DJJIB",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 6,
+        "total_cm": 7758.89,
+        "cm_feu": 15517.78,
+        "avg_ptcm": 1293.15,
+        "avg_ptcm_feu": 2586.3,
+        "avg_per_month_teu": 6.0,
+        "avg_per_month_cm": 7758.89,
+        "months_active": 1
+      }
+    },
+    "VNVUT|EGSOK|EGSOK": {
+      "pol": "VNVUT",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 9415.85,
+        "cm_feu": 18831.69,
+        "avg_ptcm": 2353.96,
+        "avg_ptcm_feu": 4707.92,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 9415.85,
+        "months_active": 1
+      }
+    },
+    "VNVUT|SAJED|SAJED": {
+      "pol": "VNVUT",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 10,
+        "total_cm": 24532.7,
+        "cm_feu": 49065.4,
+        "avg_ptcm": 2453.27,
+        "avg_ptcm_feu": 4906.54,
+        "avg_per_month_teu": 10.0,
+        "avg_per_month_cm": 24532.7,
+        "months_active": 1
+      }
+    },
+    "VNVUT|YEADE|YEADE": {
+      "pol": "VNVUT",
+      "pod": "YEADE",
+      "del": "YEADE",
+      "months": 1,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 4,
+        "total_cm": 11105.81,
+        "cm_feu": 22211.62,
+        "avg_ptcm": 2776.45,
+        "avg_ptcm_feu": 5552.9,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 11105.81,
+        "months_active": 1
+      }
+    },
+    "YEADE|EGSOK|EGSOK": {
+      "pol": "YEADE",
+      "pod": "EGSOK",
+      "del": "EGSOK",
+      "months": 3,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 50,
+        "total_cm": 378.12,
+        "cm_feu": 756.23,
+        "avg_ptcm": 7.56,
+        "avg_ptcm_feu": 15.12,
+        "avg_per_month_teu": 16.7,
+        "avg_per_month_cm": 126.04,
+        "months_active": 3
+      }
+    },
+    "YEADE|INMUN|INMUN": {
+      "pol": "YEADE",
+      "pod": "INMUN",
+      "del": "INMUN",
+      "months": 1,
+      "gp20": {
+        "total_teu": 15,
+        "total_cm": 2708.25,
+        "avg_ptcm": 180.55,
+        "avg_per_month_teu": 15.0,
+        "avg_per_month_cm": 2708.25,
+        "months_active": 1
+      },
+      "hc40": {
+        "total_teu": 78,
+        "total_cm": 14082.9,
+        "cm_feu": 28165.8,
+        "avg_ptcm": 180.55,
+        "avg_ptcm_feu": 361.1,
+        "avg_per_month_teu": 78.0,
+        "avg_per_month_cm": 14082.9,
+        "months_active": 1
+      }
+    },
+    "YEADE|MYPKG|MYPKG": {
+      "pol": "YEADE",
+      "pod": "MYPKG",
+      "del": "MYPKG",
+      "months": 1,
+      "gp20": null,
+      "hc40": null
+    },
+    "YEADE|SAJED|SAJED": {
+      "pol": "YEADE",
+      "pod": "SAJED",
+      "del": "SAJED",
+      "months": 2,
+      "gp20": null,
+      "hc40": {
+        "total_teu": 8,
+        "total_cm": 1142.1,
+        "cm_feu": 2284.21,
+        "avg_ptcm": 142.76,
+        "avg_ptcm_feu": 285.53,
+        "avg_per_month_teu": 4.0,
+        "avg_per_month_cm": 571.05,
+        "months_active": 2
+      }
+    }
+  },
+  "ai_insights": {
+    "best_gp20_pairs": [
+      {
+        "pair": "CNSHK|YEHOD|YEHOD",
+        "ptcm": 5015.29,
+        "months": 7
+      },
+      {
+        "pair": "CNNAS|YEHOD|YEHOD",
+        "ptcm": 4347.9,
+        "months": 4
+      },
+      {
+        "pair": "CNNAS|SOBBO|SOBBO",
+        "ptcm": 2946.21,
+        "months": 3
+      },
+      {
+        "pair": "HKHKG|EGSOK|EGSOK",
+        "ptcm": 2798.58,
+        "months": 3
+      },
+      {
+        "pair": "CNJMN|EGSOK|EGSOK",
+        "ptcm": 2655.34,
+        "months": 3
+      },
+      {
+        "pair": "CNSHK|YEADE|YEADE",
+        "ptcm": 2604.33,
+        "months": 31
+      },
+      {
+        "pair": "CNSHA|YEADE|YEADE",
+        "ptcm": 2542.09,
+        "months": 7
+      },
+      {
+        "pair": "THLCH|JOAQJ|JOAQJ",
+        "ptcm": 2539.61,
+        "months": 7
+      },
+      {
+        "pair": "THLCH|SAJED|SAJED",
+        "ptcm": 2534.57,
+        "months": 28
+      },
+      {
+        "pair": "TWKHH|JOAQJ|JOAQJ",
+        "ptcm": 2505.68,
+        "months": 11
+      },
+      {
+        "pair": "CNNAS|YEADE|YEADE",
+        "ptcm": 2489.63,
+        "months": 43
+      },
+      {
+        "pair": "CNNGB|YEADE|YEADE",
+        "ptcm": 2479.43,
+        "months": 27
+      },
+      {
+        "pair": "CNXGG|SDPZU|SDPZU",
+        "ptcm": 2469.44,
+        "months": 10
+      },
+      {
+        "pair": "CNSHA|SAJED|SAJED",
+        "ptcm": 2459.32,
+        "months": 30
+      },
+      {
+        "pair": "CNTAO|YEADE|YEADE",
+        "ptcm": 2456.8,
+        "months": 19
+      }
+    ],
+    "best_hc40_pairs": [
+      {
+        "pair": "CNNAS|SOBBO|SOBBO",
+        "ptcm_feu": 8727.39,
+        "months": 7
+      },
+      {
+        "pair": "CNSHK|YEHOD|YEHOD",
+        "ptcm_feu": 5534.73,
+        "months": 14
+      },
+      {
+        "pair": "CNNAS|YEHOD|YEHOD",
+        "ptcm_feu": 5298.38,
+        "months": 17
+      },
+      {
+        "pair": "TWKHH|JOAQJ|JOAQJ",
+        "ptcm_feu": 4354.0,
+        "months": 6
+      },
+      {
+        "pair": "MYPKG|SAJED|SAJED",
+        "ptcm_feu": 4171.09,
+        "months": 14
+      },
+      {
+        "pair": "THLCH|YEADE|YEADE",
+        "ptcm_feu": 4109.92,
+        "months": 6
+      },
+      {
+        "pair": "MYPKG|EGSOK|EGSOK",
+        "ptcm_feu": 4038.89,
+        "months": 3
+      },
+      {
+        "pair": "IDJKT|SAJED|SAJED",
+        "ptcm_feu": 4013.14,
+        "months": 6
+      },
+      {
+        "pair": "VNHPH|SAJED|SAJED",
+        "ptcm_feu": 3741.5,
+        "months": 19
+      },
+      {
+        "pair": "TWTXG|JOAQJ|JOAQJ",
+        "ptcm_feu": 3599.05,
+        "months": 5
+      },
+      {
+        "pair": "IDJKT|YEADE|YEADE",
+        "ptcm_feu": 3529.16,
+        "months": 8
+      },
+      {
+        "pair": "THLCH|JOAQJ|JOAQJ",
+        "ptcm_feu": 3431.64,
+        "months": 4
+      },
+      {
+        "pair": "THSCS|YEADE|YEADE",
+        "ptcm_feu": 3393.24,
+        "months": 5
+      },
+      {
+        "pair": "HKHKG|EGSOK|EGSOK",
+        "ptcm_feu": 3353.84,
+        "months": 13
+      },
+      {
+        "pair": "VNHPH|YEADE|YEADE",
+        "ptcm_feu": 3353.4,
+        "months": 16
+      }
+    ],
+    "gp20_better_than_hc40": [
+      {
+        "pair": "CNXGG|SDPZU|SDPZU",
+        "ratio": 1.42,
+        "gp20_ptcm": 2469.44,
+        "hc40_ptcm_feu": 1740.86
+      },
+      {
+        "pair": "CNXGG|SAJED|SAJED",
+        "ratio": 1.19,
+        "gp20_ptcm": 1887.77,
+        "hc40_ptcm_feu": 1589.32
+      },
+      {
+        "pair": "CNXGG|EGSOK|EGSOK",
+        "ratio": 1.1,
+        "gp20_ptcm": 1888.09,
+        "hc40_ptcm_feu": 1722.64
+      },
+      {
+        "pair": "CNXMN|SDPZU|SDPZU",
+        "ratio": 1.05,
+        "gp20_ptcm": 2295.32,
+        "hc40_ptcm_feu": 2190.83
+      },
+      {
+        "pair": "CNXMN|EGSOK|EGSOK",
+        "ratio": 1.03,
+        "gp20_ptcm": 1968.62,
+        "hc40_ptcm_feu": 1906.49
+      },
+      {
+        "pair": "VNHPH|SDPZU|SDPZU",
+        "ratio": 1.03,
+        "gp20_ptcm": 2042.33,
+        "hc40_ptcm_feu": 1982.08
+      },
+      {
+        "pair": "CNXMN|DJJIB|DJJIB",
+        "ratio": 1.02,
+        "gp20_ptcm": 1901.37,
+        "hc40_ptcm_feu": 1863.11
+      },
+      {
+        "pair": "CNTAO|SDPZU|SDPZU",
+        "ratio": 1.01,
+        "gp20_ptcm": 2220.35,
+        "hc40_ptcm_feu": 2194.8
+      },
+      {
+        "pair": "EGSOK|SAJED|SAJED",
+        "ratio": 1.0,
+        "gp20_ptcm": 18.27,
+        "hc40_ptcm_feu": 18.28
+      },
+      {
+        "pair": "CNSHA|EGSOK|EGSOK",
+        "ratio": 0.99,
+        "gp20_ptcm": 2268.69,
+        "hc40_ptcm_feu": 2300.52
+      }
+    ],
+    "hc40_better_than_gp20": [
+      {
+        "pair": "EGSOK|YEADE|YEADE",
+        "ratio": 3.51,
+        "gp20_ptcm": 287.93,
+        "hc40_ptcm_feu": 1009.44
+      },
+      {
+        "pair": "CNNAS|SOBBO|SOBBO",
+        "ratio": 2.96,
+        "gp20_ptcm": 2946.21,
+        "hc40_ptcm_feu": 8727.39
+      },
+      {
+        "pair": "MYPKG|EGSOK|EGSOK",
+        "ratio": 2.41,
+        "gp20_ptcm": 1674.16,
+        "hc40_ptcm_feu": 4038.89
+      },
+      {
+        "pair": "THLCH|YEADE|YEADE",
+        "ratio": 2.39,
+        "gp20_ptcm": 1716.45,
+        "hc40_ptcm_feu": 4109.92
+      },
+      {
+        "pair": "THSCS|YEADE|YEADE",
+        "ratio": 2.38,
+        "gp20_ptcm": 1424.95,
+        "hc40_ptcm_feu": 3393.24
+      },
+      {
+        "pair": "VNHPH|JOAQJ|JOAQJ",
+        "ratio": 2.27,
+        "gp20_ptcm": 1278.09,
+        "hc40_ptcm_feu": 2896.61
+      },
+      {
+        "pair": "SAJED|CNNAS|CNNAS",
+        "ratio": 2.13,
+        "gp20_ptcm": 242.87,
+        "hc40_ptcm_feu": 517.53
+      },
+      {
+        "pair": "TWTXG|EGSOK|EGSOK",
+        "ratio": 2.09,
+        "gp20_ptcm": 1389.87,
+        "hc40_ptcm_feu": 2909.27
+      },
+      {
+        "pair": "THBKK|SAJED|SAJED",
+        "ratio": 2.08,
+        "gp20_ptcm": 1379.88,
+        "hc40_ptcm_feu": 2867.18
+      },
+      {
+        "pair": "MYPKG|SAJED|SAJED",
+        "ratio": 2.08,
+        "gp20_ptcm": 2008.96,
+        "hc40_ptcm_feu": 4171.09
+      }
+    ]
+  },
+  "del_by_pod": {
+    "AEJEA": [
+      {
+        "del": "AEJEA",
+        "teu": 1397,
+        "cm": 285478.44,
+        "rows": 5
+      }
+    ],
+    "CNHUA": [
+      {
+        "del": "CNHUA",
+        "teu": 1240,
+        "cm": 227786.33,
+        "rows": 16
+      }
+    ],
+    "CNNAS": [
+      {
+        "del": "CNNAS",
+        "teu": 2568,
+        "cm": 479804.7,
+        "rows": 60
+      }
+    ],
+    "CNNGB": [
+      {
+        "del": "CNNGB",
+        "teu": 760,
+        "cm": 55538.33,
+        "rows": 49
+      }
+    ],
+    "CNSHA": [
+      {
+        "del": "CNSHA",
+        "teu": 337,
+        "cm": 24468.71,
+        "rows": 4
+      }
+    ],
+    "CNSHK": [
+      {
+        "del": "CNSHK",
+        "teu": 901,
+        "cm": 238411.68,
+        "rows": 33
+      }
+    ],
+    "CNSWA": [
+      {
+        "del": "CNSWA",
+        "teu": 100,
+        "cm": 15603.11,
+        "rows": 1
+      }
+    ],
+    "CNTAO": [
+      {
+        "del": "CNTAO",
+        "teu": 209,
+        "cm": -14016.49,
+        "rows": 7
+      }
+    ],
+    "CNXMN": [
+      {
+        "del": "CNXMN",
+        "teu": 122,
+        "cm": 9334.48,
+        "rows": 7
+      }
+    ],
+    "DJJIB": [
+      {
+        "del": "DJJIB",
+        "teu": 6298,
+        "cm": 8066833.78,
+        "rows": 197
+      }
+    ],
+    "EGALY": [
+      {
+        "del": "EGALY",
+        "teu": 10,
+        "cm": 7392.85,
+        "rows": 2
+      }
+    ],
+    "EGPSD": [
+      {
+        "del": "EGPSD",
+        "teu": 8,
+        "cm": 9022.08,
+        "rows": 3
+      }
+    ],
+    "EGSOK": [
+      {
+        "del": "EGSOK",
+        "teu": 43698,
+        "cm": 62790741.44,
+        "rows": 822
+      }
+    ],
+    "HKHKG": [
+      {
+        "del": "HKHKG",
+        "teu": 2,
+        "cm": 15608.26,
+        "rows": 3
+      }
+    ],
+    "IDJKT": [
+      {
+        "del": "IDJKT",
+        "teu": 1,
+        "cm": -89.43,
+        "rows": 1
+      }
+    ],
+    "INMUN": [
+      {
+        "del": "INMUN",
+        "teu": 93,
+        "cm": 16791.15,
+        "rows": 1
+      }
+    ],
+    "JOAQJ": [
+      {
+        "del": "JOAQJ",
+        "teu": 634,
+        "cm": 1200782.72,
+        "rows": 125
+      }
+    ],
+    "JPNGO": [
+      {
+        "del": "JPNGO",
+        "teu": 8,
+        "cm": -83.36,
+        "rows": 1
+      }
+    ],
+    "JPTYO": [
+      {
+        "del": "JPTYO",
+        "teu": 50,
+        "cm": 355.58,
+        "rows": 2
+      }
+    ],
+    "MYPGU": [
+      {
+        "del": "MYPGU",
+        "teu": 40,
+        "cm": -4197.76,
+        "rows": 1
+      }
+    ],
+    "MYPKG": [
+      {
+        "del": "MYPKG",
+        "teu": 2457,
+        "cm": 426201.22,
+        "rows": 8
+      }
+    ],
+    "PHMNN": [
+      {
+        "del": "PHMNN",
+        "teu": 100,
+        "cm": 29013.95,
+        "rows": 5
+      }
+    ],
+    "SAJED": [
+      {
+        "del": "SAJED",
+        "teu": 47207,
+        "cm": 68626675.85,
+        "rows": 845
+      },
+      {
+        "del": "SARUH",
+        "teu": 10,
+        "cm": 44536.31,
+        "rows": 6
+      },
+      {
+        "del": "SADMM",
+        "teu": 11,
+        "cm": 43439.1,
+        "rows": 4
+      }
+    ],
+    "SDPZU": [
+      {
+        "del": "SDPZU",
+        "teu": 10577,
+        "cm": 14289799.23,
+        "rows": 442
+      }
+    ],
+    "SOBBO": [
+      {
+        "del": "SOBBO",
+        "teu": 209,
+        "cm": 544793.24,
+        "rows": 23
+      }
+    ],
+    "SYLTR": [
+      {
+        "del": "SYLTR",
+        "teu": 12,
+        "cm": 19897.24,
+        "rows": 1
+      }
+    ],
+    "THBKK": [
+      {
+        "del": "THBKK",
+        "teu": 10,
+        "cm": 675.77,
+        "rows": 2
+      }
+    ],
+    "THLCH": [
+      {
+        "del": "THLCH",
+        "teu": 1,
+        "cm": 9.81,
+        "rows": 1
+      }
+    ],
+    "TRIST": [
+      {
+        "del": "TRIST",
+        "teu": 149,
+        "cm": 220614.88,
+        "rows": 5
+      }
+    ],
+    "TRIZT": [
+      {
+        "del": "TRIZT",
+        "teu": 9,
+        "cm": 13062.93,
+        "rows": 2
+      }
+    ],
+    "TWKEL": [
+      {
+        "del": "TWKEL",
+        "teu": 28,
+        "cm": -797.07,
+        "rows": 3
+      },
+      {
+        "del": "TWTPE",
+        "teu": 55,
+        "cm": -8168.92,
+        "rows": 9
+      }
+    ],
+    "TWKHH": [
+      {
+        "del": "TWKHH",
+        "teu": 75,
+        "cm": 3692.53,
+        "rows": 9
+      }
+    ],
+    "TWTPE": [
+      {
+        "del": "TWTPE",
+        "teu": 5,
+        "cm": -93.76,
+        "rows": 2
+      }
+    ],
+    "TWTXG": [
+      {
+        "del": "TWTXG",
+        "teu": 17,
+        "cm": -245.48,
+        "rows": 3
+      }
+    ],
+    "VNHPH": [
+      {
+        "del": "VNHPH",
+        "teu": 88,
+        "cm": 726.02,
+        "rows": 5
+      }
+    ],
+    "VNSGN": [
+      {
+        "del": "VNSGN",
+        "teu": 266,
+        "cm": 61927.34,
+        "rows": 1
+      }
+    ],
+    "YEADE": [
+      {
+        "del": "YEADE",
+        "teu": 13284,
+        "cm": 17955912.42,
+        "rows": 421
+      }
+    ],
+    "YEHOD": [
+      {
+        "del": "YEHOD",
+        "teu": 397,
+        "cm": 1156918.05,
+        "rows": 66
+      }
+    ]
+  },
+  "metadata": {
+    "total_records": 3203,
+    "period": "2025-02 to 2026-05",
+    "total_teu": 133443,
+    "total_cm": 176854157.25,
+    "total_gp20_teu": 20301,
+    "total_hc40_teu": 113142,
+    "overall_gp20_ptcm": 1720.32,
+    "overall_hc40_ptcm": 1254.44,
+    "overall_hc40_ptcm_feu": 2508.88
+  }
+}

@@ -1,171 +1,195 @@
+"""
+Extract CM history from Excel and generate cm_history.json
+Data source: 0125 to 0525 CM Data.xlsx
+Logic:
+  - VC (Variable Cost) = AVG FRT + AVG SUR&MISC - AVG CM  (per unit)
+  - CM = FRT + SUR&MISC - VC  => when user inputs FRT they can derive CM
+  - 40HC CM is per TEU in source; multiply x2 for FEU basis
+"""
+import json, os, sys
 import pandas as pd
-import json
+import numpy as np
+from datetime import datetime
 
-df = pd.read_excel(r'C:\Users\elaineteh\Downloads\0225 to 0526 CM for REX.xlsx', header=[0,1])
+SRC = r'C:\Users\elaineteh\Downloads\0125 to 0525 CM Data.xlsx'
+OUT = os.path.join(os.path.dirname(__file__), 'data', 'cm_history.json')
 
-# Only keep first 17 meaningful columns
-df = df.iloc[:, :17]
-df.columns = ['RevMonth','Lane','VVD','SUL','POR','POL','POD','DEL',
-               'GP20_TEU','GP20_CM','GP20_PTCM',
-               'HC40_TEU','HC40_CM','HC40_PTCM',
-               'TOT_TEU','TOT_CM','TOT_PTCM']
+print(f"Reading {SRC} ...")
+df = pd.read_excel(SRC, header=[0,1])
+df.columns = ['RevWk','TRD','LANE','POR','POL','POD','DEL','DIR','SOC','CNTR_TYPE',
+              'GP20_FRT','GP20_SUR','GP20_CM','GP20_VOL','GP20_TTLCM',
+              'HC40_FRT','HC40_SUR','HC40_CM','HC40_VOL','HC40_TTLCM',
+              'CBP_COST_20','CBP_COST_40']
 
-print("Columns:", list(df.columns))
-print(f"Rows: {len(df)}")
+# Filter GP only (ignore RF/OT/FR)
+df = df[df['CNTR_TYPE']=='GP'].copy()
 
-# Fill numeric columns with 0
-for col in ['GP20_TEU','GP20_CM','GP20_PTCM','HC40_TEU','HC40_CM','HC40_PTCM','TOT_TEU','TOT_CM','TOT_PTCM']:
-    df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+# Numeric coerce
+for c in ['GP20_FRT','GP20_SUR','GP20_CM','GP20_VOL','GP20_TTLCM',
+          'HC40_FRT','HC40_SUR','HC40_CM','HC40_VOL','HC40_TTLCM',
+          'CBP_COST_20','CBP_COST_40']:
+    df[c] = pd.to_numeric(df[c], errors='coerce')
 
-pol_list = sorted(df['POL'].dropna().unique().tolist())
-pod_list = sorted(df['POD'].dropna().unique().tolist())
-del_list = sorted(df['DEL'].dropna().unique().tolist())
-por_list = sorted(df['POR'].dropna().unique().tolist())
+# VC = FRT + SUR - CM  (all per TEU/unit)
+df['GP20_VC'] = df['GP20_FRT'] + df['GP20_SUR'] - df['GP20_CM']
+df['HC40_VC'] = df['HC40_FRT'] + df['HC40_SUR'] - df['HC40_CM']
 
-print(f"POLs: {len(pol_list)}, PODs: {len(pod_list)}, DELs: {len(del_list)}, PORs: {len(por_list)}")
+# Date range
+wk_min = int(df['RevWk'].min())
+wk_max = int(df['RevWk'].max())
 
-# Build port pair data: POL -> POD -> DEL
-port_pair_data = {}
+def wk_to_label(w):
+    w = str(w)
+    yr, wk = int(w[:4]), int(w[4:])
+    from datetime import datetime, timedelta
+    d = datetime(yr, 1, 4) + timedelta(weeks=wk-1)
+    return d.strftime('%Y-%m')
 
-for (pol, pod, del_val), grp in df.groupby(['POL','POD','DEL'], dropna=False):
-    if pd.notna(del_val):
-        key = f"{pol}|{pod}|{del_val}"
-    else:
-        key = f"{pol}|{pod}"
+date_range = f"{wk_to_label(wk_min)} ~ {wk_to_label(wk_max)}"
+print(f"Date range: {date_range}  |  Total rows: {len(df)}")
 
-    gp20_sub = grp[grp['GP20_TEU'] > 0]
-    hc40_sub = grp[grp['HC40_TEU'] > 0]
+# Build lane -> rotation structure
+# POR is the actual loading origin (e.g. small feeder port)
+# POL is where it gets onto main vessel
+# For rotation: use LANE grouping
+lane_ports = {}
+for lane, grp in df.groupby('LANE'):
+    pols = sorted(grp['POL'].dropna().unique().tolist())
+    pods = sorted(grp['POD'].dropna().unique().tolist())
+    pors = sorted(grp['POR'].dropna().unique().tolist())
+    dels = sorted(grp['DEL'].dropna().unique().tolist())
+    lane_ports[lane] = {
+        'pol': pols,
+        'pod': pods,
+        'por': pors,
+        'del': dels,
+        'trd': grp['TRD'].mode()[0] if len(grp) > 0 else '',
+        'dir': grp['DIR'].mode()[0] if len(grp) > 0 else '',
+    }
 
-    record = {
+# Build port_pair stats (weighted average by volume)
+# Group by LANE, POR, POL, POD, DEL
+def wavg(vals, weights):
+    mask = (~np.isnan(vals)) & (~np.isnan(weights)) & (weights > 0)
+    if mask.sum() == 0:
+        return np.nan
+    return np.average(vals[mask], weights=weights[mask])
+
+records = {}
+for (lane, por, pol, pod, del_), grp in df.groupby(['LANE','POR','POL','POD','DEL']):
+    key = f"{lane}|{por}|{pol}|{pod}|{del_}"
+
+    # 20GP
+    gp_vol = grp['GP20_VOL'].fillna(0).values
+    gp_frt = grp['GP20_FRT'].values
+    gp_sur = grp['GP20_SUR'].values
+    gp_cm  = grp['GP20_CM'].values
+    gp_vc  = grp['GP20_VC'].values
+
+    gp_avg_frt = wavg(gp_frt, gp_vol)
+    gp_avg_sur = wavg(gp_sur, gp_vol)
+    gp_avg_cm  = wavg(gp_cm,  gp_vol)
+    gp_avg_vc  = wavg(gp_vc,  gp_vol)
+    gp_ttl_vol = float(gp_vol.sum())
+
+    # 40HC
+    hc_vol = grp['HC40_VOL'].fillna(0).values
+    hc_frt = grp['HC40_FRT'].values
+    hc_sur = grp['HC40_SUR'].values
+    hc_cm  = grp['HC40_CM'].values
+    hc_vc  = grp['HC40_VC'].values
+
+    hc_avg_frt = wavg(hc_frt, hc_vol)
+    hc_avg_sur = wavg(hc_sur, hc_vol)
+    hc_avg_cm  = wavg(hc_cm,  hc_vol)
+    hc_avg_vc  = wavg(hc_vc,  hc_vol)
+    hc_ttl_vol = float(hc_vol.sum())
+
+    # 40HC FEU basis (x2)
+    hc_avg_cm_feu = hc_avg_cm * 2 if not np.isnan(hc_avg_cm) else np.nan
+    hc_avg_vc_feu = hc_avg_vc * 2 if not np.isnan(hc_avg_vc) else np.nan
+    hc_avg_frt_feu = hc_avg_frt * 2 if not np.isnan(hc_avg_frt) else np.nan
+    hc_avg_sur_feu = hc_avg_sur * 2 if not np.isnan(hc_avg_sur) else np.nan
+
+    weeks_active = int(grp['RevWk'].nunique())
+
+    def safe(v):
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return None
+        return round(float(v), 2)
+
+    records[key] = {
+        'lane': lane,
+        'por': por,
         'pol': pol,
         'pod': pod,
-        'del': str(del_val) if pd.notna(del_val) else '',
-        'months': int(len(grp)),
-        'gp20': None,
-        'hc40': None
+        'del': del_,
+        'weeks': weeks_active,
+        'gp20': {
+            'vol': safe(gp_ttl_vol),
+            'avg_frt': safe(gp_avg_frt),
+            'avg_sur': safe(gp_avg_sur),
+            'avg_vc':  safe(gp_avg_vc),
+            'avg_cm':  safe(gp_avg_cm),
+        },
+        'hc40': {
+            'vol': safe(hc_ttl_vol),
+            'avg_frt': safe(hc_avg_frt),       # per TEU
+            'avg_sur': safe(hc_avg_sur),        # per TEU
+            'avg_vc':  safe(hc_avg_vc),         # per TEU
+            'avg_cm':  safe(hc_avg_cm),         # per TEU
+            'avg_frt_feu': safe(hc_avg_frt_feu),  # per FEU
+            'avg_sur_feu': safe(hc_avg_sur_feu),
+            'avg_vc_feu':  safe(hc_avg_vc_feu),
+            'avg_cm_feu':  safe(hc_avg_cm_feu),   # per FEU (x2)
+        }
     }
 
-    if len(gp20_sub) > 0:
-        record['gp20'] = {
-            'total_teu': int(gp20_sub['GP20_TEU'].sum()),
-            'total_cm': round(float(gp20_sub['GP20_CM'].sum()), 2),
-            'avg_ptcm': round(float(gp20_sub['GP20_CM'].sum() / gp20_sub['GP20_TEU'].sum()), 2),
-            'avg_per_month_teu': round(float(gp20_sub['GP20_TEU'].sum() / len(gp20_sub)), 1),
-            'avg_per_month_cm': round(float(gp20_sub['GP20_CM'].sum() / len(gp20_sub)), 2),
-            'months_active': int(len(gp20_sub))
-        }
+print(f"Total port-pair records: {len(records)}")
 
-    if len(hc40_sub) > 0:
-        record['hc40'] = {
-            'total_teu': int(hc40_sub['HC40_TEU'].sum()),
-            'total_cm': round(float(hc40_sub['HC40_CM'].sum()), 2),
-            'cm_feu': round(float(hc40_sub['HC40_CM'].sum() * 2), 2),
-            'avg_ptcm': round(float(hc40_sub['HC40_CM'].sum() / hc40_sub['HC40_TEU'].sum()), 2),
-            'avg_ptcm_feu': round(float(hc40_sub['HC40_CM'].sum() * 2 / hc40_sub['HC40_TEU'].sum()), 2),
-            'avg_per_month_teu': round(float(hc40_sub['HC40_TEU'].sum() / len(hc40_sub)), 1),
-            'avg_per_month_cm': round(float(hc40_sub['HC40_CM'].sum() / len(hc40_sub)), 2),
-            'months_active': int(len(hc40_sub))
-        }
+# Build transshipment map: POD -> list of DEL that differ from POD
+ts_map = {}
+for r in records.values():
+    pod, del_ = r['pod'], r['del']
+    if pod != del_:
+        if pod not in ts_map:
+            ts_map[pod] = set()
+        ts_map[pod].add(del_)
+ts_map = {k: sorted(list(v)) for k, v in ts_map.items()}
+print(f"Transshipment hubs: {list(ts_map.keys())[:15]}")
 
-    port_pair_data[key] = record
+# Lane rotations: for each lane, derive common rotation order
+# Use the order: POL ports by average voyage sequence
+# We'll just list them in DIR order (WB=west-to-east, EB=east-to-west etc.)
+lane_info = {}
+for lane, lp in lane_ports.items():
+    lane_recs = [r for r in records.values() if r['lane']==lane]
+    total_vol = sum((r['gp20']['vol'] or 0) + (r['hc40']['vol'] or 0) for r in lane_recs)
+    lane_info[lane] = {
+        **lp,
+        'total_vol': round(total_vol, 0),
+        'port_pair_count': len(lane_recs),
+    }
 
-# Build AI insight data
-ai_data = {
-    'best_gp20_pairs': [],
-    'best_hc40_pairs': [],
-    'gp20_better_than_hc40': [],
-    'hc40_better_than_gp20': []
-}
-
-qualified = {}
-for k, v in port_pair_data.items():
-    if v['gp20'] and v['hc40'] and v['gp20']['months_active'] >= 3 and v['hc40']['months_active'] >= 3:
-        qualified[k] = v
-
-print(f"Qualified pairs (both EQ, >=3 months): {len(qualified)}")
-
-# Top GP20 by PTCM
-sorted_gp20 = sorted(qualified.items(), key=lambda x: x[1]['gp20']['avg_ptcm'], reverse=True)[:15]
-for k, v in sorted_gp20:
-    ai_data['best_gp20_pairs'].append({
-        'pair': k, 'ptcm': v['gp20']['avg_ptcm'], 'months': v['gp20']['months_active']
-    })
-
-# Top HC40 FEU by PTCM
-sorted_hc40 = sorted(qualified.items(), key=lambda x: x[1]['hc40']['avg_ptcm_feu'], reverse=True)[:15]
-for k, v in sorted_hc40:
-    ai_data['best_hc40_pairs'].append({
-        'pair': k, 'ptcm_feu': v['hc40']['avg_ptcm_feu'], 'months': v['hc40']['months_active']
-    })
-
-# GP20 better than HC40 FEU
-ratio_gp20_better = sorted(
-    [(k, v) for k, v in qualified.items() if v['hc40']['avg_ptcm_feu'] > 0],
-    key=lambda x: x[1]['gp20']['avg_ptcm'] / x[1]['hc40']['avg_ptcm_feu'],
-    reverse=True
-)[:10]
-for k, v in ratio_gp20_better:
-    ai_data['gp20_better_than_hc40'].append({
-        'pair': k,
-        'ratio': round(v['gp20']['avg_ptcm'] / v['hc40']['avg_ptcm_feu'], 2),
-        'gp20_ptcm': v['gp20']['avg_ptcm'],
-        'hc40_ptcm_feu': v['hc40']['avg_ptcm_feu']
-    })
-
-# HC40 FEU better than GP20
-ratio_hc40_better = sorted(
-    [(k, v) for k, v in qualified.items() if v['gp20']['avg_ptcm'] > 0],
-    key=lambda x: x[1]['hc40']['avg_ptcm_feu'] / x[1]['gp20']['avg_ptcm'],
-    reverse=True
-)[:10]
-for k, v in ratio_hc40_better:
-    ai_data['hc40_better_than_gp20'].append({
-        'pair': k,
-        'ratio': round(v['hc40']['avg_ptcm_feu'] / v['gp20']['avg_ptcm'], 2),
-        'gp20_ptcm': v['gp20']['avg_ptcm'],
-        'hc40_ptcm_feu': v['hc40']['avg_ptcm_feu']
-    })
-
-# DEL distribution for each POD
-del_by_pod = {}
-for pod in pod_list:
-    pod_df = df[df['POD'] == pod]
-    dels = pod_df.groupby('DEL').agg(
-        teu=('TOT_TEU','sum'), cm=('TOT_CM','sum'), rows=('TOT_TEU','count')
-    ).reset_index()
-    del_by_pod[pod] = [
-        {'del': str(r['DEL']) if pd.notna(r.get('DEL','')) else '', 'teu': int(r['teu']), 'cm': round(float(r['cm']),2), 'rows': int(r['rows'])}
-        for _, r in dels.sort_values('cm', ascending=False).iterrows()
-    ]
-
-output = {
-    'pol_list': pol_list,
-    'pod_list': pod_list,
-    'del_list': del_list,
-    'por_list': por_list,
-    'port_pairs': port_pair_data,
-    'ai_insights': ai_data,
-    'del_by_pod': del_by_pod,
+out = {
     'metadata': {
-        'total_records': len(df),
-        'period': '2025-02 to 2026-05',
-        'total_teu': int(df['TOT_TEU'].sum()),
-        'total_cm': round(float(df['TOT_CM'].sum()), 2),
-        'total_gp20_teu': int(df['GP20_TEU'].sum()),
-        'total_hc40_teu': int(df['HC40_TEU'].sum()),
-        'overall_gp20_ptcm': round(float(df['GP20_CM'].sum() / df['GP20_TEU'].sum()), 2),
-        'overall_hc40_ptcm': round(float(df['HC40_CM'].sum() / df['HC40_TEU'].sum()), 2),
-        'overall_hc40_ptcm_feu': round(float(df['HC40_CM'].sum() * 2 / df['HC40_TEU'].sum()), 2),
-    }
+        'source': '0125 to 0525 CM Data.xlsx',
+        'date_range': date_range,
+        'wk_min': wk_min,
+        'wk_max': wk_max,
+        'total_port_pairs': len(records),
+        'generated': datetime.now().isoformat(),
+        'note': '40HC avg_cm/avg_frt/avg_vc are per TEU; _feu fields are x2 (per FEU). VC = FRT + SUR - CM',
+    },
+    'lanes': lane_info,
+    'ts_map': ts_map,
+    'port_pairs': records,
 }
 
-import os
-out_dir = r'c:\Users\elaineteh\WorkBuddy\20260515150853\cm_calculator\data'
-os.makedirs(out_dir, exist_ok=True)
-out_path = os.path.join(out_dir, 'cm_history.json')
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
+with open(OUT, 'w', encoding='utf-8') as f:
+    json.dump(out, f, ensure_ascii=False, indent=2)
 
-with open(out_path, 'w', encoding='utf-8') as f:
-    json.dump(output, f, ensure_ascii=False, indent=2, default=str)
-
-print(f"\nGenerated: {out_path}")
-print(f"  File size: {os.path.getsize(out_path)/1024:.1f} KB")
+sz = os.path.getsize(OUT) / 1024
+print(f"\nSaved to {OUT}  ({sz:.1f} KB)")
+print("Done.")

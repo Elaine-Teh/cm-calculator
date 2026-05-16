@@ -2,582 +2,1051 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REX CM Calculator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CM Calculator — REX Lane</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#242838;--border:#2e3348;--text:#e4e6f0;--text2:#9498ad;--accent:#6c5ce7;--accent2:#a29bfe;--green:#00cec9;--green2:#00b894;--red:#ff6b6b;--orange:#fdcb6e;--blue:#74b9ff}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-.header{background:linear-gradient(135deg,var(--accent),#4a3ab5);padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:22px;font-weight:700;letter-spacing:-0.5px}
-.header .sub{font-size:13px;color:rgba(255,255,255,.7)}
-.badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
-.container{max-width:1400px;margin:0 auto;padding:24px}
-.grid{display:grid;grid-template-columns:380px 1fr;gap:24px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.panel-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
-.panel-head .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.panel-body{padding:20px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
-select,input[type=number]{width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;outline:none;transition:border .2s}
-select:focus,input:focus{border-color:var(--accent)}
-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239498ad' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.eq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.eq-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px}
-.eq-card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.eq-card h3{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.eq-card h3 span{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
-.tag-20{background:rgba(0,206,201,.15);color:var(--green)}
-.tag-40{background:rgba(108,92,231,.15);color:var(--accent2)}
-.btn{padding:12px 24px;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:#7c6cf7;transform:translateY(-1px)}
-.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
-.btn-secondary:hover{border-color:var(--accent)}
-.btn-add{width:100%;padding:10px;border:1px dashed var(--border);background:transparent;color:var(--text2);border-radius:8px;cursor:pointer;font-size:13px;margin-top:12px;transition:all .2s}
-.btn-add:hover{border-color:var(--accent);color:var(--text)}
-.btn-remove{background:transparent;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:2px 6px;border-radius:4px}
-.btn-remove:hover{background:rgba(255,107,107,.1)}
-/* Results */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-@media(max-width:700px){.stats-row{grid-template-columns:repeat(2,1fr)}}
-.stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px}
-.stat-card .label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.stat-card .value{font-size:24px;font-weight:700}
-.stat-card .value.green{color:var(--green)}
-.stat-card .value.blue{color:var(--blue)}
-.stat-card .value.orange{color:var(--orange)}
-.stat-card .sub{font-size:11px;color:var(--text2);margin-top:2px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;padding:10px 14px;font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);font-weight:600;position:sticky;top:0;background:var(--surface)}
-td{padding:10px 14px;border-bottom:1px solid rgba(46,51,72,.5)}
-tr:hover td{background:rgba(108,92,231,.05)}
-.positive{color:var(--green2)}
-.negative{color:var(--red)}
-.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
-.tag-up{background:rgba(0,184,148,.12);color:var(--green2)}
-.tag-down{background:rgba(255,107,107,.12);color:var(--red)}
-.tag-flat{background:rgba(148,152,173,.12);color:var(--text2)}
-/* AI Panel */
-.ai-panel{background:linear-gradient(135deg,rgba(108,92,231,.08),rgba(0,206,201,.05));border:1px solid rgba(108,92,231,.2)}
-.ai-msg{padding:14px 16px;border-radius:8px;margin-bottom:10px;font-size:13px;line-height:1.6}
-.ai-msg.tip{background:rgba(0,184,148,.08);border-left:3px solid var(--green2)}
-.ai-msg.warning{background:rgba(253,203,110,.08);border-left:3px solid var(--orange)}
-.ai-msg.insight{background:rgba(116,185,255,.08);border-left:3px solid var(--blue)}
-.ai-msg strong{color:var(--text)}
-.pair-badge{display:inline-block;padding:3px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;font-size:12px;font-family:'Courier New',monospace;margin:2px}
-.empty-state{text-align:center;padding:60px 20px;color:var(--text2)}
-.empty-state svg{width:64px;height:64px;margin-bottom:16px;opacity:.3}
-.scroll{max-height:600px;overflow-y:auto}
-.scroll::-webkit-scrollbar{width:6px}
-.scroll::-webkit-scrollbar-track{background:transparent}
-.scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-.entry-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(46,51,72,.3)}
-.entry-num{width:24px;height:24px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
-.divider{height:1px;background:var(--border);margin:16px 0}
-.vessel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.vessel-header h3{font-size:15px;font-weight:600}
-.vessel-tag{font-size:11px;padding:4px 10px;background:rgba(108,92,231,.12);color:var(--accent2);border-radius:6px;font-weight:500}
+/* ── RESET & BASE ─────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:13px;background:#f4f6f9;color:#222}
+:root{
+  --blue:#1a73e8;--blue2:#1558b0;--green:#27ae60;--red:#e74c3c;--orange:#f39c12;
+  --bg:#f4f6f9;--card:#fff;--border:#dde3ec;--text:#222;--muted:#6b7280;
+  --row-alt:#f8fafc;--header:#f0f4f8;
+}
+
+/* ── LAYOUT ───────────────────────────────────────── */
+.page{max-width:1280px;margin:0 auto;padding:16px}
+.header{background:var(--blue);color:#fff;padding:14px 20px;border-radius:10px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.header h1{font-size:18px;font-weight:700}
+.header small{opacity:.8;font-size:11px}
+.badge{background:rgba(255,255,255,.2);border-radius:20px;padding:2px 10px;font-size:11px}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+.card-title{font-weight:700;font-size:13px;color:var(--blue);border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.card-title .num{background:var(--blue);color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:11px}
+
+/* ── FORM CONTROLS ────────────────────────────────── */
+.form-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-bottom:8px}
+.form-group{display:flex;flex-direction:column;gap:3px}
+.form-group label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+select,input[type=number],input[type=text]{
+  border:1px solid var(--border);border-radius:6px;padding:6px 8px;font-size:13px;
+  background:#fff;color:var(--text);outline:none;transition:border .2s
+}
+select:focus,input:focus{border-color:var(--blue)}
+select{cursor:pointer}
+.btn{border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue2)}
+.btn-success{background:var(--green);color:#fff}
+.btn-danger{background:var(--red);color:#fff}
+.btn-warn{background:var(--orange);color:#fff}
+.btn-outline{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.btn-sm{padding:4px 10px;font-size:11px}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* ── TABLES ───────────────────────────────────────── */
+.tbl-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{background:var(--header);padding:7px 9px;text-align:left;font-weight:700;font-size:11px;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
+thead th.right{text-align:right}
+tbody tr:nth-child(even){background:var(--row-alt)}
+tbody tr:hover{background:#eaf2ff}
+td{padding:7px 9px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
+td.right{text-align:right;font-variant-numeric:tabular-nums}
+td.center{text-align:center}
+td.muted{color:var(--muted)}
+.tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:600}
+.tag-green{background:#d4edda;color:#1e7e34}
+.tag-red{background:#fde8e8;color:#c0392b}
+.tag-orange{background:#fff3cd;color:#856404}
+.tag-blue{background:#dbeafe;color:#1558b0}
+.tag-gray{background:#f3f4f6;color:#555}
+
+/* ── ROTATION BUILDER ─────────────────────────────── */
+#rotation-display{
+  display:flex;align-items:center;flex-wrap:wrap;gap:4px;
+  background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:10px 12px;
+  min-height:42px;margin-bottom:10px
+}
+.rot-port{
+  background:var(--blue);color:#fff;border-radius:16px;padding:3px 12px;font-size:12px;font-weight:600;
+  cursor:pointer;position:relative;
+}
+.rot-port.hub{background:#7c3aed}
+.rot-port.ts{background:#e67e22}
+.rot-port .remove-rot{margin-left:6px;opacity:.7;cursor:pointer;font-size:11px}
+.rot-port .remove-rot:hover{opacity:1}
+.rot-arrow{color:var(--muted);font-size:14px;padding:0 2px}
+.rot-empty{color:var(--muted);font-style:italic;font-size:12px}
+.ts-indent{margin-left:20px;border-left:2px solid #e67e22;padding-left:8px}
+
+/* ── PORT PAIR ENTRIES ────────────────────────────── */
+.entry-card{
+  background:#fafcff;border:1px solid var(--border);border-radius:8px;padding:12px;
+  margin-bottom:10px;position:relative
+}
+.entry-card:hover{border-color:#a3c0e8}
+.entry-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.entry-pair-label{font-weight:700;font-size:13px;color:var(--blue);flex:1}
+.eq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eq-section{border:1px solid var(--border);border-radius:6px;padding:10px}
+.eq-section.gp20{border-top:3px solid #2196f3}
+.eq-section.hc40{border-top:3px solid #9c27b0}
+.eq-label{font-weight:700;font-size:11px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.eq-label.gp20{color:#2196f3}
+.eq-label.hc40{color:#9c27b0}
+.info-pill{font-size:10px;color:var(--muted);background:#f0f4f8;border-radius:10px;padding:1px 7px}
+.calc-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:4px}
+.calc-val{font-size:11px;color:var(--muted)}
+.cm-output{
+  background:#e8f5e9;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;color:#1b5e20;
+  display:inline-block;min-width:100px;text-align:right
+}
+.frt-mode-toggle{display:flex;gap:4px;margin-bottom:8px}
+.mode-btn{padding:4px 10px;border-radius:20px;border:1px solid var(--border);cursor:pointer;font-size:11px;font-weight:600;background:#fff;color:var(--muted)}
+.mode-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ── TOTALS BAR ───────────────────────────────────── */
+#totals-bar{
+  background:#1a2d4a;color:#fff;border-radius:10px;padding:14px 20px;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:14px
+}
+.tot-item{display:flex;flex-direction:column;gap:2px}
+.tot-label{font-size:10px;opacity:.7;text-transform:uppercase}
+.tot-val{font-size:16px;font-weight:700}
+.tot-sep{width:1px;background:rgba(255,255,255,.2);height:36px}
+.usage-bar-wrap{flex:1;min-width:200px}
+.usage-bar-bg{background:rgba(255,255,255,.15);border-radius:4px;height:8px;overflow:hidden}
+.usage-bar-fill{height:8px;border-radius:4px;background:var(--green);transition:width .3s}
+.usage-bar-fill.warn{background:var(--orange)}
+.usage-bar-fill.over{background:var(--red)}
+.usage-pct{font-size:11px;margin-top:2px}
+
+/* ── AI PANEL ─────────────────────────────────────── */
+#ai-panel{display:none}
+#ai-panel.visible{display:block}
+.ai-section{margin-bottom:14px}
+.ai-section h4{font-size:12px;font-weight:700;color:var(--blue2);margin-bottom:8px}
+.ai-row{display:flex;gap:8px;margin-bottom:4px;align-items:flex-start}
+.ai-row .ai-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.ai-row .ai-text{font-size:12px;line-height:1.5}
+.ai-highlight{background:#fffbe6;border-left:3px solid var(--orange);padding:6px 10px;border-radius:0 6px 6px 0;font-size:12px;margin-bottom:6px}
+.ai-good{background:#e8f5e9;border-left:3px solid var(--green);padding:6px 10px;border-radius:0 6px 6px 0;font-size:12px;margin-bottom:6px}
+
+/* ── MISC ─────────────────────────────────────────── */
+.divider{border:none;border-top:1px solid var(--border);margin:14px 0}
+.empty-msg{color:var(--muted);text-align:center;padding:20px;font-style:italic}
+.loading{color:var(--muted);font-style:italic;padding:20px;text-align:center}
+.err{color:var(--red);padding:12px;background:#fde8e8;border-radius:6px;font-size:12px}
+.tooltip{position:relative}
+.tooltip:hover::after{
+  content:attr(data-tip);position:absolute;bottom:120%;left:50%;transform:translateX(-50%);
+  background:#333;color:#fff;font-size:10px;padding:4px 8px;border-radius:4px;white-space:nowrap;z-index:100
+}
 </style>
 </head>
 <body>
+<div class="page">
 
+<!-- HEADER -->
 <div class="header">
+  <div style="font-size:22px">⚓</div>
   <div>
-    <h1>REX CM Calculator</h1>
-    <div class="sub">Port Pair CM Estimator based on 12-month history</div>
+    <h1>CM Calculator</h1>
+    <small id="headerSub">Loading data…</small>
   </div>
-  <div class="badge">2025-02 ~ 2026-05</div>
+  <div style="flex:1"></div>
+  <span class="badge" id="headerBadge">—</span>
 </div>
 
-<div class="container">
-  <div class="grid">
-    <!-- LEFT: Input -->
-    <div>
-      <div class="panel" style="margin-bottom:20px">
-        <div class="panel-head"><span class="dot"></span> Vessel Configuration</div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Vessel / Voyage</label>
-            <input type="text" id="vvdName" placeholder="e.g. REX 001E / COSCO HOPE" style="width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;outline:none">
-          </div>
-          <div class="vessel-header">
-            <h3>Port Pair Entries</h3>
-            <button class="btn btn-add" onclick="addEntry()" style="width:auto;margin:0;padding:6px 14px;font-size:12px">+ Add Port Pair</button>
-          </div>
-          <div id="entries"></div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head"><span class="dot" style="background:var(--green)"></span> Actions</div>
-        <div class="panel-body" style="display:flex;gap:10px">
-          <button class="btn btn-primary" onclick="calculate()" style="flex:1">Calculate CM</button>
-          <button class="btn btn-secondary" onclick="resetAll()">Reset</button>
-        </div>
-      </div>
+<!-- ── SECTION 1: VESSEL BSA ── -->
+<div class="card" style="margin-bottom:14px">
+  <div class="card-title"><span class="num">1</span> Vessel BSA (Total Allocation)</div>
+  <div class="form-row" style="align-items:center;gap:20px">
+    <div class="form-group">
+      <label>20' Total BSA (TEU)</label>
+      <input type="number" id="bsa20" value="" min="0" step="50" placeholder="e.g. 500" style="width:130px" oninput="updateUsage()">
     </div>
-
-    <!-- RIGHT: Results -->
-    <div>
-      <!-- Stats -->
-      <div class="stats-row" id="statsRow" style="display:none">
-        <div class="stat-card">
-          <div class="label">Total CM</div>
-          <div class="value green" id="statTotalCM">-</div>
-          <div class="sub" id="statTotalCMsub"></div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Total TEU</div>
-          <div class="value blue" id="statTotalTEU">-</div>
-          <div class="sub" id="statTotalTEUsub"></div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Blended Per TEU CM</div>
-          <div class="value orange" id="statBlended">-</div>
-          <div class="sub" id="statBlendedsub"></div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Vessel BSA Utilization</div>
-          <div class="value" id="statUtil">-</div>
-          <div class="sub" id="statUtilsub"></div>
-        </div>
+    <div class="form-group">
+      <label>40' Total BSA (FEU)</label>
+      <input type="number" id="bsa40" value="" min="0" step="50" placeholder="e.g. 800" style="width:130px" oninput="updateUsage()">
+    </div>
+    <div id="totals-bar" style="flex:1;margin-bottom:0;margin-top:0;border-radius:8px;padding:10px 16px">
+      <div class="tot-item">
+        <div class="tot-label">Used 20'</div>
+        <div class="tot-val" id="tot-used20">0</div>
       </div>
-
-      <!-- Result Table -->
-      <div class="panel" style="margin-bottom:20px">
-        <div class="panel-head"><span class="dot" style="background:var(--blue)"></span> CM Calculation Results</div>
-        <div class="panel-body scroll" id="resultBody">
-          <div class="empty-state">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-            <div style="font-size:15px;font-weight:600;margin-bottom:6px">No calculations yet</div>
-            <div style="font-size:13px">Add port pairs and click Calculate CM</div>
+      <div class="tot-sep"></div>
+      <div class="tot-item">
+        <div class="tot-label">Used 40'</div>
+        <div class="tot-val" id="tot-used40">0</div>
+      </div>
+      <div class="tot-sep"></div>
+      <div class="tot-item">
+        <div class="tot-label">Total CM (USD)</div>
+        <div class="tot-val" id="tot-cm">—</div>
+      </div>
+      <div class="tot-sep"></div>
+      <div class="tot-item">
+        <div class="tot-label">Avg Per TEU CM</div>
+        <div class="tot-val" id="tot-ptcm">—</div>
+      </div>
+      <div class="tot-sep"></div>
+      <div class="usage-bar-wrap">
+        <div class="tot-label">BSA Utilization</div>
+        <div style="display:flex;gap:8px;margin-top:2px">
+          <div style="flex:1">
+            <div class="usage-pct" id="pct20-label">20': —</div>
+            <div class="usage-bar-bg"><div class="usage-bar-fill" id="bar20" style="width:0%"></div></div>
           </div>
-        </div>
-      </div>
-
-      <!-- AI Suggestions -->
-      <div class="panel ai-panel">
-        <div class="panel-head"><span class="dot" style="background:var(--orange)"></span> AI Margin Optimization</div>
-        <div class="panel-body" id="aiBody">
-          <div class="empty-state" style="padding:30px">
-            <div style="font-size:14px;color:var(--text2)">Calculate CM first to get AI-driven margin suggestions</div>
+          <div class="tot-sep"></div>
+          <div style="flex:1">
+            <div class="usage-pct" id="pct40-label">40': —</div>
+            <div class="usage-bar-bg"><div class="usage-bar-fill" id="bar40" style="width:0%"></div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="grid-2">
+
+<!-- ── SECTION 2: ROTATION ── -->
+<div class="card">
+  <div class="card-title"><span class="num">2</span> Rotation Builder</div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Lane</label>
+      <select id="sel-lane" onchange="onLaneChange()" style="width:100px">
+        <option value="">All Lanes</option>
+      </select>
+    </div>
+    <div class="form-group" style="flex:1">
+      <label>Add Port (POL)</label>
+      <select id="sel-rot-port" style="min-width:130px">
+        <option value="">— select port —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>&nbsp;</label>
+      <button class="btn btn-outline" onclick="addRotPort()">+ Add</button>
+    </div>
+    <div class="form-group">
+      <label>&nbsp;</label>
+      <button class="btn btn-ghost btn-sm" onclick="clearRotation()">Clear</button>
+    </div>
+  </div>
+
+  <!-- Add transshipment -->
+  <div class="form-row" style="background:#fff8f0;border:1px solid #fce8cc;border-radius:6px;padding:8px 10px">
+    <div style="font-size:11px;color:#b45309;font-weight:600;width:100%;margin-bottom:4px">🔀 Transshipment (T/S)</div>
+    <div class="form-group">
+      <label>Hub Port</label>
+      <select id="sel-ts-hub" onchange="onTsHubChange()" style="width:120px">
+        <option value="">— hub —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>T/S Destination</label>
+      <select id="sel-ts-dest" style="width:120px">
+        <option value="">— dest —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>&nbsp;</label>
+      <button class="btn btn-warn btn-sm" onclick="addTsDest()">+ T/S</button>
+    </div>
+  </div>
+
+  <div style="margin-top:10px">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:4px">Current Rotation:</div>
+    <div id="rotation-display"><span class="rot-empty">No ports added yet</span></div>
+  </div>
+
+  <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn btn-primary btn-sm" onclick="applyRotationToPortPairs()">↓ Apply Rotation to Port Pairs</button>
+    <button class="btn btn-outline btn-sm" onclick="aiSuggestRotation()">🤖 AI Optimize Rotation</button>
+  </div>
+  <div id="rot-ai-msg" style="margin-top:8px;font-size:11px;color:var(--muted)"></div>
+</div>
+
+<!-- ── SECTION 3: PORT PAIRS ── -->
+<div class="card">
+  <div class="card-title"><span class="num">3</span> Port Pair BSA &amp; Freight</div>
+
+  <div class="form-row" style="margin-bottom:10px">
+    <div class="form-group">
+      <label>POL</label>
+      <select id="add-pol" onchange="filterAddPod()" style="width:110px">
+        <option value="">— POL —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>POD</label>
+      <select id="add-pod" onchange="filterAddDel()" style="width:110px">
+        <option value="">— POD —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>DEL (opt)</label>
+      <select id="add-del" style="width:110px">
+        <option value="">— same as POD —</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>&nbsp;</label>
+      <button class="btn btn-primary" onclick="addEntry()">+ Add Row</button>
+    </div>
+  </div>
+
+  <div id="entries">
+    <div class="empty-msg">Add port pairs above, or apply from Rotation.</div>
+  </div>
+
+  <div style="text-align:right;margin-top:8px">
+    <button class="btn btn-success" onclick="calculate()">⚡ Calculate CM</button>
+  </div>
+</div>
+</div><!-- end grid-2 -->
+
+<!-- ── RESULTS ── -->
+<div class="card" style="margin-top:14px" id="results-card">
+  <div class="card-title"><span class="num">4</span> CM Result Summary</div>
+  <div id="results-body">
+    <div class="empty-msg">Press "Calculate CM" to see results.</div>
+  </div>
+</div>
+
+<!-- ── AI SUGGESTIONS ── -->
+<div class="card" style="margin-top:14px">
+  <div class="card-title">
+    <span class="num">5</span> AI Suggestions
+    <div style="flex:1"></div>
+    <button class="btn btn-outline btn-sm" onclick="runAI()">🤖 Run AI Analysis</button>
+  </div>
+  <div id="ai-panel">
+    <div class="empty-msg" id="ai-empty">Click "Run AI Analysis" after calculating CM.</div>
+    <div id="ai-content" style="display:none"></div>
+  </div>
+</div>
+
+</div><!-- .page -->
 
 <script>
-// Load data
-let DATA = {};
-let entries = [];
+// ════════════════════════════════════════════════
+//  DATA STORE
+// ════════════════════════════════════════════════
+let DATA = null;          // full cm_history.json
+let ROTATION = [];        // [{port, type:'pol'|'ts_hub', tsDestinations:[]}]
+let ENTRIES = [];         // [{id, pol, pod, del, gp20_bsa, hc40_bsa, frt_mode, gp20_frt, hc40_frt}]
+let RESULTS = [];         // computed per entry
+let entryCounter = 0;
 
+// ════════════════════════════════════════════════
+//  BOOT
+// ════════════════════════════════════════════════
 fetch('data/cm_history.json').then(r=>r.json()).then(d=>{
   DATA = d;
-  addEntry();
-  populateSelects();
+  const meta = d.metadata;
+  document.getElementById('headerSub').textContent =
+    `CM Estimator — ${meta.date_range} | ${meta.total_port_pairs} port pairs`;
+  document.getElementById('headerBadge').textContent = meta.date_range;
+  populateGlobalSelects();
+  populateLaneSelect();
 }).catch(e=>{
-  document.getElementById('entries').innerHTML = '<div style="color:var(--red);padding:20px">Failed to load cm_history.json</div>';
+  document.getElementById('entries').innerHTML =
+    `<div class="err">Failed to load data/cm_history.json: ${e.message}</div>`;
 });
 
-function fmt(n){ return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
-function fmtInt(n){ return n.toLocaleString('en-US'); }
+// ════════════════════════════════════════════════
+//  POPULATE SELECTS
+// ════════════════════════════════════════════════
+function allPortPairs(){
+  return Object.values(DATA.port_pairs);
+}
 
-function populateSelects(){
-  document.querySelectorAll('select.pol-sel').forEach(s=>fillPol(s));
-  document.querySelectorAll('select.pod-sel').forEach(s=>{
-    fillPod(s);
-    const prev = s.dataset.pol;
-    if(prev) filterDel(s.closest('.eq-card').querySelector('select.del-sel'), prev, s.value);
+function populateGlobalSelects(){
+  const pp = allPortPairs();
+  const pols = [...new Set(pp.map(p=>p.pol))].sort();
+  const pods = [...new Set(pp.map(p=>p.pod))].sort();
+
+  setSelectOptions('add-pol', pols, '— POL —');
+  setSelectOptions('sel-rot-port',  pols, '— select port —');
+  setSelectOptions('sel-ts-hub',
+    Object.keys(DATA.ts_map).sort(), '— hub —');
+}
+
+function populateLaneSelect(){
+  const lanes = Object.keys(DATA.lanes).sort();
+  const sel = document.getElementById('sel-lane');
+  lanes.forEach(l=>{
+    const op = document.createElement('option');
+    op.value = l; op.textContent = l;
+    sel.appendChild(op);
   });
 }
 
-function fillPol(sel){
-  const val = sel.value;
-  sel.innerHTML = '<option value="">Select POL</option>';
-  DATA.pol_list.forEach(p=>{
-    sel.innerHTML += `<option value="${p}"${p===val?' selected':''}>${p}</option>`;
+function filterAddPod(){
+  const pol = document.getElementById('add-pol').value;
+  if(!pol) return;
+  const pods = [...new Set(
+    allPortPairs().filter(p=>p.pol===pol).map(p=>p.pod)
+  )].sort();
+  setSelectOptions('add-pod', pods, '— POD —');
+  setSelectOptions('add-del', [], '— same as POD —');
+}
+
+function filterAddDel(){
+  const pol = document.getElementById('add-pol').value;
+  const pod = document.getElementById('add-pod').value;
+  if(!pol||!pod) return;
+  const dels = [...new Set(
+    allPortPairs().filter(p=>p.pol===pol && p.pod===pod && p.del!==pod).map(p=>p.del)
+  )].sort();
+  setSelectOptions('add-del', dels, '— same as POD —');
+}
+
+function onTsHubChange(){
+  const hub = document.getElementById('sel-ts-hub').value;
+  const dests = hub ? (DATA.ts_map[hub]||[]) : [];
+  setSelectOptions('sel-ts-dest', dests, '— dest —');
+}
+
+function setSelectOptions(id, vals, placeholder){
+  const sel = document.getElementById(id);
+  sel.innerHTML = '';
+  const ph = document.createElement('option');
+  ph.value=''; ph.textContent=placeholder; sel.appendChild(ph);
+  vals.forEach(v=>{
+    const op=document.createElement('option');
+    op.value=v; op.textContent=v; sel.appendChild(op);
   });
 }
 
-function fillPod(sel){
-  const val = sel.value;
-  sel.innerHTML = '<option value="">Select POD</option>';
-  DATA.pod_list.forEach(p=>{
-    sel.innerHTML += `<option value="${p}"${p===val?' selected':''}>${p}</option>`;
-  });
+function onLaneChange(){
+  const lane = document.getElementById('sel-lane').value;
+  if(!lane){
+    populateGlobalSelects(); return;
+  }
+  const pp = allPortPairs().filter(p=>p.lane===lane);
+  const pols = [...new Set(pp.map(p=>p.pol))].sort();
+  setSelectOptions('sel-rot-port', pols, '— select port —');
+  setSelectOptions('add-pol', pols, '— POL —');
 }
 
-function filterDel(delSel, pol, pod){
-  const val = delSel.value;
-  delSel.innerHTML = '<option value="">Select DEL</option>';
-  if(!pod) return;
-  // Find matching DELs from port pairs
-  const dels = new Set();
-  Object.keys(DATA.port_pairs).forEach(k=>{
-    const pp = DATA.port_pairs[k];
-    if(pp.pod === pod){
-      if(!pol || pp.pol === pol){
-        if(pp.del) dels.add(pp.del);
-      }
+// ════════════════════════════════════════════════
+//  ROTATION BUILDER
+// ════════════════════════════════════════════════
+function addRotPort(){
+  const port = document.getElementById('sel-rot-port').value;
+  if(!port) return;
+  if(ROTATION.find(r=>r.port===port && r.type==='pol')) return; // no dupe
+  ROTATION.push({port, type:'pol', tsDests:[]});
+  renderRotation();
+}
+
+function addTsDest(){
+  const hub  = document.getElementById('sel-ts-hub').value;
+  const dest = document.getElementById('sel-ts-dest').value;
+  if(!hub||!dest) return;
+  let hubEntry = ROTATION.find(r=>r.port===hub && r.type==='pol');
+  if(!hubEntry){
+    // auto-add hub if not there
+    ROTATION.push({port:hub, type:'pol', tsDests:[]});
+    hubEntry = ROTATION[ROTATION.length-1];
+  }
+  if(!hubEntry.tsDests.includes(dest)) hubEntry.tsDests.push(dest);
+  renderRotation();
+}
+
+function removeRotPort(port){
+  ROTATION = ROTATION.filter(r=>r.port!==port);
+  renderRotation();
+}
+
+function removeTs(hubPort, dest){
+  const h = ROTATION.find(r=>r.port===hubPort);
+  if(h) h.tsDests = h.tsDests.filter(d=>d!==dest);
+  renderRotation();
+}
+
+function clearRotation(){
+  ROTATION=[];
+  renderRotation();
+}
+
+function renderRotation(){
+  const el = document.getElementById('rotation-display');
+  if(ROTATION.length===0){
+    el.innerHTML='<span class="rot-empty">No ports added yet</span>'; return;
+  }
+  let html='';
+  ROTATION.forEach((r,i)=>{
+    if(i>0) html+=`<span class="rot-arrow">→</span>`;
+    const hasTs = r.tsDests && r.tsDests.length>0;
+    html+=`<span class="rot-port ${hasTs?'hub':''}" title="${hasTs?'T/S Hub':'POL'}">
+      ${r.port}
+      <span class="remove-rot" onclick="removeRotPort('${r.port}')">✕</span>
+    </span>`;
+    if(hasTs){
+      r.tsDests.forEach(d=>{
+        html+=`<span class="rot-arrow" style="color:#e67e22">↘</span>
+          <span class="rot-port ts" title="T/S from ${r.port}">
+            ${d}
+            <span class="remove-rot" onclick="removeTs('${r.port}','${d}')">✕</span>
+          </span>`;
+      });
     }
   });
-  // Also add from del_by_pod
-  if(DATA.del_by_pod[pod]){
-    DATA.del_by_pod[pod].forEach(d=>{ if(d.del) dels.add(d.del); });
+  el.innerHTML=html;
+}
+
+// Apply rotation => add port pairs to entries
+function applyRotationToPortPairs(){
+  if(ROTATION.length===0){alert('Build a rotation first.'); return;}
+  const lanes = [...new Set(allPortPairs().map(p=>p.lane))];
+  const laneFilter = document.getElementById('sel-lane').value;
+
+  // For each POL in rotation, find all PODs downstream
+  const polPorts = ROTATION.map(r=>r.port);
+  const podPorts = [];
+  // PODs = everything after POL in rotation + TS dests
+  ROTATION.forEach(r=>{
+    podPorts.push(r.port);
+    (r.tsDests||[]).forEach(d=>podPorts.push(d));
+  });
+
+  // Find all matching port pairs
+  const added = new Set(ENTRIES.map(e=>`${e.pol}|${e.pod}|${e.del}`));
+  let count=0;
+  for(const pol of polPorts){
+    const matchPods = allPortPairs().filter(p=>
+      p.pol===pol &&
+      (!laneFilter || p.lane===laneFilter) &&
+      !added.has(`${p.pol}|${p.pod}|${p.del}`)
+    );
+    matchPods.forEach(pp=>{
+      addEntryFromPP(pp);
+      added.add(`${pp.pol}|${pp.pod}|${pp.del}`);
+      count++;
+    });
   }
-  [...dels].sort().forEach(d=>{
-    delSel.innerHTML += `<option value="${d}"${d===val?' selected':''}>${d}</option>`;
-  });
+  if(count===0) alert('No new port pairs found for this rotation. Check lane filter.');
+  else document.getElementById('rot-ai-msg').textContent = `✅ Added ${count} port pairs from rotation.`;
 }
 
-function onPolChange(sel){
-  const card = sel.closest('.eq-card');
-  filterDel(card.querySelector('select.del-sel'), sel.value, card.querySelector('select.pod-sel').value);
+// ════════════════════════════════════════════════
+//  PORT PAIR ENTRIES
+// ════════════════════════════════════════════════
+function lookupPP(pol, pod, del_){
+  // Try exact match
+  const key = `REX|${pol}|${pol}|${pod}|${del_}`;
+  if(DATA.port_pairs[key]) return DATA.port_pairs[key];
+  // Fallback: search by pol+pod+del
+  const del2 = del_||pod;
+  return Object.values(DATA.port_pairs).find(p=>
+    p.pol===pol && p.pod===pod && p.del===del2
+  ) || null;
 }
 
-function onPodChange(sel){
-  const card = sel.closest('.eq-card');
-  filterDel(card.querySelector('select.del-sel'), card.querySelector('select.pol-sel').value, sel.value);
-}
-
-let entryCounter = 0;
 function addEntry(){
-  entryCounter++;
-  const id = entryCounter;
-  const div = document.createElement('div');
-  div.className = 'eq-card';
-  div.id = `entry-${id}`;
-  div.innerHTML = `
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-      <h3><span class="entry-num">${id}</span> Port Pair #${id}</h3>
-      <button class="btn-remove" onclick="removeEntry(${id})" title="Remove">&times;</button>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-      <div>
-        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">POL</label>
-        <select class="pol-sel" onchange="onPolChange(this)"><option value="">Select</option></select>
-      </div>
-      <div>
-        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">POD</label>
-        <select class="pod-sel" onchange="onPodChange(this)"><option value="">Select</option></select>
-      </div>
-      <div>
-        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">DEL</label>
-        <select class="del-sel"><option value="">Select</option></select>
-      </div>
-    </div>
-    <div class="eq-grid">
-      <div>
-        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">20' BSA (TEU)</label>
-        <input type="number" class="gp20-bsa" placeholder="0" min="0" value="0" style="width:100%;padding:8px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;outline:none">
-      </div>
-      <div>
-        <label style="font-size:11px;color:var(--text2);display:block;margin-bottom:4px">40' BSA (TEU)</label>
-        <input type="number" class="hc40-bsa" placeholder="0" min="0" value="0" style="width:100%;padding:8px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;outline:none">
-      </div>
-    </div>
-    <div style="margin-top:10px;padding:10px;background:rgba(108,92,231,.05);border-radius:6px;font-size:12px;color:var(--text2)" class="hist-info">
-      Historical benchmark will show here after selecting ports
-    </div>
-  `;
-  document.getElementById('entries').appendChild(div);
-  populateSelects();
-  // Add live preview
-  div.querySelectorAll('select').forEach(s=>{
-    s.addEventListener('change', ()=>showHist(div));
-  });
+  const pol = document.getElementById('add-pol').value;
+  const pod = document.getElementById('add-pod').value;
+  const del_ = document.getElementById('add-del').value || pod;
+  if(!pol||!pod){return;}
+
+  const pp = lookupPP(pol, pod, del_);
+  if(!pp){
+    alert(`No history found for ${pol} → ${pod} → ${del_}`); return;
+  }
+  _addEntryObj(pol, pod, del_, pp);
+}
+
+function addEntryFromPP(pp){
+  _addEntryObj(pp.pol, pp.pod, pp.del, pp);
+}
+
+function _addEntryObj(pol, pod, del_, pp){
+  const id = ++entryCounter;
+  ENTRIES.push({id, pol, pod, del:del_, pp, frt_mode:'hist',
+    gp20_bsa:0, hc40_bsa:0, gp20_frt:null, hc40_frt:null});
+  renderEntries();
 }
 
 function removeEntry(id){
-  const el = document.getElementById(`entry-${id}`);
-  if(el) el.remove();
+  ENTRIES = ENTRIES.filter(e=>e.id!==id);
+  renderEntries();
+  recalcTotals();
 }
 
-function showHist(card){
-  const pol = card.querySelector('select.pol-sel').value;
-  const pod = card.querySelector('select.pod-sel').value;
-  const del = card.querySelector('select.del-sel').value;
-  const info = card.querySelector('.hist-info');
-  if(!pol || !pod){
-    info.textContent = 'Select POL and POD to see historical benchmark';
+function renderEntries(){
+  const el = document.getElementById('entries');
+  if(ENTRIES.length===0){
+    el.innerHTML='<div class="empty-msg">Add port pairs above, or apply from Rotation.</div>';
     return;
   }
-  // Try to find matching port pair
-  let best = null;
-  // Exact match with DEL first
-  if(del){
-    const k = `${pol}|${pod}|${del}`;
-    if(DATA.port_pairs[k]) best = DATA.port_pairs[k];
+  el.innerHTML = ENTRIES.map(e=>renderEntryCard(e)).join('');
+}
+
+function renderEntryCard(e){
+  const pp = e.pp;
+  const gp = pp.gp20; const hc = pp.hc40;
+
+  // Historical benchmarks
+  const gp_cm_hist  = gp?.avg_cm  ?? null;
+  const hc_cm_hist  = hc?.avg_cm_feu ?? null;
+  const gp_frt_hist = gp?.avg_frt ?? null;
+  const hc_frt_hist = hc?.avg_frt_feu ?? null;
+  const gp_vc       = gp?.avg_vc  ?? null;
+  const hc_vc_feu   = hc?.avg_vc_feu ?? null;
+
+  const fmt = (v,d=0)=> v==null?'—': Number(v).toLocaleString('en',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const fmtUSD = (v)=> v==null?'—': 'USD '+Number(v).toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0});
+
+  // Labels
+  const laneLabel = pp.lane ? `<span class="tag tag-blue">${pp.lane}</span>` : '';
+  const tsLabel = pp.del!==pp.pod ? `<span class="tag tag-orange">T/S→${pp.del}</span>` : '';
+
+  return `<div class="entry-card" id="ec-${e.id}">
+  <div class="entry-header">
+    <div class="entry-pair-label">
+      ${pp.pol} → ${pp.pod} ${pp.del!==pp.pod?'→ '+pp.del:''} ${laneLabel} ${tsLabel}
+    </div>
+    <div class="calc-val">Hist weeks: ${pp.weeks||'—'}</div>
+    <button class="btn btn-ghost btn-sm" onclick="removeEntry(${e.id})">✕ Remove</button>
+  </div>
+
+  <!-- Freight Mode Toggle -->
+  <div class="frt-mode-toggle">
+    <span style="font-size:11px;color:var(--muted);margin-right:4px;line-height:24px">Mode:</span>
+    <button class="mode-btn ${e.frt_mode==='hist'?'active':''}" onclick="setFrtMode(${e.id},'hist')">📊 History-based</button>
+    <button class="mode-btn ${e.frt_mode==='input'?'active':''}" onclick="setFrtMode(${e.id},'input')">✏️ Input FRT</button>
+  </div>
+
+  <div class="eq-grid">
+    <!-- 20GP -->
+    <div class="eq-section gp20">
+      <div class="eq-label gp20">📦 20GP (per TEU)
+        <span class="info-pill">Hist CM: ${fmt(gp_cm_hist,0)}</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>BSA (TEU)</label>
+          <input type="number" id="bsa20-${e.id}" value="${e.gp20_bsa||''}" min="0" step="10"
+            oninput="onBsaChange(${e.id},'gp20',this.value)" style="width:90px" placeholder="0">
+        </div>
+        <div class="form-group ${e.frt_mode==='input'?'':'hidden-frt'}" id="frt20-grp-${e.id}" style="${e.frt_mode==='input'?'':'display:none'}">
+          <label>Your FRT (USD/TEU)</label>
+          <input type="number" id="frt20-${e.id}" value="${e.gp20_frt||''}" min="0" step="50"
+            oninput="onFrtChange(${e.id},'gp20',this.value)" style="width:110px" placeholder="${fmt(gp_frt_hist,0)}">
+        </div>
+      </div>
+      <div class="calc-row" style="margin-top:6px">
+        <span class="calc-val">VC: ${fmt(gp_vc,0)}/TEU</span>
+        <span style="color:#ccc">|</span>
+        <span class="calc-val">Est CM/TEU:</span>
+        <span class="cm-output" id="cm20u-${e.id}">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-val">Total CM:</span>
+        <span class="cm-output" id="cm20t-${e.id}" style="background:#c8e6c9">—</span>
+      </div>
+    </div>
+
+    <!-- 40HC -->
+    <div class="eq-section hc40">
+      <div class="eq-label hc40">🟪 40HC (per FEU)
+        <span class="info-pill">Hist CM: ${fmt(hc_cm_hist,0)}</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>BSA (FEU)</label>
+          <input type="number" id="bsa40-${e.id}" value="${e.hc40_bsa||''}" min="0" step="10"
+            oninput="onBsaChange(${e.id},'hc40',this.value)" style="width:90px" placeholder="0">
+        </div>
+        <div class="form-group" id="frt40-grp-${e.id}" style="${e.frt_mode==='input'?'':'display:none'}">
+          <label>Your FRT (USD/FEU)</label>
+          <input type="number" id="frt40-${e.id}" value="${e.hc40_frt||''}" min="0" step="50"
+            oninput="onFrtChange(${e.id},'hc40',this.value)" style="width:110px" placeholder="${fmt(hc_frt_hist,0)}">
+        </div>
+      </div>
+      <div class="calc-row" style="margin-top:6px">
+        <span class="calc-val">VC: ${fmt(hc_vc_feu,0)}/FEU</span>
+        <span style="color:#ccc">|</span>
+        <span class="calc-val">Est CM/FEU:</span>
+        <span class="cm-output" id="cm40u-${e.id}" style="background:#f3e5f5;color:#4a148c">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-val">Total CM:</span>
+        <span class="cm-output" id="cm40t-${e.id}" style="background:#e1bee7;color:#4a148c">—</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Combined row CM -->
+  <div style="display:flex;gap:10px;margin-top:8px;background:#f0f7ff;border-radius:6px;padding:8px 10px;align-items:center">
+    <span style="font-size:11px;color:var(--muted)">Row Total CM:</span>
+    <span id="cmrow-${e.id}" style="font-size:14px;font-weight:700;color:var(--blue)">—</span>
+    <span style="flex:1"></span>
+    <span style="font-size:11px;color:var(--muted)">Blended Per TEU:</span>
+    <span id="cmblend-${e.id}" style="font-size:12px;font-weight:600;color:var(--blue2)">—</span>
+  </div>
+</div>`;
+}
+
+function setFrtMode(id, mode){
+  const e = ENTRIES.find(x=>x.id===id);
+  if(!e) return;
+  e.frt_mode = mode;
+  // toggle visibility
+  const show = mode==='input';
+  const g20 = document.getElementById(`frt20-grp-${id}`);
+  const g40 = document.getElementById(`frt40-grp-${id}`);
+  if(g20) g20.style.display = show?'':'none';
+  if(g40) g40.style.display = show?'':'none';
+  // update toggle buttons
+  const card = document.getElementById(`ec-${id}`);
+  if(card){
+    card.querySelectorAll('.mode-btn').forEach(b=>{
+      const m = b.textContent.includes('History') ? 'hist' : 'input';
+      b.classList.toggle('active', m===mode);
+    });
   }
-  // Match without DEL
-  if(!best){
-    const k = `${pol}|${pod}`;
-    if(DATA.port_pairs[k]) best = DATA.port_pairs[k];
+  computeEntryLive(id);
+}
+
+function onBsaChange(id, eq, val){
+  const e = ENTRIES.find(x=>x.id===id);
+  if(!e) return;
+  if(eq==='gp20') e.gp20_bsa = parseFloat(val)||0;
+  else e.hc40_bsa = parseFloat(val)||0;
+  computeEntryLive(id);
+  recalcTotals();
+}
+
+function onFrtChange(id, eq, val){
+  const e = ENTRIES.find(x=>x.id===id);
+  if(!e) return;
+  if(eq==='gp20') e.gp20_frt = parseFloat(val)||null;
+  else e.hc40_frt = parseFloat(val)||null;
+  computeEntryLive(id);
+  recalcTotals();
+}
+
+function computeEntryLive(id){
+  const e = ENTRIES.find(x=>x.id===id);
+  if(!e) return;
+  const res = computeEntry(e);
+  // update DOM
+  const fmt0 = v=> v==null?'—': Number(v).toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0});
+  const fmtC = v=> v==null?'—': 'USD '+Number(v).toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0});
+  setTxt(`cm20u-${id}`, fmt0(res.gp20_cm_per_teu));
+  setTxt(`cm20t-${id}`, fmtC(res.gp20_total_cm));
+  setTxt(`cm40u-${id}`, fmt0(res.hc40_cm_per_feu));
+  setTxt(`cm40t-${id}`, fmtC(res.hc40_total_cm));
+  setTxt(`cmrow-${id}`, fmtC(res.row_total_cm));
+  setTxt(`cmblend-${id}`, res.blended_ptcm ? fmt0(res.blended_ptcm)+'/TEU' : '—');
+}
+
+function computeEntry(e){
+  const pp = e.pp;
+  const gp = pp.gp20; const hc = pp.hc40;
+
+  // 20GP CM per TEU
+  let gp20_cm_per_teu = null;
+  if(e.frt_mode==='input' && e.gp20_frt!=null){
+    const vc = gp?.avg_vc ?? null;
+    if(vc!=null) gp20_cm_per_teu = e.gp20_frt - vc;
+    else gp20_cm_per_teu = null; // can't compute without VC
+  } else {
+    gp20_cm_per_teu = gp?.avg_cm ?? null;
   }
-  // Try any DEL
-  if(!best){
-    for(const [key, val] of Object.entries(DATA.port_pairs)){
-      if(val.pol === pol && val.pod === pod){
-        best = val;
-        break;
-      }
+
+  // 40HC CM per FEU
+  let hc40_cm_per_feu = null;
+  if(e.frt_mode==='input' && e.hc40_frt!=null){
+    const vc_feu = hc?.avg_vc_feu ?? null;
+    if(vc_feu!=null) hc40_cm_per_feu = e.hc40_frt - vc_feu;
+    else hc40_cm_per_feu = null;
+  } else {
+    hc40_cm_per_feu = hc?.avg_cm_feu ?? null;
+  }
+
+  const gp20_bsa = e.gp20_bsa||0;
+  const hc40_bsa = e.hc40_bsa||0;
+
+  const gp20_total_cm = gp20_cm_per_teu!=null ? gp20_cm_per_teu * gp20_bsa : null;
+  const hc40_total_cm = hc40_cm_per_feu!=null ? hc40_cm_per_feu * hc40_bsa : null;
+
+  const row_total_cm =
+    (gp20_total_cm??0) + (hc40_total_cm??0);
+
+  // blended per TEU (40HC: each FEU = 2 TEU equiv)
+  const tot_teu = gp20_bsa + hc40_bsa*2;
+  const blended_ptcm = tot_teu>0 ? row_total_cm/tot_teu : null;
+
+  return {gp20_cm_per_teu, hc40_cm_per_feu, gp20_total_cm, hc40_total_cm,
+          row_total_cm, blended_ptcm, gp20_bsa, hc40_bsa};
+}
+
+function setTxt(id, v){ const el=document.getElementById(id); if(el) el.textContent=v; }
+
+// ════════════════════════════════════════════════
+//  CALCULATE ALL
+// ════════════════════════════════════════════════
+function calculate(){
+  if(ENTRIES.length===0){alert('Add port pairs first.'); return;}
+
+  RESULTS = ENTRIES.map(e=>{
+    const r = computeEntry(e);
+    return {...r, entry:e};
+  });
+
+  renderResults();
+  recalcTotals();
+  document.getElementById('ai-panel').classList.add('visible');
+}
+
+function renderResults(){
+  const tbody = RESULTS.map(r=>{
+    const e = r.entry;
+    const pp = e.pp;
+    const fmt0 = v=> v==null?'—':Number(v).toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0});
+    const fmtC = v=> v==null?'—':'USD '+Number(v).toLocaleString('en',{minimumFractionDigits:0,maximumFractionDigits:0});
+    const tsLabel = pp.del!==pp.pod?`<span class="tag tag-orange">T/S→${pp.del}</span>`:'';
+    return `<tr>
+      <td>${pp.pol} → ${pp.pod} ${tsLabel}</td>
+      <td class="right">${fmt0(r.gp20_bsa)}</td>
+      <td class="right">${fmt0(r.gp20_cm_per_teu)}</td>
+      <td class="right">${fmtC(r.gp20_total_cm)}</td>
+      <td class="right">${fmt0(r.hc40_bsa)}</td>
+      <td class="right">${fmt0(r.hc40_cm_per_feu)}</td>
+      <td class="right">${fmtC(r.hc40_total_cm)}</td>
+      <td class="right" style="font-weight:700;color:var(--blue)">${fmtC(r.row_total_cm)}</td>
+      <td class="right">${r.blended_ptcm?fmt0(r.blended_ptcm)+'':'—'}</td>
+      <td class="center">${e.frt_mode==='input'?'<span class="tag tag-blue">FRT Input</span>':'<span class="tag tag-gray">History</span>'}</td>
+    </tr>`;
+  }).join('');
+
+  const html = `<div class="tbl-wrap"><table>
+    <thead><tr>
+      <th>Port Pair</th>
+      <th class="right">20' BSA</th>
+      <th class="right">CM/TEU</th>
+      <th class="right">20' Total CM</th>
+      <th class="right">40' BSA</th>
+      <th class="right">CM/FEU</th>
+      <th class="right">40' Total CM</th>
+      <th class="right">Row Total CM</th>
+      <th class="right">Blended /TEU</th>
+      <th class="center">Mode</th>
+    </tr></thead>
+    <tbody>${tbody}</tbody>
+  </table></div>`;
+
+  document.getElementById('results-body').innerHTML = html;
+}
+
+function recalcTotals(){
+  let used20=0, used40=0, totalCM=0;
+  ENTRIES.forEach(e=>{
+    used20 += e.gp20_bsa||0;
+    used40 += e.hc40_bsa||0;
+  });
+  RESULTS.forEach(r=>{ totalCM += r.row_total_cm||0; });
+
+  const bsa20 = parseFloat(document.getElementById('bsa20').value)||0;
+  const bsa40 = parseFloat(document.getElementById('bsa40').value)||0;
+
+  setTxt('tot-used20', used20.toLocaleString());
+  setTxt('tot-used40', used40.toLocaleString());
+  setTxt('tot-cm', totalCM>0 ? 'USD '+Math.round(totalCM).toLocaleString():'—');
+
+  const totTEU = used20 + used40*2;
+  setTxt('tot-ptcm', totTEU>0 ? Math.round(totalCM/totTEU).toLocaleString()+'/TEU':'—');
+
+  updateBar('bar20','pct20-label', used20, bsa20, "20'");
+  updateBar('bar40','pct40-label', used40, bsa40, "40'");
+}
+
+function updateBar(barId, lblId, used, total, label){
+  const bar = document.getElementById(barId);
+  const lbl = document.getElementById(lblId);
+  if(!bar||!lbl) return;
+  if(total<=0){
+    bar.style.width='0%'; lbl.textContent=label+': —'; return;
+  }
+  const pct = Math.min(used/total*100, 100);
+  bar.style.width = pct+'%';
+  bar.className = 'usage-bar-fill'+(used>total?' over': used/total>0.85?' warn':'');
+  lbl.textContent = `${label}: ${Math.round(used/total*100)}% (${used.toLocaleString()}/${total.toLocaleString()})`;
+}
+
+function updateUsage(){ recalcTotals(); }
+
+// ════════════════════════════════════════════════
+//  AI SUGGESTIONS
+// ════════════════════════════════════════════════
+function aiSuggestRotation(){
+  // Suggest which ports have the highest avg CM
+  const laneFilter = document.getElementById('sel-lane').value;
+  const pp = allPortPairs().filter(p=>!laneFilter||p.lane===laneFilter);
+  // Group by POL, rank by avg combined CM
+  const polCM = {};
+  pp.forEach(p=>{
+    const cm = (p.gp20?.avg_cm||0)*(p.gp20?.vol||0) + (p.hc40?.avg_cm_feu||0)*(p.hc40?.vol||0);
+    const vol = (p.gp20?.vol||0)+(p.hc40?.vol||0);
+    if(!polCM[p.pol]) polCM[p.pol]={ttlCM:0,ttlVol:0};
+    polCM[p.pol].ttlCM += cm;
+    polCM[p.pol].ttlVol += vol;
+  });
+  const ranked = Object.entries(polCM)
+    .map(([pol,v])=>({pol, wtCM:v.ttlVol>0?v.ttlCM/v.ttlVol:0}))
+    .sort((a,b)=>b.wtCM-a.wtCM).slice(0,8);
+  const msg = `🤖 Suggested high-CM POLs: ${ranked.map(r=>r.pol+' ('+Math.round(r.wtCM)+')').join(', ')}`;
+  document.getElementById('rot-ai-msg').textContent = msg;
+}
+
+function runAI(){
+  if(RESULTS.length===0){calculate();}
+  const panel = document.getElementById('ai-content');
+  const empty = document.getElementById('ai-empty');
+  panel.style.display='block'; empty.style.display='none';
+
+  const bsa20 = parseFloat(document.getElementById('bsa20').value)||0;
+  const bsa40 = parseFloat(document.getElementById('bsa40').value)||0;
+  let totalCM=0, used20=0, used40=0;
+  RESULTS.forEach(r=>{totalCM+=r.row_total_cm||0; used20+=r.gp20_bsa||0; used40+=r.hc40_bsa||0;});
+
+  // Sort by blended CM desc
+  const sorted = [...RESULTS].sort((a,b)=>(b.blended_ptcm||0)-(a.blended_ptcm||0));
+  const top3 = sorted.slice(0,3);
+  const bot3 = sorted.slice(-3).reverse();
+
+  // Equipment analysis
+  const prefer40 = RESULTS.filter(r=>{
+    const pp=r.entry.pp;
+    return (pp.hc40?.avg_cm_feu||0) > (pp.gp20?.avg_cm||0)*1.1;
+  });
+  const prefer20 = RESULTS.filter(r=>{
+    const pp=r.entry.pp;
+    const hcFeu = pp.hc40?.avg_cm_feu||0;
+    const gp = pp.gp20?.avg_cm||0;
+    return gp > 0 && hcFeu < gp*0.9;
+  });
+
+  // BSA optimization
+  const optLines = [];
+  if(bsa20>0 && used20>bsa20*1.05) optLines.push(`⚠️ 20' OVER-ALLOCATED: ${used20} / ${bsa20} BSA`);
+  if(bsa40>0 && used40>bsa40*1.05) optLines.push(`⚠️ 40' OVER-ALLOCATED: ${used40} / ${bsa40} BSA`);
+  if(bsa20>0 && used20<bsa20*0.6) optLines.push(`💡 20' under-utilized: ${Math.round(used20/bsa20*100)}% used — consider shifting to higher CM port pairs`);
+  if(bsa40>0 && used40<bsa40*0.6) optLines.push(`💡 40' under-utilized: ${Math.round(used40/bsa40*100)}% used — consider shifting to higher CM port pairs`);
+
+  // Unused high-CM port pairs
+  const used_keys = new Set(ENTRIES.map(e=>`${e.pol}|${e.pod}`));
+  const unused = allPortPairs()
+    .filter(p=>!used_keys.has(`${p.pol}|${p.pod}`))
+    .filter(p=>(p.hc40?.avg_cm_feu||0)>0 || (p.gp20?.avg_cm||0)>0)
+    .map(p=>({
+      key:`${p.pol}→${p.pod}`,
+      cm: Math.max(p.hc40?.avg_cm_feu||0, p.gp20?.avg_cm||0),
+      weeks:p.weeks||0,
+      lane:p.lane
+    }))
+    .sort((a,b)=>b.cm-a.cm).slice(0,5);
+
+  const fmtC = v=> 'USD '+Number(v).toLocaleString('en',{maximumFractionDigits:0});
+  const fmt0 = v=> Number(v).toLocaleString('en',{maximumFractionDigits:0});
+
+  let html=`
+  <div class="ai-section">
+    <h4>📊 Voyage CM Overview</h4>
+    <div class="ai-good">
+      Total Estimated CM: <strong>${fmtC(totalCM)}</strong> &nbsp;|&nbsp;
+      Blended Per TEU: <strong>${used20+used40>0?fmt0(totalCM/(used20+used40*2)):0}/TEU</strong>
+      ${bsa20>0||bsa40>0 ? `&nbsp;|&nbsp; Utilization: 20' ${bsa20>0?Math.round(used20/bsa20*100)+'%':'n/a'} / 40' ${bsa40>0?Math.round(used40/bsa40*100)+'%':'n/a'}` : ''}
+    </div>
+  </div>
+
+  <div class="ai-section">
+    <h4>🏆 Top Port Pairs by Blended Per TEU CM</h4>
+    ${top3.map(r=>`<div class="ai-good">
+      <strong>${r.entry.pp.pol}→${r.entry.pp.pod}</strong>
+      — Blended ${fmt0(r.blended_ptcm||0)}/TEU
+      (20': ${fmt0(r.gp20_cm_per_teu||0)}/TEU, 40': ${fmt0(r.hc40_cm_per_feu||0)}/FEU)
+      | Total CM: ${fmtC(r.row_total_cm||0)}
+    </div>`).join('')}
+  </div>
+
+  <div class="ai-section">
+    <h4>⚠️ Low-Margin Port Pairs to Review</h4>
+    ${bot3.map(r=>`<div class="ai-highlight">
+      <strong>${r.entry.pp.pol}→${r.entry.pp.pod}</strong>
+      — Blended ${fmt0(r.blended_ptcm||0)}/TEU
+      | Total CM: ${fmtC(r.row_total_cm||0)}
+    </div>`).join('')}
+  </div>
+
+  <div class="ai-section">
+    <h4>📦 Equipment Strategy</h4>
+    ${prefer40.length>0?`<div class="ai-good">✅ <strong>Prefer 40'</strong>: ${prefer40.map(r=>`${r.entry.pp.pol}→${r.entry.pp.pod}`).join(', ')} — 40HC FEU CM significantly higher than 20GP.</div>`:''}
+    ${prefer20.length>0?`<div class="ai-highlight">📌 <strong>Prefer 20'</strong>: ${prefer20.map(r=>`${r.entry.pp.pol}→${r.entry.pp.pod}`).join(', ')} — 20GP outperforms 40HC on CM/TEU.</div>`:''}
+    ${prefer40.length===0&&prefer20.length===0?'<div class="ai-row"><span class="ai-icon">ℹ️</span><span class="ai-text">Balanced equipment profile — no strong preference signal.</span></div>':''}
+  </div>
+
+  ${optLines.length>0?`<div class="ai-section">
+    <h4>⚡ BSA Optimization Alerts</h4>
+    ${optLines.map(l=>`<div class="ai-highlight">${l}</div>`).join('')}
+  </div>`:''}
+
+  <div class="ai-section">
+    <h4>💡 Untapped High-CM Port Pairs (not in current plan)</h4>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Port Pair</th><th>Lane</th><th class="right">Best CM/Unit</th><th class="right">Hist Weeks</th></tr></thead>
+      <tbody>${unused.map(u=>`<tr>
+        <td>${u.key}</td><td><span class="tag tag-blue">${u.lane}</span></td>
+        <td class="right">${fmt0(u.cm)}</td><td class="right">${u.weeks}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+  </div>
+
+  <div class="ai-section">
+    <h4>🔄 BSA Reallocation Suggestion</h4>
+    ${genRealloc(bsa20, bsa40, used20, used40)}
+  </div>`;
+
+  panel.innerHTML = html;
+  document.getElementById('ai-panel').classList.add('visible');
+}
+
+function genRealloc(bsa20, bsa40, used20, used40){
+  if(!bsa20&&!bsa40) return '<div class="ai-row"><span class="ai-icon">ℹ️</span><span class="ai-text">Set Vessel BSA in Section 1 to get reallocation suggestions.</span></div>';
+  const lines=[];
+  if(bsa20>0){
+    const slack20 = bsa20 - used20;
+    if(slack20>50){
+      const top20pp = RESULTS.filter(r=>(r.gp20_cm_per_teu||0)>0)
+        .sort((a,b)=>(b.gp20_cm_per_teu||0)-(a.gp20_cm_per_teu||0)).slice(0,2);
+      lines.push(`💡 ${Math.round(slack20)} 20' TEUs unallocated — top candidates: ${top20pp.map(r=>`${r.entry.pp.pol}→${r.entry.pp.pod} (${Math.round(r.gp20_cm_per_teu||0)}/TEU)`).join(', ')}`);
     }
   }
-  if(!best){
-    info.innerHTML = '<span style="color:var(--orange)">No historical data found for this port pair</span>';
-    return;
+  if(bsa40>0){
+    const slack40 = bsa40 - used40;
+    if(slack40>20){
+      const top40pp = RESULTS.filter(r=>(r.hc40_cm_per_feu||0)>0)
+        .sort((a,b)=>(b.hc40_cm_per_feu||0)-(a.hc40_cm_per_feu||0)).slice(0,2);
+      lines.push(`💡 ${Math.round(slack40)} 40' FEUs unallocated — top candidates: ${top40pp.map(r=>`${r.entry.pp.pol}→${r.entry.pp.pod} (${Math.round(r.hc40_cm_per_feu||0)}/FEU)`).join(', ')}`);
+    }
   }
-  let html = `<strong>Historical Benchmark (${best.months} months):</strong><br>`;
-  if(best.gp20){
-    html += `20' Avg Per TEU CM: <span style="color:var(--green2);font-weight:600">$${fmt(best.gp20.avg_ptcm)}</span>`;
-    html += ` (${fmtInt(best.gp20.total_teu)} TEU total)`;
-  }
-  if(best.gp20 && best.hc40) html += '<br>';
-  if(best.hc40){
-    html += `40' Per TEU CM: <span style="color:var(--accent2);font-weight:600">$${fmt(best.hc40.avg_ptcm)}</span>`;
-    html += ` | FEU adj: <span style="color:var(--accent2);font-weight:600">$${fmt(best.hc40.avg_ptcm_feu)}</span>`;
-    html += ` (${fmtInt(best.hc40.total_teu)} TEU total)`;
-  }
-  info.innerHTML = html;
-}
-
-function findBestPortPair(pol, pod, del){
-  if(del){
-    const k = `${pol}|${pod}|${del}`;
-    if(DATA.port_pairs[k]) return DATA.port_pairs[k];
-  }
-  const k = `${pol}|${pod}`;
-  if(DATA.port_pairs[k]) return DATA.port_pairs[k];
-  for(const [key, val] of Object.entries(DATA.port_pairs)){
-    if(val.pol === pol && val.pod === pod) return val;
-  }
-  return null;
-}
-
-function calculate(){
-  const entryEls = document.querySelectorAll('#entries .eq-card');
-  if(entryEls.length === 0) return;
-
-  let results = [];
-  let totalCM = 0, totalTEU = 0, totalGP20TEU = 0, totalHC40TEU = 0;
-  let totalGP20CM = 0, totalHC40CM = 0;
-  let totalBSA = 0;
-  const vvdName = document.getElementById('vvdName').value || 'REX Vessel';
-
-  entryEls.forEach((card, idx)=>{
-    const pol = card.querySelector('select.pol-sel').value;
-    const pod = card.querySelector('select.pod-sel').value;
-    const del = card.querySelector('select.del-sel').value;
-    const gp20Bsa = parseInt(card.querySelector('.gp20-bsa').value) || 0;
-    const hc40Bsa = parseInt(card.querySelector('.hc40-bsa').value) || 0;
-
-    if(!pol || !pod || (gp20Bsa===0 && hc40Bsa===0)) return;
-
-    const hist = findBestPortPair(pol, pod, del);
-    const gp20Ptcm = hist?.gp20?.avg_ptcm || DATA.metadata.overall_gp20_ptcm;
-    const hc40Ptcm = hist?.hc40?.avg_ptcm || DATA.metadata.overall_hc40_ptcm;
-    const hc40PtcmFeu = hist?.hc40?.avg_ptcm_feu || DATA.metadata.overall_hc40_ptcm_feu;
-    const hasHist = !!hist;
-
-    const gp20CM = gp20Bsa * gp20Ptcm;
-    const hc40CM = hc40Bsa * hc40Ptcm;
-    const hc40CMFeu = hc40Bsa * hc40PtcmFeu;
-    const entryCM = gp20CM + hc40CMFeu;
-    const entryTEU = gp20Bsa + hc40Bsa;
-
-    totalCM += entryCM;
-    totalTEU += entryTEU;
-    totalGP20TEU += gp20Bsa;
-    totalHC40TEU += hc40Bsa;
-    totalGP20CM += gp20CM;
-    totalHC40CM += hc40CMFeu;
-    totalBSA += gp20Bsa + hc40Bsa;
-
-    results.push({
-      idx: idx+1, pol, pod, del, gp20Bsa, hc40Bsa,
-      gp20Ptcm, hc40Ptcm, hc40PtcmFeu,
-      gp20CM, hc40CM: hc40CMFeu,
-      entryCM, entryTEU, hasHist,
-      source: hist ? (hist.del ? `${pol}→${pod}→${hist.del}` : `${pol}→${pod}`) : 'Overall Average'
-    });
-  });
-
-  if(results.length === 0) return;
-
-  // Update stats
-  document.getElementById('statsRow').style.display = 'grid';
-  document.getElementById('statTotalCM').textContent = '$' + fmt(totalCM);
-  document.getElementById('statTotalCMsub').textContent = `GP20: $${fmt(totalGP20CM)} | HC40(FEU): $${fmt(totalHC40CM)}`;
-  document.getElementById('statTotalTEU').textContent = fmtInt(totalTEU);
-  document.getElementById('statTotalTEUsub').textContent = `GP20: ${fmtInt(totalGP20TEU)} | HC40: ${fmtInt(totalHC40TEU)}`;
-  document.getElementById('statBlended').textContent = '$' + fmt(totalCM/totalTEU);
-  document.getElementById('statBlendedsub').textContent = `GP20: $${fmt(totalGP20TEU>0?totalGP20CM/totalGP20TEU:0)} | HC40 FEU: $${fmt(totalHC40TEU>0?totalHC40CM/totalHC40TEU:0)}`;
-  document.getElementById('statUtil').textContent = fmtInt(totalBSA) + ' TEU';
-  document.getElementById('statUtilsub').textContent = `${results.length} port pairs`;
-
-  // Build result table
-  let html = `<table>
-    <thead><tr>
-      <th>#</th><th>Port Pair</th><th>DEL</th>
-      <th style="text-align:right">20' BSA</th><th style="text-align:right">20' P/T CM</th><th style="text-align:right">20' Est CM</th>
-      <th style="text-align:right">40' BSA</th><th style="text-align:right">40' P/T(FEU)</th><th style="text-align:right">40' Est CM</th>
-      <th style="text-align:right">Total CM</th><th>Source</th>
-    </tr></thead><tbody>`;
-
-  results.forEach(r=>{
-    const ppStr = `<span class="pair-badge">${r.pol} → ${r.pod}</span>`;
-    const sourceTag = r.hasHist ?
-      `<span class="tag tag-up">Historical</span>` :
-      `<span class="tag tag-flat">Overall Avg</span>`;
-    html += `<tr>
-      <td>${r.idx}</td>
-      <td>${ppStr}</td>
-      <td style="color:var(--text2)">${r.del || '-'}</td>
-      <td style="text-align:right;font-family:monospace">${fmtInt(r.gp20Bsa)}</td>
-      <td style="text-align:right;color:var(--green2)">$${fmt(r.gp20Ptcm)}</td>
-      <td style="text-align:right;font-weight:600">$${fmt(r.gp20CM)}</td>
-      <td style="text-align:right;font-family:monospace">${fmtInt(r.hc40Bsa)}</td>
-      <td style="text-align:right;color:var(--accent2)">$${fmt(r.hc40PtcmFeu)}</td>
-      <td style="text-align:right;font-weight:600">$${fmt(r.hc40CM)}</td>
-      <td style="text-align:right;font-weight:700;color:var(--green2)">$${fmt(r.entryCM)}</td>
-      <td>${sourceTag}</td>
-    </tr>`;
-  });
-
-  // Total row
-  html += `<tr style="background:var(--surface2);font-weight:700">
-    <td colspan="3" style="color:var(--accent2)">VESSEL TOTAL</td>
-    <td style="text-align:right">${fmtInt(totalGP20TEU)}</td>
-    <td style="text-align:right">-</td>
-    <td style="text-align:right">$${fmt(totalGP20CM)}</td>
-    <td style="text-align:right">${fmtInt(totalHC40TEU)}</td>
-    <td style="text-align:right">-</td>
-    <td style="text-align:right">$${fmt(totalHC40CM)}</td>
-    <td style="text-align:right;color:var(--green2);font-size:15px">$${fmt(totalCM)}</td>
-    <td></td>
-  </tr>`;
-  html += '</tbody></table>';
-  document.getElementById('resultBody').innerHTML = html;
-
-  // AI Suggestions
-  generateAI(results, totalCM, totalTEU, totalGP20TEU, totalHC40TEU);
-}
-
-function generateAI(results, totalCM, totalTEU, gp20Teu, hc40Teu){
-  const ai = DATA.ai_insights;
-  let msgs = [];
-
-  // 1. Equipment mix analysis
-  const gp20Pct = (gp20Teu / totalTEU * 100).toFixed(1);
-  const hc40Pct = (hc40Teu / totalTEU * 100).toFixed(1);
-  const overallRatio = parseFloat(DATA.metadata.overall_hc40_ptcm_feu / DATA.metadata.overall_gp20_ptcm).toFixed(2);
-
-  msgs.push({
-    type: 'insight',
-    html: `<strong>Equipment Mix:</strong> Your vessel is ${gp20Pct}% 20' / ${hc40Pct}% 40'. 
-    Historical overall 40' FEU Per TEU CM ($${fmt(DATA.metadata.overall_hc40_ptcm_feu)}) is <strong>${overallRatio}x</strong> of 20' ($${fmt(DATA.metadata.overall_gp20_ptcm)}). 
-    ${parseFloat(hc40Pct) < 80 ? 'Consider increasing 40\' allocation for better margin.' : 'Your 40\' utilization is strong.'}`
-  });
-
-  // 2. Check if any entries use overall average (no history)
-  const noHist = results.filter(r=>!r.hasHist);
-  if(noHist.length > 0){
-    const pairs = noHist.map(r=>`<span class="pair-badge">${r.pol}→${r.pod}</span>`).join(' ');
-    msgs.push({
-      type: 'warning',
-      html: `<strong>No Historical Match:</strong> ${pairs} ${noHist.length===1?'has':'have'} no matching history. 
-      CM is estimated using <strong>overall average</strong>, which may be inaccurate for these specific routes. Verify with actual data if possible.`
-    });
-  }
-
-  // 3. Port pair optimization suggestions
-  const pairSet = new Set(results.map(r=>`${r.pol}|${r.pod}`));
-  const hc40Better = ai.hc40_better_than_gp20.filter(p=>pairSet.has(p.pair));
-  const gp20Better = ai.gp20_better_than_gp20.filter(p=>pairSet.has(p.pair));
-
-  if(hc40Better.length > 0){
-    const top = hc40Better.slice(0,3);
-    const pairs = top.map(p=>`<span class="pair-badge">${p.pair.replace('|','→')}</span> (${p.ratio}x)`).join(' ');
-    msgs.push({
-      type: 'tip',
-      html: `<strong>Maximize 40' on these routes:</strong> ${pairs}<br>
-      40' FEU Per TEU CM significantly exceeds 20' on these port pairs. Prioritize 40' allocation here.`
-    });
-  }
-
-  if(gp20Better.length > 0){
-    const top = gp20Better.slice(0,3);
-    const pairs = top.map(p=>`<span class="pair-badge">${p.pair.replace('|','→')}</span> (${p.ratio}x 20' better)</span>`).join(' ');
-    msgs.push({
-      type: 'tip',
-      html: `<strong>20' outperforms 40' on:</strong> ${pairs}<br>
-      Consider offering competitive 20' rates to capture volume — the Per TEU CM is higher than 40' FEU here.`
-    });
-  }
-
-  // 4. Top margin port pairs not yet in the plan
-  const allTopHC40 = ai.best_hc40_pairs.slice(0,10).map(p=>p.pair);
-  const allTopGP20 = ai.best_gp20_pairs.slice(0,10).map(p=>p.pair);
-  const missingHC40 = allTopHC40.filter(p=>!pairSet.has(p)).slice(0,3);
-  const missingGP20 = allTopGP20.filter(p=>!pairSet.has(p)).slice(0,3);
-
-  if(missingHC40.length > 0 || missingGP20.length > 0){
-    let missPairs = [];
-    missingHC40.forEach(p=>missPairs.push(`<span class="pair-badge">${p.replace('|','→')}</span>`));
-    missingGP20.forEach(p=>missPairs.push(`<span class="pair-badge">${p.replace('|','→')}</span>`));
-    msgs.push({
-      type: 'insight',
-      html: `<strong>High-margin pairs not in your plan:</strong> ${missPairs.join(' ')}<br>
-      These port pairs have top historical Per TEU CM. Consider adding them if viable.`
-    });
-  }
-
-  // 5. Blended CM assessment
-  const blended = totalCM / totalTEU;
-  const benchmark = (DATA.metadata.total_gp20_teu > 0 && DATA.metadata.total_hc40_teu > 0) ?
-    (DATA.metadata.total_cm / DATA.metadata.total_teu) : 0;
-
-  if(blended > benchmark * 1.1){
-    msgs.push({
-      type: 'tip',
-      html: `<strong>Strong vessel profile:</strong> Your estimated blended Per TEU CM ($${fmt(blended)}) is <strong>${((blended/benchmark-1)*100).toFixed(0)}% above</strong> the 12-month average ($${fmt(benchmark)}). This vessel composition looks profitable.`
-    });
-  } else if(blended < benchmark * 0.9){
-    msgs.push({
-      type: 'warning',
-      html: `<strong>Below benchmark:</strong> Estimated blended Per TEU CM ($${fmt(blended)}) is <strong>${((1-blended/benchmark)*100).toFixed(0)}% below</strong> the 12-month average ($${fmt(benchmark)}). Review port pair mix and consider substituting lower-margin routes.`
-    });
-  }
-
-  // Render
-  let html = '';
-  msgs.forEach(m=>{
-    html += `<div class="ai-msg ${m.type}">${m.html}</div>`;
-  });
-  document.getElementById('aiBody').innerHTML = html;
-}
-
-function resetAll(){
-  document.getElementById('entries').innerHTML = '';
-  document.getElementById('vvdName').value = '';
-  document.getElementById('statsRow').style.display = 'none';
-  document.getElementById('resultBody').innerHTML = `
-    <div class="empty-state">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-      <div style="font-size:15px;font-weight:600;margin-bottom:6px">No calculations yet</div>
-      <div style="font-size:13px">Add port pairs and click Calculate CM</div>
-    </div>`;
-  document.getElementById('aiBody').innerHTML = `
-    <div class="empty-state" style="padding:30px">
-      <div style="font-size:14px;color:var(--text2)">Calculate CM first to get AI-driven margin suggestions</div>
-    </div>`;
-  entryCounter = 0;
-  addEntry();
+  if(lines.length===0) lines.push('✅ BSA well utilized — no major reallocation needed.');
+  return lines.map(l=>`<div class="ai-highlight">${l}</div>`).join('');
 }
 </script>
 </body>
